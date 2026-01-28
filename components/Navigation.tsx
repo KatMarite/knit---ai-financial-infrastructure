@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
           onClick={(e) => scrollToSection(e as any, '#top')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <img src="/knit-logo.png" alt="Knit Logo" className="h-10 w-auto" />
+          <img src="/knit-logo.png" alt="Knit Logo" className="h-14 w-auto" />
         </div>
 
         {/* Desktop Nav */}

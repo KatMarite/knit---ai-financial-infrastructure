@@ -261,139 +261,192 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Architecture Diagram Section */}
-        <section className="py-24 bg-surface-50/50 border-b border-surface-200 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Infrastructure Section - Three Bucket Flow */}
+        <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
+          {/* Background Mesh */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
-              <div className="text-center mb-16 max-w-2xl mx-auto">
-                <h2 className="text-2xl font-semibold text-brand-950 mb-3">Seamless Infrastructure Integration</h2>
-                <p className="text-slate-500 text-sm">Our API-first architecture sits between your systems and your customers, acting as an intelligent firewall against revenue loss.</p>
+              <div className="text-center mb-20 max-w-3xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-surface-200 text-brand-600 text-[10px] font-mono uppercase tracking-widest mb-6 rounded-full shadow-sm">
+                  <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
+                  Knit Architect OS
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Describe your operation. Deploy your stack.</h2>
+                <p className="text-slate-600 text-lg font-light">
+                  Orchestrate complex financial operations through three integrated layers.
+                </p>
               </div>
             </Reveal>
 
-            <Reveal delay={200}>
-              <div className="relative p-8 md:p-12 bg-white border border-surface-200 rounded-lg shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 overflow-hidden hover:shadow-md transition-shadow duration-500">
-                {/* Background Grid inside diagram */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
-                {/* Node 1: Institution */}
-                <div className="relative z-10 flex flex-col items-center gap-3 w-40 group">
-                  <div className="w-16 h-16 bg-surface-50 border border-surface-200 rounded flex items-center justify-center text-slate-600 group-hover:border-brand-300 group-hover:text-brand-600 transition-all duration-300 shadow-sm group-hover:shadow-md">
-                    <Database size={24} strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xs font-bold text-brand-950 uppercase tracking-wide">Institution</div>
-                    <div className="text-[10px] font-mono text-slate-400 mt-1">ERP / CRM Data</div>
-                  </div>
-                </div>
-
-                {/* Connector 1 */}
-                <div className="relative z-10 flex-1 h-px w-full md:w-auto flex items-center justify-center">
-                  <div className="absolute inset-0 h-[1px] bg-slate-200"></div>
-                  <div className="absolute inset-0 h-[1px] bg-gradient-to-r from-transparent via-brand-400 to-transparent w-1/2 mx-auto animate-[shimmer_2s_infinite_linear]"></div>
-                  {/* Animated dashed line */}
-                  <div className="absolute inset-0 border-t border-dashed border-slate-300 w-full"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-0.5 w-full bg-flow-gradient animate-[flow_1.5s_linear_infinite] opacity-50"></div>
-                  </div>
-
-                  <div className="bg-white px-2 py-1 border border-surface-200 rounded text-[10px] font-mono text-slate-500 uppercase tracking-wider relative z-10 shadow-sm">
-                    Sync API
-                  </div>
-                  <ChevronRight size={14} className="absolute right-0 -translate-y-1/2 top-1/2 text-surface-400" />
-                </div>
-
-                {/* Node 2: Knit Engine */}
-                <div className="relative z-10 flex flex-col items-center gap-3 w-48">
-                  <div className="w-20 h-20 bg-brand-950 border border-brand-800 rounded shadow-xl shadow-brand-900/20 flex items-center justify-center text-brand-400 relative overflow-hidden group hover:scale-105 transition-transform duration-300">
-                    <div className="absolute inset-0 bg-brand-900 opacity-50 skew-x-12 group-hover:skew-x-0 transition-transform duration-700"></div>
-                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-600/20 to-transparent"></div>
-                    <Zap size={32} strokeWidth={1.5} className="relative z-10 group-hover:text-white transition-colors duration-300 animate-pulse-slow" />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xs font-bold text-brand-950 uppercase tracking-wide">Knit Intelligence</div>
-                    <div className="text-[10px] font-mono text-slate-400 mt-1">Predict &gt; Decide &gt; Act</div>
-                  </div>
-                </div>
-
-                {/* Connector 2 */}
-                <div className="relative z-10 flex-1 h-px w-full md:w-auto flex items-center justify-center">
-                  <div className="absolute inset-0 h-[1px] bg-slate-200"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-0.5 w-full bg-flow-gradient animate-[flow_1.5s_linear_infinite] opacity-50"></div>
-                  </div>
-                  <div className="bg-white px-2 py-1 border border-surface-200 rounded text-[10px] font-mono text-slate-500 uppercase tracking-wider relative z-10 shadow-sm">
-                    Webhooks
-                  </div>
-                  <ChevronRight size={14} className="absolute right-0 -translate-y-1/2 top-1/2 text-surface-400" />
-                </div>
-
-                {/* Node 3: Recovery */}
-                <div className="relative z-10 flex flex-col items-center gap-3 w-40 group">
-                  <div className="w-16 h-16 bg-surface-50 border border-surface-200 rounded flex items-center justify-center text-slate-600 group-hover:border-emerald-300 group-hover:text-emerald-600 transition-all duration-300 shadow-sm group-hover:shadow-md">
-                    <GitMerge size={24} strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xs font-bold text-brand-950 uppercase tracking-wide">Resolution</div>
-                    <div className="text-[10px] font-mono text-slate-400 mt-1">Payment Restructuring</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* Platform Section - Bento Grid */}
-        <section id="platform" className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-surface-200 pb-8">
-              <div className="max-w-2xl">
-                <Reveal>
-                  <h2 className="text-2xl font-semibold text-brand-950 mb-2">The Financial Operating System</h2>
-                  <p className="text-slate-600 text-sm">
-                    Consolidate disparate financial workflows into a single, intelligent infrastructure.
-                  </p>
-                </Reveal>
-              </div>
-              <div className="hidden md:block">
-                <button className="text-brand-600 text-sm font-medium hover:text-brand-700 flex items-center gap-1 hover:translate-x-1 transition-transform">
-                  Explore all modules <ArrowRight size={14} />
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-surface-200 border border-surface-200 rounded-lg overflow-hidden shadow-sm">
-              {[
-                {
-                  icon: <Users className="text-brand-600" size={24} strokeWidth={1.5} />,
-                  title: "Identity & Risk",
-                  desc: "Instant KYC, risk assessment, and affordability checks via unified API."
-                },
-                {
-                  icon: <BarChart3 className="text-brand-600" size={24} strokeWidth={1.5} />,
-                  title: "Revenue Management",
-                  desc: "Automated billing logic, smart payment routing, and real-time reconciliation."
-                },
-                {
-                  icon: <TrendingUp className="text-brand-600" size={24} strokeWidth={1.5} />,
-                  title: "Intelligent Recovery",
-                  desc: "Algorithmic remediation strategies that maximize yield and retention."
-                }
-              ].map((feature, idx) => (
-                <Reveal key={idx} delay={idx * 150} className="h-full">
-                  <div className="bg-white p-8 group hover:bg-surface-50 transition-colors h-full flex flex-col relative z-0 hover:z-10">
-                    <div className="mb-6 w-12 h-12 flex items-center justify-center bg-surface-50 rounded-sm border border-surface-200 group-hover:border-brand-200 group-hover:bg-brand-50 transition-colors group-hover:scale-110 duration-300">{feature.icon}</div>
-                    <h3 className="text-lg font-semibold text-brand-950 mb-3">{feature.title}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed flex-grow">{feature.desc}</p>
-                    <div className="mt-8 pt-6 border-t border-surface-100 flex items-center text-brand-600 text-[10px] font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform cursor-pointer">
-                      View Specs <ChevronRight size={12} className="ml-1" />
+              {/* Bucket 1: Workflows (Logic) */}
+              <Reveal delay={100} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
+                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden">
+                    {/* Visual: Process Steps */}
+                    <div className="space-y-3 relative z-10">
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
+                          <FileText size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-semibold text-brand-950">Draft Lease Agreement</div>
+                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Template: v2024.1</div>
+                        </div>
+                        <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">DONE</div>
+                      </div>
+                      <div className="flex items-center justify-center h-4">
+                        <div className="w-px h-full bg-surface-300"></div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
+                          <Users size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-semibold text-brand-950">Tenant KYC Check</div>
+                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Integration: TPN</div>
+                        </div>
+                        <div className="text-[10px] font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded animate-pulse">Running</div>
+                      </div>
+                      <div className="flex items-center justify-center h-4">
+                        <div className="w-px h-full bg-surface-300 border-l border-dashed border-slate-300"></div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-white/50 border border-surface-100 border-dashed rounded-lg opacity-60">
+                        <div className="w-8 h-8 rounded bg-surface-100 flex items-center justify-center text-slate-400">
+                          <Landmark size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-medium text-slate-500">Collect Deposit</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </Reveal>
-              ))}
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <GitMerge size={20} className="text-brand-600" />
+                      Workflows
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Drag-and-drop logic for financial operations. Automate rent collection, lease renewals, and reconciliation without writing code.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Event-driven architecture
+                      </li>
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Multi-party approval steps
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Bucket 2: Integrations (Connectors) */}
+              <Reveal delay={200} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group relative z-10">
+                  <div className="bg-brand-950 rounded-lg p-6 border-b border-brand-900 flex-1 relative overflow-hidden flex items-center justify-center">
+                    {/* Visual: Hub & Spoke */}
+                    <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
+                      <div className="absolute inset-0 border border-brand-800 rounded-full opacity-50 animate-[spin_10s_linear_infinite]"></div>
+                      <div className="absolute inset-4 border border-brand-800 rounded-full opacity-30 animate-[spin_15s_linear_infinite_reverse]"></div>
+
+                      {/* Center */}
+                      <div className="w-16 h-16 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/20 flex items-center justify-center relative z-20">
+                        <span className="font-bold text-white text-xl">K</span>
+                      </div>
+
+                      {/* Satellites */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 bg-white p-1.5 rounded shadow-sm">
+                        <Database size={14} className="text-slate-600" />
+                      </div>
+                      <div className="absolute bottom-4 right-4 bg-white p-1.5 rounded shadow-sm">
+                        <Landmark size={14} className="text-slate-600" />
+                      </div>
+                      <div className="absolute bottom-4 left-4 bg-white p-1.5 rounded shadow-sm">
+                        <Users size={14} className="text-slate-600" />
+                      </div>
+
+                      {/* Connecting Lines */}
+                      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
+                        <line x1="50%" y1="50%" x2="50%" y2="0%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                        <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                        <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <Database size={20} className="text-brand-600" />
+                      Integrations
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Unified API pipes that connect your existing stack. Sync ledgers, banks, and CRMs in real-time.
+                    </p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Sage</span>
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Xero</span>
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Netcash</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Bucket 3: Security (Guardrails) */}
+              <Reveal delay={300} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
+                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden flex flex-col justify-center">
+                    {/* Visual: Security Shield */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <Shield size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">SOC2 Type II</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <Lock size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">POPIA Compliant</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <FileText size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">Audit Trails</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <Shield size={20} className="text-brand-600" />
+                      Security
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Bank-grade security and automated legal guardrails. Ensure every interaction is compliant with Section 32 and local regulations.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> 256-bit Encryption
+                      </li>
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Role-Based Access Control
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+
             </div>
           </div>
         </section>
+
 
         {/* AI Engine Section */}
         <section id="ai-engine" className="py-24 bg-brand-950 text-white relative overflow-hidden border-t border-brand-900">
@@ -559,7 +612,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
               <div className="col-span-2">
                 <div className="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                  <img src="/knit-logo.png" alt="Knit" className="h-10 w-auto brightness-0 invert" />
+                  <img src="/knit-logo.png" alt="Knit" className="h-14 w-auto brightness-0 invert" />
                 </div>
                 <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
                   Next-generation financial infrastructure for the AI era.

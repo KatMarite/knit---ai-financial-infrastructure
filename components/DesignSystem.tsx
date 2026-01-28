@@ -64,7 +64,7 @@ const DesignSystem: React.FC<DesignSystemProps> = ({ onClose }) => {
           <div className="flex justify-between items-end">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/knit-logo.png" alt="Knit Logo" className="h-16 w-auto" />
+                <img src="/knit-logo.png" alt="Knit Logo" className="h-24 w-auto" />
               </div>
               <p className="text-slate-500 text-sm font-mono uppercase tracking-widest">Design System v1.0</p>
             </div>
