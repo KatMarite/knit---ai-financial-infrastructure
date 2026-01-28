@@ -275,7 +275,7 @@ const App: React.FC = () => {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Describe your operation. Deploy your stack.</h2>
                 <p className="text-slate-600 text-lg font-light">
-                  Orchestrate complex financial operations through three integrated layers.
+                  Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
                 </p>
               </div>
             </Reveal>
