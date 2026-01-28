@@ -266,6 +266,18 @@ const App: React.FC = () => {
         <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
+              <div className="text-center mb-20 max-w-3xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-surface-200 text-brand-600 text-[10px] font-mono uppercase tracking-widest mb-6 rounded-full shadow-sm">
+                  <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
+                  Knit Architect OS
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Describe your operation. Deploy your stack.</h2>
+                <p className="text-slate-600 text-lg font-light">
+                  Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal>
               <KnitWorkflowDemo />
             </Reveal>
           </div>
