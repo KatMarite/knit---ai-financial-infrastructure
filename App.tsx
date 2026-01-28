@@ -4,6 +4,7 @@ import { Shield, TrendingUp, Users, Lock, Zap, ArrowRight, BarChart3, BookOpen, 
 import Navigation from './components/Navigation';
 import RiskSimulator from './components/RiskSimulator';
 import DesignSystem from './components/DesignSystem';
+import KnitWorkflowDemo from './components/KnitWorkflowDemo';
 
 // --- Animation Components ---
 
@@ -261,189 +262,12 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Infrastructure Section - Three Bucket Flow */}
+        {/* Infrastructure Section - Interactive AI Demo */}
         <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
-          {/* Background Mesh */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
-              <div className="text-center mb-20 max-w-3xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-surface-200 text-brand-600 text-[10px] font-mono uppercase tracking-widest mb-6 rounded-full shadow-sm">
-                  <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
-                  Knit Architect OS
-                </div>
-                <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Describe your operation. Deploy your stack.</h2>
-                <p className="text-slate-600 text-lg font-light">
-                  Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
-                </p>
-              </div>
+              <KnitWorkflowDemo />
             </Reveal>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-
-              {/* Bucket 1: Workflows (Logic) */}
-              <Reveal delay={100} className="h-full">
-                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
-                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden">
-                    {/* Visual: Process Steps */}
-                    <div className="space-y-3 relative z-10">
-                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
-                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
-                          <FileText size={16} />
-                        </div>
-                        <div className="flex-1">
-                          <div className="text-xs font-semibold text-brand-950">Draft Lease Agreement</div>
-                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Template: v2024.1</div>
-                        </div>
-                        <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">DONE</div>
-                      </div>
-                      <div className="flex items-center justify-center h-4">
-                        <div className="w-px h-full bg-surface-300"></div>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
-                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
-                          <Users size={16} />
-                        </div>
-                        <div className="flex-1">
-                          <div className="text-xs font-semibold text-brand-950">Tenant KYC Check</div>
-                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Integration: TPN</div>
-                        </div>
-                        <div className="text-[10px] font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded animate-pulse">Running</div>
-                      </div>
-                      <div className="flex items-center justify-center h-4">
-                        <div className="w-px h-full bg-surface-300 border-l border-dashed border-slate-300"></div>
-                      </div>
-                      <div className="flex items-center gap-3 p-3 bg-white/50 border border-surface-100 border-dashed rounded-lg opacity-60">
-                        <div className="w-8 h-8 rounded bg-surface-100 flex items-center justify-center text-slate-400">
-                          <Landmark size={16} />
-                        </div>
-                        <div className="flex-1">
-                          <div className="text-xs font-medium text-slate-500">Collect Deposit</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
-                      <GitMerge size={20} className="text-brand-600" />
-                      Workflows
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                      Drag-and-drop logic for financial operations. Automate rent collection, lease renewals, and reconciliation without writing code.
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <Check size={12} className="text-brand-500" /> Event-driven architecture
-                      </li>
-                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <Check size={12} className="text-brand-500" /> Multi-party approval steps
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Bucket 2: Integrations (Connectors) */}
-              <Reveal delay={200} className="h-full">
-                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group relative z-10">
-                  <div className="bg-brand-950 rounded-lg p-6 border-b border-brand-900 flex-1 relative overflow-hidden flex items-center justify-center">
-                    {/* Visual: Hub & Spoke */}
-                    <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
-                      <div className="absolute inset-0 border border-brand-800 rounded-full opacity-50 animate-[spin_10s_linear_infinite]"></div>
-                      <div className="absolute inset-4 border border-brand-800 rounded-full opacity-30 animate-[spin_15s_linear_infinite_reverse]"></div>
-
-                      {/* Center */}
-                      <div className="w-16 h-16 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/20 flex items-center justify-center relative z-20">
-                        <span className="font-bold text-white text-xl">K</span>
-                      </div>
-
-                      {/* Satellites */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 bg-white p-1.5 rounded shadow-sm">
-                        <Database size={14} className="text-slate-600" />
-                      </div>
-                      <div className="absolute bottom-4 right-4 bg-white p-1.5 rounded shadow-sm">
-                        <Landmark size={14} className="text-slate-600" />
-                      </div>
-                      <div className="absolute bottom-4 left-4 bg-white p-1.5 rounded shadow-sm">
-                        <Users size={14} className="text-slate-600" />
-                      </div>
-
-                      {/* Connecting Lines */}
-                      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
-                        <line x1="50%" y1="50%" x2="50%" y2="0%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                        <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                        <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
-                      <Database size={20} className="text-brand-600" />
-                      Integrations
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                      Unified API pipes that connect your existing stack. Sync ledgers, banks, and CRMs in real-time.
-                    </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Sage</span>
-                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Xero</span>
-                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Netcash</span>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* Bucket 3: Security (Guardrails) */}
-              <Reveal delay={300} className="h-full">
-                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
-                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden flex flex-col justify-center">
-                    {/* Visual: Security Shield */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
-                        <div className="flex items-center gap-3">
-                          <Shield size={16} className="text-emerald-600" />
-                          <span className="text-xs font-semibold text-brand-950">SOC2 Type II</span>
-                        </div>
-                        <Check size={14} className="text-emerald-500" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
-                        <div className="flex items-center gap-3">
-                          <Lock size={16} className="text-emerald-600" />
-                          <span className="text-xs font-semibold text-brand-950">POPIA Compliant</span>
-                        </div>
-                        <Check size={14} className="text-emerald-500" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
-                        <div className="flex items-center gap-3">
-                          <FileText size={16} className="text-emerald-600" />
-                          <span className="text-xs font-semibold text-brand-950">Audit Trails</span>
-                        </div>
-                        <Check size={14} className="text-emerald-500" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
-                      <Shield size={20} className="text-brand-600" />
-                      Security
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                      Bank-grade security and automated legal guardrails. Ensure every interaction is compliant with Section 32 and local regulations.
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <Check size={12} className="text-brand-500" /> 256-bit Encryption
-                      </li>
-                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
-                        <Check size={12} className="text-brand-500" /> Role-Based Access Control
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Reveal>
-
-            </div>
           </div>
         </section>
 
