@@ -137,7 +137,7 @@ const App: React.FC = () => {
                 </Reveal>
                 <Reveal delay={200}>
                   <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                    Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
+                    Use our AI to build workflows that automate how you manage customers, secure payments and optimise cashflows - powering Schools, Landlords, and the broader instalment economy.
                   </p>
                 </Reveal>
 
@@ -196,6 +196,23 @@ const App: React.FC = () => {
                 <div className="absolute -bottom-3 -left-3 w-full h-full border border-dashed border-surface-300 rounded -z-10 opacity-50"></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Trust Section */}
+        <section id="trust" className="py-20 bg-white border-t border-surface-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Reveal>
+              <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Trusted by modern financial teams</h2>
+
+              <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                {/* Text-based Logos for professional look */}
+                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-sm"></div>EdFinance</div>
+                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-full"></div>NovaBank</div>
+                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rotate-45"></div>ScholarPay</div>
+                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-tr-lg"></div>LendTech</div>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -525,9 +542,26 @@ const App: React.FC = () => {
 
                 <div className="space-y-6 border-t border-brand-800 pt-8">
                   {[
-                    { title: "Behavioral Forensics", desc: "Detects subtle changes in payment velocity and engagement." },
-                    { title: "Contextual Intervention", desc: "Deploys precise, empathetic nudges via the optimal channel." },
-                    { title: "Regulatory Guardrails", desc: "Hard-coded compliance with NCR, POPIA, and fair lending laws." }
+                    {
+                      title: 'The Architect: "Infrastructure That Builds Itself"',
+                      desc: 'A zero-code configuration engine that treats your business logic as a blueprint. Whether you are a landlord in Maboneng or a microlender in Khayelitsha, the Architect provisions your dedicated database, API handshakes, and regulatory guardrails instantly.',
+                      highlight: 'The Feature: "Zero-Touch Onboarding" — From "Intent" to "Live Infrastructure" via a simple 5-minute discovery script.'
+                    },
+                    {
+                      title: 'The Admissions Agent: "The Gatekeeper"',
+                      desc: 'An AI-driven screening layer that integrates directly with TPN and Experian. It performs real-time bank scrapes and affordability checks to ensure every new "Unit" is a safe bet.',
+                      highlight: 'The Value: "Say Yes with Certainty" — Automate NCR-compliant affordability checks and fraud detection so you never take on bad debt again.'
+                    },
+                    {
+                      title: 'The Payments Pipe: "The Frictionless Pipe"',
+                      desc: 'A smart payment orchestrator that mixes Instant EFT, Debit Orders, and retail cash payments. By offering the right payment method at the right time, Knit reduces payment friction by 22%.',
+                      highlight: 'The Value: "Automate the Installment DNA" — Deep integrations with Netcash and Ozow ensure your money moves securely and predictably every month.'
+                    },
+                    {
+                      title: 'The Collections Agent: "The Watchdog"',
+                      desc: 'Deploy specialized AI personas—from the "Empathetic Assistant" to the "Formal Officer"—to handle arrears via WhatsApp, SMS, and voice. It negotiates payment plans and triggers legal notices (like Section 32) without human intervention.',
+                      highlight: 'The Value: "Recover Revenue, Retain Relationships" — Reduce delinquency by 15-20% through proactive, predictive negotiation'
+                    }
                   ].map((item, idx) => (
                     <Reveal key={idx} delay={idx * 150}>
                       <div className="flex gap-4 group cursor-default">
@@ -537,6 +571,7 @@ const App: React.FC = () => {
                         <div>
                           <h4 className="font-semibold text-white text-sm group-hover:text-brand-200 transition-colors">{item.title}</h4>
                           <p className="text-slate-500 text-xs mt-1 leading-relaxed group-hover:text-slate-400 transition-colors">{item.desc}</p>
+                          <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>
                         </div>
                       </div>
                     </Reveal>
@@ -623,22 +658,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Trust Section */}
-        <section id="trust" className="py-20 bg-white border-t border-surface-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Reveal>
-              <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Trusted by modern financial teams</h2>
 
-              <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                {/* Text-based Logos for professional look */}
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-sm"></div>EdFinance</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-full"></div>NovaBank</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rotate-45"></div>ScholarPay</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-tr-lg"></div>LendTech</div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
 
         {/* CTA Footer */}
         <section id="contact" className="bg-surface-50 py-24 border-t border-surface-200">
