@@ -132,12 +132,12 @@ const App: React.FC = () => {
                 </Reveal>
                 <Reveal delay={100}>
                   <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-semibold tracking-tight text-brand-950 mb-8 leading-[1.05]">
-                    Stop chasing payments.<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Predict them.</span>
+                    Describe your operation.<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Deploy your stack.</span>
                   </h1>
                 </Reveal>
                 <Reveal delay={200}>
                   <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                    Knit is the AI financial operating system that helps institutions identify risk early and automate recovery without damaging relationships.
+                    Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
                   </p>
                 </Reveal>
 
@@ -184,73 +184,10 @@ const App: React.FC = () => {
                       <div className="w-4"></div>
                     </div>
 
-                    {/* Chart Area */}
-                    <div className="p-8 flex-1 flex flex-col">
-                      <div className="flex justify-between items-end mb-8">
-                        <div>
-                          <div className="text-[10px] text-slate-500 uppercase font-mono tracking-wider mb-2">Net Recovered Revenue</div>
-                          <div className="text-4xl font-light text-brand-950 font-mono tracking-tighter tabular-nums">
-                            <CountUp end={2845000} prefix="R " />
-                          </div>
-                        </div>
-                        <div className="text-emerald-700 text-[10px] font-mono font-bold bg-emerald-50 px-2 py-1 rounded-sm border border-emerald-100 flex items-center gap-1 animate-pulse-slow">
-                          <TrendingUp size={12} /> +14.2% YOY
-                        </div>
-                      </div>
-                      <div className="flex-1 w-full min-h-0">
-                        <ResponsiveContainer width="100%" height="100%">
-                          <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                            <defs>
-                              <linearGradient id="colorKnit" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#0f53d6" stopOpacity={0.1} />
-                                <stop offset="95%" stopColor="#0f53d6" stopOpacity={0} />
-                              </linearGradient>
-                            </defs>
-                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                            <XAxis
-                              dataKey="month"
-                              axisLine={false}
-                              tickLine={false}
-                              tick={{ fill: '#94a3b8', fontSize: 10, fontFamily: 'IBM Plex Mono' }}
-                              dy={10}
-                            />
-                            <YAxis
-                              axisLine={false}
-                              tickLine={false}
-                              tick={{ fill: '#94a3b8', fontSize: 10, fontFamily: 'IBM Plex Mono' }}
-                            />
-                            <Tooltip
-                              contentStyle={{
-                                borderRadius: '2px',
-                                border: '1px solid #e2e8f0',
-                                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.05)',
-                                fontFamily: 'IBM Plex Mono',
-                                fontSize: '12px',
-                                padding: '8px 12px'
-                              }}
-                            />
-                            <Area
-                              type="monotone"
-                              dataKey="knit"
-                              stroke="#0f53d6"
-                              strokeWidth={2}
-                              fillOpacity={1}
-                              fill="url(#colorKnit)"
-                              activeDot={{ r: 4, strokeWidth: 0, fill: '#0f53d6' }}
-                              animationDuration={2000}
-                            />
-                            <Area
-                              type="monotone"
-                              dataKey="traditional"
-                              stroke="#cbd5e1"
-                              strokeWidth={1}
-                              strokeDasharray="4 4"
-                              fill="transparent"
-                              animationDuration={2500}
-                            />
-                          </AreaChart>
-                        </ResponsiveContainer>
-                      </div>
+                    {/* Demo Video Area */}
+                    {/* Demo Area */}
+                    <div className="flex-1 relative bg-surface-50 overflow-hidden">
+                      <KnitWorkflowDemo compact headless />
                     </div>
                   </div>
                 </div>
@@ -262,7 +199,9 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Infrastructure Section - Interactive AI Demo */}
+
+
+        {/* Workflow Logic Section - 3 Buckets */}
         <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
@@ -271,14 +210,242 @@ const App: React.FC = () => {
                   <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
                   Knit Architect OS
                 </div>
-                <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Describe your operation. Deploy your stack.</h2>
+                <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">Seamless Infrastructure Integration</h2>
                 <p className="text-slate-600 text-lg font-light">
-                  Use our AI Architect to build custom workflows that automate customer lifecycles, secure payments, and optimize cashflows legally - powering Landlords, Lenders, and Schools.
+                  Our API-first architecture sits between your systems and your customers, acting as an intelligent firewall against revenue loss.
                 </p>
               </div>
             </Reveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+              {/* Bucket 1: Workflows (Logic) */}
+              <Reveal delay={100} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
+                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden">
+                    {/* Visual: Process Steps */}
+                    <div className="space-y-3 relative z-10">
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
+                          <FileText size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-semibold text-brand-950">Draft Lease Agreement</div>
+                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Template: v2024.1</div>
+                        </div>
+                        <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">DONE</div>
+                      </div>
+                      <div className="flex items-center justify-center h-4">
+                        <div className="w-px h-full bg-surface-300"></div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+                        <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
+                          <Users size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-semibold text-brand-950">Tenant KYC Check</div>
+                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">Integration: TPN</div>
+                        </div>
+                        <div className="text-[10px] font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded animate-pulse">Running</div>
+                      </div>
+                      <div className="flex items-center justify-center h-4">
+                        <div className="w-px h-full bg-surface-300 border-l border-dashed border-slate-300"></div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 bg-white/50 border border-surface-100 border-dashed rounded-lg opacity-60">
+                        <div className="w-8 h-8 rounded bg-surface-100 flex items-center justify-center text-slate-400">
+                          <Landmark size={16} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-xs font-medium text-slate-500">Collect Deposit</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <GitMerge size={20} className="text-brand-600" />
+                      Workflows
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Drag-and-drop logic for financial operations. Automate rent collection, lease renewals, and reconciliation without writing code.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Event-driven architecture
+                      </li>
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Multi-party approval steps
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Bucket 2: Integrations (Connectors) */}
+              <Reveal delay={200} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group relative z-10">
+                  <div className="bg-brand-950 rounded-lg p-6 border-b border-brand-900 flex-1 relative overflow-hidden flex items-center justify-center">
+                    {/* Visual: Hub & Spoke */}
+                    <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
+                      <div className="absolute inset-0 border border-brand-800 rounded-full opacity-50 animate-[spin_10s_linear_infinite]"></div>
+                      <div className="absolute inset-4 border border-brand-800 rounded-full opacity-30 animate-[spin_15s_linear_infinite_reverse]"></div>
+
+                      {/* Center */}
+                      <div className="w-16 h-16 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/20 flex items-center justify-center relative z-20">
+                        <span className="font-bold text-white text-xl">K</span>
+                      </div>
+
+                      {/* Satellites */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 bg-white p-1.5 rounded shadow-sm">
+                        <Database size={14} className="text-slate-600" />
+                      </div>
+                      <div className="absolute bottom-4 right-4 bg-white p-1.5 rounded shadow-sm">
+                        <Landmark size={14} className="text-slate-600" />
+                      </div>
+                      <div className="absolute bottom-4 left-4 bg-white p-1.5 rounded shadow-sm">
+                        <Users size={14} className="text-slate-600" />
+                      </div>
+
+                      {/* Connecting Lines */}
+                      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
+                        <line x1="50%" y1="50%" x2="50%" y2="0%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                        <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                        <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <Database size={20} className="text-brand-600" />
+                      Integrations
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Unified API pipes that connect your existing stack. Sync ledgers, banks, and CRMs in real-time.
+                    </p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Sage</span>
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Xero</span>
+                      <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Netcash</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Bucket 3: Security (Guardrails) */}
+              <Reveal delay={300} className="h-full">
+                <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
+                  <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden flex flex-col justify-center">
+                    {/* Visual: Security Shield */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <Shield size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">SOC2 Type II</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <Lock size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">POPIA Compliant</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                        <div className="flex items-center gap-3">
+                          <FileText size={16} className="text-emerald-600" />
+                          <span className="text-xs font-semibold text-brand-950">Audit Trails</span>
+                        </div>
+                        <Check size={14} className="text-emerald-500" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
+                      <Shield size={20} className="text-brand-600" />
+                      Security
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      Bank-grade security and automated legal guardrails. Ensure every interaction is compliant with Section 32 and local regulations.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> 256-bit Encryption
+                      </li>
+                      <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                        <Check size={12} className="text-brand-500" /> Role-Based Access Control
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+
+            </div>
+          </div>
+        </section>
+
+
+        {/* Financial Operating System Section */}
+        <section className="py-24 bg-white border-b border-surface-200 overflow-hidden relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
-              <KnitWorkflowDemo />
+              <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div className="max-w-2xl">
+                  <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">The AI Financial Infrastructure</h2>
+                  <p className="text-slate-600 text-lg font-light">
+                    Consolidate disparate financial workflows into a single, intelligent infrastructure.
+                  </p>
+                </div>
+                <a href="#solutions" className="text-brand-600 font-medium hover:text-brand-700 flex items-center gap-1 group whitespace-nowrap">
+                  Explore all modules <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <div className="grid grid-cols-1 md:grid-cols-3 bg-white border border-surface-200 rounded-2xl shadow-sm divide-y md:divide-y-0 md:divide-x divide-surface-200 overflow-hidden">
+                {/* Card 1: Identity & Risk */}
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Users size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-950 mb-3">Identity & Risk</h3>
+                  <p className="text-slate-600 mb-8 text-sm leading-relaxed">
+                    Instant KYC, risk assessment, and affordability checks via unified API.
+                  </p>
+                  <div className="flex items-center text-xs font-bold text-brand-600 tracking-wide uppercase group-hover:gap-2 transition-all cursor-pointer">
+                    View Specs <ChevronRight size={12} />
+                  </div>
+                </div>
+
+                {/* Card 2: Revenue Management */}
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <BarChart3 size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-950 mb-3">Revenue Management</h3>
+                  <p className="text-slate-600 mb-8 text-sm leading-relaxed">
+                    Automated billing logic, smart payment routing, and real-time reconciliation.
+                  </p>
+                  <div className="flex items-center text-xs font-bold text-brand-600 tracking-wide uppercase group-hover:gap-2 transition-all cursor-pointer">
+                    View Specs <ChevronRight size={12} />
+                  </div>
+                </div>
+
+                {/* Card 3: Intelligent Recovery */}
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <TrendingUp size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-950 mb-3">Intelligent Recovery</h3>
+                  <p className="text-slate-600 mb-8 text-sm leading-relaxed">
+                    Algorithmic remediation strategies that maximize yield and retention.
+                  </p>
+                  <div className="flex items-center text-xs font-bold text-brand-600 tracking-wide uppercase group-hover:gap-2 transition-all cursor-pointer">
+                    View Specs <ChevronRight size={12} />
+                  </div>
+                </div>
+              </div>
             </Reveal>
           </div>
         </section>

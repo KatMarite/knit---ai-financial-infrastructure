@@ -11,8 +11,24 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } fro
 // --- Types ---
 type Phase = 'input' | 'setup' | 'operate';
 
-const KnitWorkflowDemo: React.FC = () => {
+interface KnitWorkflowDemoProps {
+    compact?: boolean;
+    headless?: boolean;
+}
+
+const KnitWorkflowDemo: React.FC<KnitWorkflowDemoProps> = ({ compact = false, headless = false }) => {
     const [phase, setPhase] = useState<Phase>('input');
+    // ... logic ...
+
+    // Scale effect for compact mode
+    const containerStyle = compact ? {
+        transform: 'scale(0.55)',
+        transformOrigin: 'top center',
+        height: '180%', // Compensate for scale
+        width: '182%', // Compensate for scale
+    } : {};
+
+
     const [inputValue, setInputValue] = useState('');
     const [logs, setLogs] = useState<{ id: string; text: string; status: 'pending' | 'processing' | 'done'; time?: string }[]>([]);
     const [milestones, setMilestones] = useState<{ id: string; title: string; desc: string; status: 'pending' | 'processing' | 'done'; items: string[] }[]>([]);
@@ -111,36 +127,41 @@ const KnitWorkflowDemo: React.FC = () => {
           .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
           .animate-slide-up { animation: slideUp 0.5s ease-out forwards; }
         `}</style>
-            <div className="w-full bg-surface-50 p-4 md:p-8 rounded-xl overflow-hidden border border-surface-200 shadow-2xl relative min-h-[800px] flex flex-col font-sans">
+            <div
+                className={`w-full bg-surface-50 p-4 md:p-8 rounded-xl overflow-hidden ${!compact && 'border border-surface-200 shadow-2xl'} relative ${compact ? 'min-h-[750px] overflow-hidden' : 'min-h-[800px]'} flex flex-col font-sans transition-all duration-300`}
+                style={compact ? { zoom: 0.6 } : {}}
+            >
                 {/* Background Grid */}
                 <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 
                 {/* Top Bar Navigation (Mock) */}
-                <div className="bg-white border-b border-surface-200 px-6 py-4 flex items-center justify-between relative z-10 shrink-0 mb-8 rounded-t-lg">
-                    <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white">
-                                <Database size={18} />
+                {!headless && (
+                    <div className="bg-white border-b border-surface-200 px-6 py-4 flex items-center justify-between relative z-10 shrink-0 mb-8 rounded-t-lg">
+                        <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-2">
+                                <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white">
+                                    <Database size={18} />
+                                </div>
+                                <span className="font-bold text-brand-950 tracking-tight">Knit <span className="text-slate-400 font-normal">Architect</span></span>
                             </div>
-                            <span className="font-bold text-brand-950 tracking-tight">Knit <span className="text-slate-400 font-normal">Architect</span></span>
+                            <div className="h-6 w-px bg-surface-200 mx-2"></div>
+                            <div className="hidden md:flex items-center gap-2">
+                                <div className={`w-2 h-2 rounded-full ${phase === 'operate' ? 'bg-emerald-500 animate-pulse' : 'bg-brand-500'}`}></div>
+                                <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+                                    {phase === 'input' ? 'System_Ready' : phase === 'setup' ? 'Provisioning_Active' : 'LiveINGEST'}
+                                </span>
+                            </div>
                         </div>
-                        <div className="h-6 w-px bg-surface-200 mx-2"></div>
-                        <div className="hidden md:flex items-center gap-2">
-                            <div className={`w-2 h-2 rounded-full ${phase === 'operate' ? 'bg-emerald-500 animate-pulse' : 'bg-brand-500'}`}></div>
-                            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
-                                {phase === 'input' ? 'System_Ready' : phase === 'setup' ? 'Provisioning_Active' : 'LiveINGEST'}
-                            </span>
+                        <div className="flex items-center gap-4">
+                            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-surface-50 border border-surface-200 rounded text-[10px] font-mono text-slate-500">
+                                Region: <span className="font-bold text-brand-900">ZA-NORTH-1</span>
+                            </div>
+                            <div className="w-8 h-8 bg-purple-100 rounded-full border border-purple-200 flex items-center justify-center text-purple-700">
+                                <Users size={16} />
+                            </div>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-surface-50 border border-surface-200 rounded text-[10px] font-mono text-slate-500">
-                            Region: <span className="font-bold text-brand-900">ZA-NORTH-1</span>
-                        </div>
-                        <div className="w-8 h-8 bg-purple-100 rounded-full border border-purple-200 flex items-center justify-center text-purple-700">
-                            <Users size={16} />
-                        </div>
-                    </div>
-                </div>
+                )}
 
                 {/* Main Content Area */}
                 <div className="flex-1 relative z-10 max-w-6xl mx-auto w-full flex flex-col justify-center">
