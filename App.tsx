@@ -205,10 +205,10 @@ const App: React.FC = () => {
             <Reveal>
               <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Trusted by modern financial teams</h2>
 
-              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                <img src="/argility-logo.png" alt="Argility Technology Group" className="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-16 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-16 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
               </div>
             </Reveal>
           </div>
@@ -684,7 +684,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
               <div className="col-span-2">
                 <div className="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                  <img src="/knit-logo.png" alt="Knit" className="h-14 w-auto brightness-0 invert" />
+                  <img src="/knit-logo.png" alt="Knit" className="h-20 w-auto brightness-0 invert" />
                 </div>
                 <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
                   Next-generation financial infrastructure for the AI era.
