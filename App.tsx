@@ -205,12 +205,10 @@ const App: React.FC = () => {
             <Reveal>
               <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Trusted by modern financial teams</h2>
 
-              <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                {/* Text-based Logos for professional look */}
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-sm"></div>EdFinance</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-full"></div>NovaBank</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rotate-45"></div>ScholarPay</div>
-                <div className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2 hover:scale-105 transition-transform cursor-default"><div className="w-5 h-5 bg-slate-400 rounded-tr-lg"></div>LendTech</div>
+              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="/argility-logo.png" alt="Argility Technology Group" className="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-16 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-16 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
               </div>
             </Reveal>
           </div>
