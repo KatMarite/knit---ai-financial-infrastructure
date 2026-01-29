@@ -92,7 +92,7 @@ const RiskSimulator: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-md border border-surface-300 shadow-sm overflow-hidden flex flex-col h-full font-sans relative transition-all duration-300 hover:shadow-lg hover:border-surface-400">
+    <div className="bg-white rounded-md border border-surface-300 shadow-sm overflow-hidden flex flex-col h-[650px] font-sans relative transition-all duration-300 hover:shadow-lg hover:border-surface-400">
       {/* Header */}
       <div className="bg-brand-950 px-4 py-3 flex justify-between items-center border-b border-brand-900">
         <div className="flex items-center gap-2">
@@ -124,8 +124,8 @@ const RiskSimulator: React.FC = () => {
                 key={p.id}
                 onClick={() => setSelectedProfile(p)}
                 className={`w-full text-left group p-3 rounded-sm border transition-all relative overflow-hidden ${selectedProfile.id === p.id
-                    ? 'bg-white border-brand-600 shadow-sm z-10'
-                    : 'bg-surface-50 border-surface-200 hover:border-surface-300 hover:bg-white'
+                  ? 'bg-white border-brand-600 shadow-sm z-10'
+                  : 'bg-surface-50 border-surface-200 hover:border-surface-300 hover:bg-white'
                   }`}
               >
                 {selectedProfile.id === p.id && <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-600"></div>}
@@ -221,8 +221,8 @@ const RiskSimulator: React.FC = () => {
                         <div className="flex flex-col">
                           <span className="text-sm font-mono text-slate-400">/ 100</span>
                           <span className={`text-[10px] font-bold uppercase px-1.5 py-0.5 rounded-sm mt-1 border animate-in slide-in-from-left-2 duration-300 delay-100 ${analysis.riskLevel === 'High' || analysis.riskLevel === 'Critical'
-                              ? 'bg-red-50 text-red-700 border-red-100'
-                              : 'bg-amber-50 text-amber-700 border-amber-100'
+                            ? 'bg-red-50 text-red-700 border-red-100'
+                            : 'bg-amber-50 text-amber-700 border-amber-100'
                             }`}>
                             {analysis.riskLevel} Level
                           </span>
