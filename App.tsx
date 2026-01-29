@@ -222,10 +222,22 @@ const App: React.FC = () => {
               {/* Bucket 1: Workflows (Logic) */}
               <Reveal delay={100} className="h-full">
                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
+                  <style>{`
+                    @keyframes slideUpFade {
+                      from { opacity: 0; transform: translateY(10px); }
+                      to { opacity: 1; transform: translateY(0); }
+                    }
+                    @keyframes growLine {
+                      from { height: 0; opacity: 0; }
+                      to { height: 100%; opacity: 1; }
+                    }
+                  `}</style>
                   <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden">
                     {/* Visual: Process Steps */}
-                    <div className="space-y-3 relative z-10">
-                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+                    <div className="space-y-0 relative z-10">
+
+                      {/* Step 1 */}
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 0.2s' }}>
                         <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
                           <FileText size={16} />
                         </div>
@@ -235,10 +247,14 @@ const App: React.FC = () => {
                         </div>
                         <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">DONE</div>
                       </div>
-                      <div className="flex items-center justify-center h-4">
+
+                      {/* Line 1 */}
+                      <div className="flex items-center justify-center h-4 opacity-0" style={{ animation: 'growLine 0.3s ease-out forwards 0.6s' }}>
                         <div className="w-px h-full bg-surface-300"></div>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm">
+
+                      {/* Step 2 */}
+                      <div className="flex items-center gap-3 p-3 bg-white border border-surface-200 rounded-lg shadow-sm opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 0.8s' }}>
                         <div className="w-8 h-8 rounded bg-brand-50 flex items-center justify-center text-brand-600">
                           <Users size={16} />
                         </div>
@@ -248,10 +264,14 @@ const App: React.FC = () => {
                         </div>
                         <div className="text-[10px] font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded animate-pulse">Running</div>
                       </div>
-                      <div className="flex items-center justify-center h-4">
+
+                      {/* Line 2 */}
+                      <div className="flex items-center justify-center h-4 opacity-0" style={{ animation: 'growLine 0.3s ease-out forwards 1.2s' }}>
                         <div className="w-px h-full bg-surface-300 border-l border-dashed border-slate-300"></div>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-white/50 border border-surface-100 border-dashed rounded-lg opacity-60">
+
+                      {/* Step 3 */}
+                      <div className="flex items-center gap-3 p-3 bg-white/50 border border-surface-100 border-dashed rounded-lg opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 1.4s' }}>
                         <div className="w-8 h-8 rounded bg-surface-100 flex items-center justify-center text-slate-400">
                           <Landmark size={16} />
                         </div>
@@ -259,6 +279,7 @@ const App: React.FC = () => {
                           <div className="text-xs font-medium text-slate-500">Collect Deposit</div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                   <div className="p-6">
@@ -285,33 +306,53 @@ const App: React.FC = () => {
               <Reveal delay={200} className="h-full">
                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group relative z-10">
                   <div className="bg-brand-950 rounded-lg p-6 border-b border-brand-900 flex-1 relative overflow-hidden flex items-center justify-center">
-                    {/* Visual: Hub & Spoke */}
+                    {/* Visual: Integration Logos */}
                     <div className="relative w-full max-w-[200px] aspect-square flex items-center justify-center">
-                      <div className="absolute inset-0 border border-brand-800 rounded-full opacity-50 animate-[spin_10s_linear_infinite]"></div>
-                      <div className="absolute inset-4 border border-brand-800 rounded-full opacity-30 animate-[spin_15s_linear_infinite_reverse]"></div>
+                      <style>{`
+                        @keyframes orbit {
+                          from { transform: rotate(0deg); }
+                          to { transform: rotate(360deg); }
+                        }
+                      `}</style>
+                      <div className="absolute inset-0 border border-brand-800 rounded-full opacity-50 animate-[spin_12s_linear_infinite]"></div>
+                      <div className="absolute inset-8 border border-brand-800/50 rounded-full opacity-30 animate-[spin_18s_linear_infinite_reverse]"></div>
 
-                      {/* Center */}
-                      <div className="w-16 h-16 bg-brand-600 rounded-xl shadow-lg shadow-brand-600/20 flex items-center justify-center relative z-20">
-                        <span className="font-bold text-white text-xl">K</span>
+                      {/* Orbiting Elements Container */}
+                      <div className="absolute inset-0" style={{ animation: 'orbit 60s linear infinite' }}>
+                        {/* Connecting Lines */}
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
+                          <line x1="50%" y1="50%" x2="50%" y2="8%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                          <line x1="50%" y1="50%" x2="20%" y2="75%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                          <line x1="50%" y1="50%" x2="80%" y2="75%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                          <line x1="50%" y1="50%" x2="90%" y2="50%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                        </svg>
+
+                        {/* Satellites - Counter Rotate to stay upright */}
+                        {/* Sage */}
+                        <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white px-2 py-1 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                          <img src="/sage-logo.png" alt="Sage" className="h-4 w-auto object-contain" />
+                        </div>
+
+                        {/* Xero */}
+                        <div className="absolute bottom-6 left-6 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                          <img src="/xero-logo.png" alt="Xero" className="h-4 w-auto object-contain" />
+                        </div>
+
+                        {/* Paystack */}
+                        <div className="absolute bottom-6 right-6 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                          <img src="/paystack-logo.png" alt="Paystack" className="h-4 w-auto object-contain" />
+                        </div>
+
+                        {/* Trello */}
+                        <div className="absolute top-1/2 -right-4 -translate-y-1/2 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                          <img src="/trello-logo.png" alt="Trello" className="h-4 w-auto object-contain" />
+                        </div>
                       </div>
 
-                      {/* Satellites */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 bg-white p-1.5 rounded shadow-sm">
-                        <Database size={14} className="text-slate-600" />
+                      {/* Center Hub - Static (z-20 on top of orbiting container) */}
+                      <div className="w-14 h-14 bg-white rounded-xl shadow-lg shadow-black/10 flex items-center justify-center relative z-20 overflow-hidden">
+                        <img src="/central-logo.png" alt="Central" className="w-10 h-10 object-contain" />
                       </div>
-                      <div className="absolute bottom-4 right-4 bg-white p-1.5 rounded shadow-sm">
-                        <Landmark size={14} className="text-slate-600" />
-                      </div>
-                      <div className="absolute bottom-4 left-4 bg-white p-1.5 rounded shadow-sm">
-                        <Users size={14} className="text-slate-600" />
-                      </div>
-
-                      {/* Connecting Lines */}
-                      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
-                        <line x1="50%" y1="50%" x2="50%" y2="0%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                        <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                        <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                      </svg>
                     </div>
                   </div>
                   <div className="p-6">
@@ -335,23 +376,29 @@ const App: React.FC = () => {
               <Reveal delay={300} className="h-full">
                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
                   <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden flex flex-col justify-center">
+                    <style>{`
+                      @keyframes slideUpFade {
+                        from { opacity: 0; transform: translateY(10px); }
+                        to { opacity: 1; transform: translateY(0); }
+                      }
+                    `}</style>
                     {/* Visual: Security Shield */}
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500 opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 0.2s' }}>
                         <div className="flex items-center gap-3">
                           <Shield size={16} className="text-emerald-600" />
                           <span className="text-xs font-semibold text-brand-950">SOC2 Type II</span>
                         </div>
                         <Check size={14} className="text-emerald-500" />
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500 opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 0.4s' }}>
                         <div className="flex items-center gap-3">
                           <Lock size={16} className="text-emerald-600" />
                           <span className="text-xs font-semibold text-brand-950">POPIA Compliant</span>
                         </div>
                         <Check size={14} className="text-emerald-500" />
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500">
+                      <div className="flex items-center justify-between p-3 bg-white border border-surface-200 rounded-lg shadow-sm border-l-4 border-l-emerald-500 opacity-0" style={{ animation: 'slideUpFade 0.5s ease-out forwards 0.6s' }}>
                         <div className="flex items-center gap-3">
                           <FileText size={16} className="text-emerald-600" />
                           <span className="text-xs font-semibold text-brand-950">Audit Trails</span>
@@ -362,7 +409,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
-                      <Shield size={20} className="text-brand-600" />
+                      <Shield size={20} className="text-brand-600 animate-pulse" />
                       Security
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed mb-4">
@@ -402,11 +449,11 @@ const App: React.FC = () => {
               </div>
             </Reveal>
 
-            <Reveal delay={100}>
-              <div className="grid grid-cols-1 md:grid-cols-3 bg-white border border-surface-200 rounded-2xl shadow-sm divide-y md:divide-y-0 md:divide-x divide-surface-200 overflow-hidden">
-                {/* Card 1: Identity & Risk */}
-                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
-                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-3 bg-white border border-surface-200 rounded-2xl shadow-sm divide-y md:divide-y-0 md:divide-x divide-surface-200 overflow-hidden">
+              {/* Card 1: Identity & Risk */}
+              <Reveal delay={100} className="h-full">
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                     <Users size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-brand-950 mb-3">Identity & Risk</h3>
@@ -417,10 +464,12 @@ const App: React.FC = () => {
                     View Specs <ChevronRight size={12} />
                   </div>
                 </div>
+              </Reveal>
 
-                {/* Card 2: Revenue Management */}
-                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
-                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              {/* Card 2: Revenue Management */}
+              <Reveal delay={200} className="h-full">
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                     <BarChart3 size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-brand-950 mb-3">Revenue Management</h3>
@@ -431,10 +480,12 @@ const App: React.FC = () => {
                     View Specs <ChevronRight size={12} />
                   </div>
                 </div>
+              </Reveal>
 
-                {/* Card 3: Intelligent Recovery */}
-                <div className="p-8 group hover:bg-surface-50/50 transition-colors">
-                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              {/* Card 3: Intelligent Recovery */}
+              <Reveal delay={300} className="h-full">
+                <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
+                  <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                     <TrendingUp size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-brand-950 mb-3">Intelligent Recovery</h3>
@@ -445,8 +496,8 @@ const App: React.FC = () => {
                     View Specs <ChevronRight size={12} />
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </section>
 
