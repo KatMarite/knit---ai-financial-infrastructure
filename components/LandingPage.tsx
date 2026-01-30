@@ -137,7 +137,7 @@ const LandingPage: React.FC = () => {
                                 </Reveal>
                                 <Reveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                                        Use our AI to build workflows that automate how you manage customers, secure payments and optimise cashflows - powering Schools, Landlords, and the broader instalment economy.
+                                        Use our AI to build workflows that automate how you manage customers, secure payments and optimise cashflows - starting with schools
                                     </p>
                                 </Reveal>
 
