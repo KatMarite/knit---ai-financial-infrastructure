@@ -216,6 +216,84 @@ const LandingPage: React.FC = () => {
 
 
 
+                {/* AI Engine Section */}
+                <section id="ai-engine" className="py-24 bg-brand-950 text-white relative overflow-hidden border-t border-brand-900">
+                    {/* Subtle grid on dark bg */}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[100px] animate-pulse-slow"></div>
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                            <div className="lg:col-span-5 pt-8">
+                                <Reveal>
+                                    <div className="inline-flex items-center gap-2 text-brand-400 font-mono text-[10px] uppercase tracking-widest mb-6 border border-brand-800 px-3 py-1 rounded-full bg-brand-900/50 backdrop-blur-sm">
+                                        <Zap size={12} /> Neural Risk Engine
+                                    </div>
+                                    <h2 className="text-4xl font-semibold tracking-tight mb-6">
+                                        Immunize your balance sheet.
+                                    </h2>
+                                    <p className="text-slate-400 mb-10 leading-relaxed text-lg font-light">
+                                        Knit doesn't just collect; it predicts. By analyzing thousands of behavioral data points, our models detect friction before a payment is missed.
+                                    </p>
+                                </Reveal>
+
+                                <div className="space-y-6 border-t border-brand-800 pt-8">
+                                    {[
+                                        {
+                                            title: 'The Architect: "Infrastructure That Builds Itself"',
+                                            desc: 'A zero-code configuration engine that treats your business logic as a blueprint. Whether you are a landlord in Maboneng or a microlender in Khayelitsha, the Architect provisions your dedicated database, API handshakes, and regulatory guardrails instantly.',
+                                            highlight: 'The Feature: "Zero-Touch Onboarding" — From "Intent" to "Live Infrastructure" via a simple 5-minute discovery script.'
+                                        },
+                                        {
+                                            title: 'The Admissions Agent: "The Gatekeeper"',
+                                            desc: 'An AI-driven screening layer that integrates directly with TPN and Experian. It performs real-time bank scrapes and affordability checks to ensure every new "Unit" is a safe bet.',
+                                            highlight: 'The Value: "Say Yes with Certainty" — Automate NCR-compliant affordability checks and fraud detection so you never take on bad debt again.'
+                                        },
+                                        {
+                                            title: 'The Payments Pipe: "The Frictionless Pipe"',
+                                            desc: 'A smart payment orchestrator that mixes Instant EFT, Debit Orders, and retail cash payments. By offering the right payment method at the right time, Knit reduces payment friction by 22%.',
+                                            highlight: 'The Value: "Automate the Installment DNA" — Deep integrations with Netcash and Ozow ensure your money moves securely and predictably every month.'
+                                        },
+                                        {
+                                            title: 'The Collections Agent: "The Watchdog"',
+                                            desc: 'Deploy specialized AI personas—from the "Empathetic Assistant" to the "Formal Officer"—to handle arrears via WhatsApp, SMS, and voice. It negotiates payment plans and triggers legal notices (like Section 32) without human intervention.',
+                                            highlight: 'The Value: "Recover Revenue, Retain Relationships" — Reduce delinquency by 15-20% through proactive, predictive negotiation'
+                                        }
+                                    ].map((item, idx) => (
+                                        <Reveal key={idx} delay={idx * 150}>
+                                            <div className="flex gap-4 group cursor-default">
+                                                <div className="w-5 h-5 rounded-sm border border-brand-700 bg-brand-900 flex items-center justify-center shrink-0 mt-0.5 text-brand-400 group-hover:bg-brand-800 transition-colors group-hover:scale-110 duration-300">
+                                                    <div className="w-1.5 h-1.5 bg-brand-400 rounded-full group-hover:animate-pulse"></div>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-semibold text-white text-sm group-hover:text-brand-200 transition-colors">{item.title}</h4>
+                                                    <p className="text-slate-500 text-xs mt-1 leading-relaxed group-hover:text-slate-400 transition-colors">{item.desc}</p>
+                                                    <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>
+                                                </div>
+                                            </div>
+                                        </Reveal>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Interactive Demo Component */}
+                            <div className="lg:col-span-7">
+                                <Reveal delay={300}>
+                                    <div className="relative group perspective-1000">
+                                        {/* Glow effect behind simulator */}
+                                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 to-indigo-600 rounded opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-1000"></div>
+                                        <RiskSimulator />
+                                        <div className="flex justify-between items-center mt-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider opacity-60">
+                                            <span className="flex items-center gap-2"><Server size={10} /> Live Inference</span>
+                                            <span>Gemini 1.5 Flash</span>
+                                        </div>
+                                    </div>
+                                </Reveal>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Workflow Logic Section - 3 Buckets */}
                 <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -517,86 +595,10 @@ const LandingPage: React.FC = () => {
                 </section>
 
 
-                {/* AI Engine Section */}
-                <section id="ai-engine" className="py-24 bg-brand-950 text-white relative overflow-hidden border-t border-brand-900">
-                    {/* Subtle grid on dark bg */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[100px] animate-pulse-slow"></div>
 
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                            <div className="lg:col-span-5 pt-8">
-                                <Reveal>
-                                    <div className="inline-flex items-center gap-2 text-brand-400 font-mono text-[10px] uppercase tracking-widest mb-6 border border-brand-800 px-3 py-1 rounded-full bg-brand-900/50 backdrop-blur-sm">
-                                        <Zap size={12} /> Neural Risk Engine
-                                    </div>
-                                    <h2 className="text-4xl font-semibold tracking-tight mb-6">
-                                        Immunize your balance sheet.
-                                    </h2>
-                                    <p className="text-slate-400 mb-10 leading-relaxed text-lg font-light">
-                                        Knit doesn't just collect; it predicts. By analyzing thousands of behavioral data points, our models detect friction before a payment is missed.
-                                    </p>
-                                </Reveal>
-
-                                <div className="space-y-6 border-t border-brand-800 pt-8">
-                                    {[
-                                        {
-                                            title: 'The Architect: "Infrastructure That Builds Itself"',
-                                            desc: 'A zero-code configuration engine that treats your business logic as a blueprint. Whether you are a landlord in Maboneng or a microlender in Khayelitsha, the Architect provisions your dedicated database, API handshakes, and regulatory guardrails instantly.',
-                                            highlight: 'The Feature: "Zero-Touch Onboarding" — From "Intent" to "Live Infrastructure" via a simple 5-minute discovery script.'
-                                        },
-                                        {
-                                            title: 'The Admissions Agent: "The Gatekeeper"',
-                                            desc: 'An AI-driven screening layer that integrates directly with TPN and Experian. It performs real-time bank scrapes and affordability checks to ensure every new "Unit" is a safe bet.',
-                                            highlight: 'The Value: "Say Yes with Certainty" — Automate NCR-compliant affordability checks and fraud detection so you never take on bad debt again.'
-                                        },
-                                        {
-                                            title: 'The Payments Pipe: "The Frictionless Pipe"',
-                                            desc: 'A smart payment orchestrator that mixes Instant EFT, Debit Orders, and retail cash payments. By offering the right payment method at the right time, Knit reduces payment friction by 22%.',
-                                            highlight: 'The Value: "Automate the Installment DNA" — Deep integrations with Netcash and Ozow ensure your money moves securely and predictably every month.'
-                                        },
-                                        {
-                                            title: 'The Collections Agent: "The Watchdog"',
-                                            desc: 'Deploy specialized AI personas—from the "Empathetic Assistant" to the "Formal Officer"—to handle arrears via WhatsApp, SMS, and voice. It negotiates payment plans and triggers legal notices (like Section 32) without human intervention.',
-                                            highlight: 'The Value: "Recover Revenue, Retain Relationships" — Reduce delinquency by 15-20% through proactive, predictive negotiation'
-                                        }
-                                    ].map((item, idx) => (
-                                        <Reveal key={idx} delay={idx * 150}>
-                                            <div className="flex gap-4 group cursor-default">
-                                                <div className="w-5 h-5 rounded-sm border border-brand-700 bg-brand-900 flex items-center justify-center shrink-0 mt-0.5 text-brand-400 group-hover:bg-brand-800 transition-colors group-hover:scale-110 duration-300">
-                                                    <div className="w-1.5 h-1.5 bg-brand-400 rounded-full group-hover:animate-pulse"></div>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-white text-sm group-hover:text-brand-200 transition-colors">{item.title}</h4>
-                                                    <p className="text-slate-500 text-xs mt-1 leading-relaxed group-hover:text-slate-400 transition-colors">{item.desc}</p>
-                                                    <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>
-                                                </div>
-                                            </div>
-                                        </Reveal>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Interactive Demo Component */}
-                            <div className="lg:col-span-7">
-                                <Reveal delay={300}>
-                                    <div className="relative group perspective-1000">
-                                        {/* Glow effect behind simulator */}
-                                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 to-indigo-600 rounded opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-1000"></div>
-                                        <RiskSimulator />
-                                        <div className="flex justify-between items-center mt-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider opacity-60">
-                                            <span className="flex items-center gap-2"><Server size={10} /> Live Inference</span>
-                                            <span>Gemini 1.5 Flash</span>
-                                        </div>
-                                    </div>
-                                </Reveal>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Solutions Section */}
-                <section id="solutions" className="py-24 bg-surface-50">
+                <section id="solutions" className="hidden">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                             <div className="max-w-2xl">
