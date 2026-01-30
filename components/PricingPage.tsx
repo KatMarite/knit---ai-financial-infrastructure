@@ -23,10 +23,10 @@ const PricingPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                     {/* Starter */}
                     <div className="bg-white border border-surface-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative group">
-                        <h3 className="text-xl font-bold text-brand-950 mb-2">Starter</h3>
+                        <h3 className="text-xl font-bold text-brand-950 mb-2">Basic</h3>
                         <p className="text-sm text-slate-500 mb-6">For small property managers and startups.</p>
                         <div className="flex items-baseline gap-1 mb-8">
-                            <span className="text-4xl font-bold text-brand-950">R0</span>
+                            <span className="text-4xl font-bold text-brand-950">R2,500</span>
                             <span className="text-slate-500">/mo</span>
                         </div>
                         <div className="mb-8 font-mono text-xs text-brand-700 bg-brand-50 p-3 rounded border border-brand-100">
@@ -35,13 +35,13 @@ const PricingPage: React.FC = () => {
 
                         <ul className="space-y-4 mb-8">
                             {[
-                                'Up to 50 Units/Users',
+                                '0 - 500 Units',
                                 'Basic Risk Assessment',
                                 'Automated Collections (Email)',
                                 'Next-day Payouts',
                                 'Standard Support'
                             ].map((feature, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-slate-600">
+                                <li key={`basic-${i}`} className="flex items-center gap-3 text-sm text-slate-600">
                                     <Check size={16} className="text-brand-500 shrink-0" /> {feature}
                                 </li>
                             ))}
@@ -59,7 +59,7 @@ const PricingPage: React.FC = () => {
                         <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
                         <p className="text-brand-200 text-sm mb-6">For growing lenders and schools.</p>
                         <div className="flex items-baseline gap-1 mb-8">
-                            <span className="text-4xl font-bold text-white">R1,500</span>
+                            <span className="text-4xl font-bold text-white">R4,000</span>
                             <span className="text-brand-400">/mo</span>
                         </div>
                         <div className="mb-8 font-mono text-xs text-brand-200 bg-brand-900 p-3 rounded border border-brand-800">
@@ -68,14 +68,14 @@ const PricingPage: React.FC = () => {
 
                         <ul className="space-y-4 mb-8">
                             {[
-                                'Up to 500 Units/Users',
+                                '500 - 2000 Units',
                                 'Advanced Neural Risk Engine',
                                 'Multi-channel Collections (WhatsApp)',
                                 'Same-day Payouts',
                                 'Priority Support',
                                 'API Access'
                             ].map((feature, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-brand-100">
+                                <li key={`growth-${i}`} className="flex items-center gap-3 text-sm text-brand-100">
                                     <Check size={16} className="text-brand-500 shrink-0" /> {feature}
                                 </li>
                             ))}
@@ -98,14 +98,14 @@ const PricingPage: React.FC = () => {
 
                         <ul className="space-y-4 mb-8">
                             {[
-                                'Unlimited Units',
+                                '2000+ Units',
                                 'Custom Risk Models',
                                 'Dedicated Account Manager',
                                 'On-premise / VPC Deployment',
                                 'SLA Guarantees',
                                 'White-label Options'
                             ].map((feature, i) => (
-                                <li key={i} className="flex items-center gap-3 text-sm text-slate-600">
+                                <li key={`enterprise-${i}`} className="flex items-center gap-3 text-sm text-slate-600">
                                     <Check size={16} className="text-brand-500 shrink-0" /> {feature}
                                 </li>
                             ))}
@@ -130,7 +130,7 @@ const PricingPage: React.FC = () => {
                             <thead>
                                 <tr className="border-b border-surface-200">
                                     <th className="py-4 px-6 text-slate-500 font-medium w-1/4">Feature</th>
-                                    <th className="py-4 px-6 text-brand-950 font-bold w-1/4">Starter</th>
+                                    <th className="py-4 px-6 text-brand-950 font-bold w-1/4">Basic</th>
                                     <th className="py-4 px-6 text-brand-950 font-bold w-1/4 bg-brand-50/50">Growth</th>
                                     <th className="py-4 px-6 text-brand-950 font-bold w-1/4">Enterprise</th>
                                 </tr>
