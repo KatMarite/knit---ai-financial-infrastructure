@@ -414,30 +414,60 @@ const LandingPage: React.FC = () => {
                                             <div className="absolute inset-0" style={{ animation: 'orbit 60s linear infinite' }}>
                                                 {/* Connecting Lines */}
                                                 <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
-                                                    <line x1="50%" y1="50%" x2="50%" y2="8%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                                                    <line x1="50%" y1="50%" x2="20%" y2="75%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                                                    <line x1="50%" y1="50%" x2="80%" y2="75%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
-                                                    <line x1="50%" y1="50%" x2="90%" y2="50%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="50%" y2="5%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="85%" y2="20%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="95%" y2="50%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="80%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="50%" y2="95%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="5%" y2="50%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
+                                                    <line x1="50%" y1="50%" x2="15%" y2="20%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" />
                                                 </svg>
 
                                                 {/* Satellites - Counter Rotate to stay upright */}
-                                                {/* Sage */}
-                                                <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white px-2 py-1 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+
+                                                {/* 12:00 - Slack */}
+                                                <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-white px-2 py-1 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/logos/slack.png" alt="Slack" className="h-4 w-auto object-contain" />
+                                                </div>
+
+                                                {/* 1:30 - Sage */}
+                                                <div className="absolute top-[15%] right-[15%] bg-white px-2 py-1 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
                                                     <img src="/sage-logo.png" alt="Sage" className="h-4 w-auto object-contain" />
                                                 </div>
 
-                                                {/* Xero */}
-                                                <div className="absolute bottom-6 left-6 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
-                                                    <img src="/xero-logo.png" alt="Xero" className="h-4 w-auto object-contain" />
+                                                {/* 3:00 - Stripe */}
+                                                <div className="absolute top-1/2 -right-4 -translate-y-1/2 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/logos/stripe.png" alt="Stripe" className="h-4 w-auto object-contain" />
                                                 </div>
 
-                                                {/* Paystack */}
-                                                <div className="absolute bottom-6 right-6 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                {/* 4:30 - Peach Payments */}
+                                                <div className="absolute bottom-[15%] right-[15%] bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/logos/peach.png" alt="Peach Payments" className="h-4 w-auto object-contain" />
+                                                </div>
+
+                                                {/* 6:00 - Paystack */}
+                                                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
                                                     <img src="/paystack-logo.png" alt="Paystack" className="h-4 w-auto object-contain" />
                                                 </div>
 
-                                                {/* Trello */}
-                                                <div className="absolute top-1/2 -right-4 -translate-y-1/2 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                {/* 7:30 - SimplePay */}
+                                                <div className="absolute bottom-[15%] left-[15%] bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/logos/simplepay.jpg" alt="SimplePay" className="h-4 w-auto object-contain" />
+                                                </div>
+
+                                                {/* 9:00 - QuickBooks */}
+                                                <div className="absolute top-1/2 -left-4 -translate-y-1/2 bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/logos/quickbooks.png" alt="QuickBooks" className="h-4 w-auto object-contain" />
+                                                </div>
+
+                                                {/* 10:30 - Xero */}
+                                                <div className="absolute top-[20%] left-[10%] bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
+                                                    <img src="/xero-logo.png" alt="Xero" className="h-4 w-auto object-contain" />
+                                                </div>
+
+                                                {/* Inner / Extra - Trello */}
+                                                <div className="absolute top-[25%] right-[30%] bg-white px-2 py-1.5 rounded-md shadow-sm border border-surface-200" style={{ animation: 'orbit 60s linear infinite reverse' }}>
                                                     <img src="/trello-logo.png" alt="Trello" className="h-4 w-auto object-contain" />
                                                 </div>
                                             </div>
@@ -686,7 +716,7 @@ const LandingPage: React.FC = () => {
                         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                             <div className="col-span-2">
                                 <div className="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                                    <img src="/knit-logo.png" alt="Knit" className="h-20 w-auto brightness-0 invert" />
+                                    <img src="/knit-logo.png" alt="Knit" className="h-28 w-auto brightness-0 invert" />
                                 </div>
                                 <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
                                     Next-generation financial infrastructure for the AI era.

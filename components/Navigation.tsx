@@ -93,7 +93,7 @@ const Navigation: React.FC = () => {
           onClick={(e) => handleNavigation(e, '/')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <img src="/knit-logo.png" alt="Knit Logo" className="h-20 w-auto" />
+          <img src="/knit-logo.png" alt="Knit Logo" className="h-28 w-auto" />
         </div>
 
         {/* Desktop Nav */}
