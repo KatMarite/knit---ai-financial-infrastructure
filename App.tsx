@@ -448,7 +448,7 @@ const App: React.FC = () => {
 
 
         {/* Financial Operating System Section */}
-        <section className="py-24 bg-white border-b border-surface-200 overflow-hidden relative">
+        <section className="hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Reveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
