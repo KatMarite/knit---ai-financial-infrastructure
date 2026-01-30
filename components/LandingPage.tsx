@@ -240,26 +240,26 @@ const LandingPage: React.FC = () => {
                                 <div className="space-y-6 border-t border-brand-800 pt-8">
                                     {[
                                         {
-                                            title: 'The Architect: "Infrastructure That Builds Itself"',
-                                            desc: 'A zero-code configuration engine that treats your business logic as a blueprint. Whether you are a landlord in Maboneng or a microlender in Khayelitsha, the Architect provisions your dedicated database, API handshakes, and regulatory guardrails instantly.',
-                                            highlight: 'The Feature: "Zero-Touch Onboarding" — From "Intent" to "Live Infrastructure" via a simple 5-minute discovery script.'
+                                            title: '1. Describe your business',
+                                            desc: 'Provision your business infrastructure for any installment vertical in under 15 minutes.'
                                         },
                                         {
-                                            title: 'The Admissions Agent: "The Gatekeeper"',
-                                            desc: 'An AI-driven screening layer that integrates directly with TPN and Experian. It performs real-time bank scrapes and affordability checks to ensure every new "Unit" is a safe bet.',
-                                            highlight: 'The Value: "Say Yes with Certainty" — Automate NCR-compliant affordability checks and fraud detection so you never take on bad debt again.'
+                                            title: '2. Screen customers',
+                                            desc: 'Automate customer screening and checks in a compliant manner. Understand and predict what risk you’re potentially opening your business up to.'
                                         },
                                         {
-                                            title: 'The Payments Pipe: "The Frictionless Pipe"',
-                                            desc: 'A smart payment orchestrator that mixes Instant EFT, Debit Orders, and retail cash payments. By offering the right payment method at the right time, Knit reduces payment friction by 22%.',
-                                            highlight: 'The Value: "Automate the Installment DNA" — Deep integrations with Netcash and Ozow ensure your money moves securely and predictably every month.'
+                                            title: '3. Automate payments and collections',
+                                            desc: 'Orchestrate payment rails to reduce payment and collections friction by up to 20%. Make payments as simple as a Netflix subscription.'
                                         },
                                         {
-                                            title: 'The Collections Agent: "The Watchdog"',
-                                            desc: 'Deploy specialized AI personas—from the "Empathetic Assistant" to the "Formal Officer"—to handle arrears via WhatsApp, SMS, and voice. It negotiates payment plans and triggers legal notices (like Section 32) without human intervention.',
-                                            highlight: 'The Value: "Recover Revenue, Retain Relationships" — Reduce delinquency by 15-20% through proactive, predictive negotiation'
+                                            title: '4. Contextualise recoveries',
+                                            desc: 'Recover revenue via automated AI-negotiated payment plans, reducing delinquency by 20%. Send whatsapp, SMS, execute first line voice in an empathetic manner.'
+                                        },
+                                        {
+                                            title: '5. Propagate a compliance fortress',
+                                            desc: 'Spin up a compliance fortress. Ensure your business operates within the prescribed regulatory parameters e.g. NCR, POPIA, and HPCSA compliance directly into your financial OS.'
                                         }
-                                    ].map((item, idx) => (
+                                    ].map((item: { title: string; desc: string; highlight?: string }, idx) => (
                                         <Reveal key={idx} delay={idx * 150}>
                                             <div className="flex gap-4 group cursor-default">
                                                 <div className="w-5 h-5 rounded-sm border border-brand-700 bg-brand-900 flex items-center justify-center shrink-0 mt-0.5 text-brand-400 group-hover:bg-brand-800 transition-colors group-hover:scale-110 duration-300">
@@ -268,7 +268,7 @@ const LandingPage: React.FC = () => {
                                                 <div>
                                                     <h4 className="font-semibold text-white text-sm group-hover:text-brand-200 transition-colors">{item.title}</h4>
                                                     <p className="text-slate-500 text-xs mt-1 leading-relaxed group-hover:text-slate-400 transition-colors">{item.desc}</p>
-                                                    <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>
+                                                    {item.highlight && <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>}
                                                 </div>
                                             </div>
                                         </Reveal>
