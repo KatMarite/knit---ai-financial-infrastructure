@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,28 +16,60 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
+  // Handle hash scrolling on page load/navigation
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          const offset = 90;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement | HTMLDivElement>, target: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    if (href === '#top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (target === '/pricing') {
+      navigate('/pricing');
+      window.scrollTo(0, 0);
       return;
     }
 
-    const element = document.querySelector(href);
-    if (element) {
-      // Manual offset calculation for perfect positioning
-      const offset = 90; // Height of nav + buffer
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    if (target === '/') {
+      navigate('/');
+      window.scrollTo(0, 0);
+      return;
+    }
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+    // Hash links
+    if (target.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate(`/${target}`);
+      } else {
+        const element = document.querySelector(target);
+        if (element) {
+          const offset = 90;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else if (target === '#top') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
     }
   };
 
@@ -42,7 +77,7 @@ const Navigation: React.FC = () => {
     { name: 'Platform', href: '#platform' },
     { name: 'AI Engine', href: '#ai-engine' },
     { name: 'Solutions', href: '#solutions' },
-    { name: 'Trust', href: '#trust' },
+    { name: 'Pricing', href: '/pricing' },
   ];
 
   return (
@@ -55,7 +90,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <div
-          onClick={(e) => scrollToSection(e as any, '#top')}
+          onClick={(e) => handleNavigation(e, '/')}
           className="flex items-center gap-3 cursor-pointer group"
         >
           <img src="/knit-logo.png" alt="Knit Logo" className="h-20 w-auto" />
@@ -67,7 +102,7 @@ const Navigation: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e) => handleNavigation(e, link.href)}
               className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
             >
               {link.name}
@@ -78,13 +113,13 @@ const Navigation: React.FC = () => {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            onClick={(e) => scrollToSection(e, '#contact')}
+            onClick={(e) => handleNavigation(e, '#contact')}
             className="text-sm font-medium text-slate-900 hover:text-brand-600"
           >
             Contact Sales
           </button>
           <button
-            onClick={(e) => scrollToSection(e, '#contact')}
+            onClick={(e) => handleNavigation(e, '#contact')}
             className="bg-brand-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-brand-800 transition-all shadow-sm"
           >
             Book Demo
@@ -109,7 +144,7 @@ const Navigation: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e) => handleNavigation(e, link.href)}
               className="text-base font-medium text-slate-700 hover:text-brand-600 px-2 py-2 block border-b border-slate-50"
             >
               {link.name}
@@ -117,13 +152,13 @@ const Navigation: React.FC = () => {
           ))}
           <div className="pt-2 flex flex-col gap-3">
             <button
-              onClick={(e) => scrollToSection(e, '#contact')}
+              onClick={(e) => handleNavigation(e, '#contact')}
               className="w-full text-slate-900 font-medium py-2 text-left px-2"
             >
               Contact Sales
             </button>
             <button
-              onClick={(e) => scrollToSection(e, '#contact')}
+              onClick={(e) => handleNavigation(e, '#contact')}
               className="w-full bg-brand-900 text-white px-5 py-3 rounded text-base font-medium"
             >
               Book a Demo
