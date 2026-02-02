@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import { Mail, MessageSquare, Send } from 'lucide-react';
+import { Send, ChevronDown } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        message: ''
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        companyEmail: '',
+        message: '',
+        phone: '',
+        country: ''
     });
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
@@ -26,120 +29,186 @@ const ContactPage: React.FC = () => {
         // Simulate API call
         setTimeout(() => {
             setStatus('success');
-            setFormData({ name: '', email: '', company: '', message: '' });
+            setFormData({
+                firstName: '',
+                lastName: '',
+                companyName: '',
+                companyEmail: '',
+                message: '',
+                phone: '',
+                country: ''
+            });
         }, 1500);
     };
 
     return (
-        <div className="min-h-screen bg-white font-sans text-slate-900">
+        <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col">
             <Navigation />
 
-            <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <div className="max-w-2xl mx-auto text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-50 border border-surface-200 text-brand-600 text-[10px] font-mono uppercase tracking-widest mb-6 rounded-full">
-                        <MessageSquare size={12} />
-                        Get in Touch
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-brand-950 mb-6">
-                        Contact Sales
-                    </h1>
-                    <p className="text-lg text-slate-600 font-light leading-relaxed">
-                        Ready to modernize your financial infrastructure? Our team is ready to help you scope your integration.
-                    </p>
-                </div>
+            <div className="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-                <div className="max-w-xl mx-auto bg-white border border-surface-200 rounded-xl shadow-sm p-8 md:p-12 relative overflow-hidden">
-                    {/* Decorative Blob */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-
-                    {status === 'success' ? (
-                        <div className="text-center py-12">
-                            <div className="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <Send size={32} />
-                            </div>
-                            <h3 className="text-2xl font-semibold text-brand-950 mb-2">Message Sent!</h3>
-                            <p className="text-slate-600 mb-8">Thank you for reaching out. A member of our team will get back to you within 24 hours.</p>
-                            <button
-                                onClick={() => setStatus('idle')}
-                                className="text-brand-600 font-medium hover:text-brand-800"
-                            >
-                                Send another message
-                            </button>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-md border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-surface-50/50"
-                                    placeholder="John Doe"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">Work Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-md border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-surface-50/50"
-                                    placeholder="john@company.com"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">Company Name</label>
-                                <input
-                                    type="text"
-                                    id="company"
-                                    name="company"
-                                    value={formData.company}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-md border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-surface-50/50"
-                                    placeholder="Acme Inc."
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">How can we help?</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows={4}
-                                    required
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-md border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-surface-50/50 resize-none"
-                                    placeholder="Tell us about your infrastructure needs..."
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                disabled={status === 'submitting'}
-                                className="w-full px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                            >
-                                {status === 'submitting' ? 'Sending...' : (
-                                    <>
-                                        Send Message <Mail size={16} />
-                                    </>
-                                )}
-                            </button>
-
-                            <p className="text-xs text-slate-400 text-center mt-4">
-                                By contacting us, you agree to our Terms of Service and Privacy Policy.
+                    {/* Left Column: Form */}
+                    <div>
+                        <div className="mb-10">
+                            <h1 className="text-4xl font-bold tracking-tight text-brand-950 mb-4">
+                                Contact Sales
+                            </h1>
+                            <p className="text-slate-600 leading-relaxed">
+                                Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.
                             </p>
-                        </form>
-                    )}
+                        </div>
+
+                        {status === 'success' ? (
+                            <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+                                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Send size={24} />
+                                </div>
+                                <h3 className="text-xl font-semibold text-green-900 mb-2">Message Sent</h3>
+                                <p className="text-green-700 mb-6">We'll be in touch shortly.</p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="text-green-700 font-medium hover:text-green-900 underline"
+                                >
+                                    Send another message
+                                </button>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label htmlFor="firstName" className="sr-only">First name</label>
+                                        <input
+                                            type="text"
+                                            id="firstName"
+                                            name="firstName"
+                                            required
+                                            value={formData.firstName}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                            placeholder="First name"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="lastName" className="sr-only">Last name</label>
+                                        <input
+                                            type="text"
+                                            id="lastName"
+                                            name="lastName"
+                                            required
+                                            value={formData.lastName}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                            placeholder="Last name"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="companyName" className="sr-only">Company name</label>
+                                    <input
+                                        type="text"
+                                        id="companyName"
+                                        name="companyName"
+                                        value={formData.companyName}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                        placeholder="Company name"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="companyEmail" className="sr-only">Company email</label>
+                                    <input
+                                        type="email"
+                                        id="companyEmail"
+                                        name="companyEmail"
+                                        required
+                                        value={formData.companyEmail}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                        placeholder="Company email"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message" className="sr-only">Message</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows={4}
+                                        required
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400 resize-none"
+                                        placeholder="What are you building, and in what countries? Details are helpful!"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="phone" className="sr-only">Phone number</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                        placeholder="Phone number (optional)"
+                                    />
+                                </div>
+
+                                <div className="relative">
+                                    <label htmlFor="country" className="sr-only">Country</label>
+                                    <select
+                                        id="country"
+                                        name="country"
+                                        value={formData.country}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white text-slate-900 appearance-none cursor-pointer"
+                                    >
+                                        <option value="" disabled className="text-slate-400">Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="ZA">South Africa</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
+                                </div>
+
+                                <div className="pt-4">
+                                    <button
+                                        type="submit"
+                                        disabled={status === 'submitting'}
+                                        className="px-8 py-3 bg-brand-900 text-white rounded-sm font-medium hover:bg-brand-800 transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                                    >
+                                        {status === 'submitting' ? 'Sending...' : 'Submit'}
+                                    </button>
+                                </div>
+                            </form>
+                        )}
+                    </div>
+
+                    {/* Right Column: Visual */}
+                    <div className="hidden lg:flex justify-center items-center h-full min-h-[600px] relative">
+                        {/* Placeholder for the Hand/Phone Illustration */}
+                        <div className="relative w-full max-w-md aspect-[3/4]">
+                            {/* Abstract Graphic as Placeholder */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-50 to-indigo-50 rounded-2xl border border-surface-200 overflow-hidden flex items-center justify-center">
+                                <div className="text-center p-8 opacity-40">
+                                    <div className="w-32 h-64 bg-white border-4 border-slate-200 rounded-[3rem] mx-auto mb-4 shadow-xl flex flex-col overflow-hidden">
+                                        <div className="h-6 w-24 bg-slate-100 rounded-b-xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 z-10"></div>
+                                        <div className="flex-1 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
+                                            <div className="w-12 h-12 border-4 border-white/50 rounded rotate-45"></div>
+                                        </div>
+                                    </div>
+                                    <p className="text-sm font-mono text-slate-400 uppercase tracking-widest">Illustration Space</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <Footer />
