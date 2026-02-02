@@ -43,6 +43,12 @@ const Navigation: React.FC = () => {
       return;
     }
 
+    if (target === '/contact') {
+      navigate('/contact');
+      window.scrollTo(0, 0);
+      return;
+    }
+
     if (target === '/') {
       navigate('/');
       window.scrollTo(0, 0);
@@ -113,7 +119,7 @@ const Navigation: React.FC = () => {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            onClick={(e) => handleNavigation(e, '#contact')}
+            onClick={(e) => handleNavigation(e, '/contact')}
             className="text-sm font-medium text-slate-900 hover:text-brand-600"
           >
             Contact Sales
@@ -122,7 +128,7 @@ const Navigation: React.FC = () => {
             onClick={(e) => handleNavigation(e, '#contact')}
             className="bg-brand-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-brand-800 transition-all shadow-sm"
           >
-            Book Demo
+            Start Building
           </button>
         </div>
 
@@ -152,7 +158,7 @@ const Navigation: React.FC = () => {
           ))}
           <div className="pt-2 flex flex-col gap-3">
             <button
-              onClick={(e) => handleNavigation(e, '#contact')}
+              onClick={(e) => handleNavigation(e, '/contact')}
               className="w-full text-slate-900 font-medium py-2 text-left px-2"
             >
               Contact Sales
@@ -161,7 +167,7 @@ const Navigation: React.FC = () => {
               onClick={(e) => handleNavigation(e, '#contact')}
               className="w-full bg-brand-900 text-white px-5 py-3 rounded text-base font-medium"
             >
-              Book a Demo
+              Start Building
             </button>
           </div>
         </div>
