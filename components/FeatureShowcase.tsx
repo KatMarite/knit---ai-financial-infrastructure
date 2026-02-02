@@ -227,7 +227,7 @@ const FeatureShowcase = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             {/* Left Column: Navigation / Text */}
             <div className="lg:col-span-5 pt-4">
                 <div className="space-y-2">
@@ -293,7 +293,7 @@ const FeatureShowcase = () => {
 
             {/* Right Column: Visual/Screenshot */}
             <div className="lg:col-span-7">
-                <div className="relative h-[500px] w-full perspective-1000">
+                <div className="relative h-[350px] md:h-[500px] w-full perspective-1000">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
