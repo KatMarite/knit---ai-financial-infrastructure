@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from './Navigation';
+import Footer from './Footer';
 import { Check, Zap, Server, Shield, ArrowRight } from 'lucide-react';
 
 const PricingPage: React.FC = () => {
@@ -160,13 +161,7 @@ const PricingPage: React.FC = () => {
                 </div>
             </div>
 
-            <footer className="bg-brand-950 text-slate-400 py-16 border-t border-brand-900">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <p className="text-xs text-slate-500">
-                        &copy; 2024 Knit Financial Technologies Inc.
-                    </p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

@@ -183,16 +183,16 @@ const KnitWorkflowDemo: React.FC<KnitWorkflowDemoProps> = ({ compact = false, he
                             </p>
 
                             <div className="bg-white p-2 rounded-xl border border-surface-300 shadow-xl shadow-brand-900/5 mb-6 relative group">
-                                <div className="flex items-center gap-4 px-4 py-3">
-                                    <ArrowRight className="text-brand-500 shrink-0" size={20} />
-                                    <input
-                                        type="text"
-                                        readOnly
-                                        value={inputValue}
-                                        className="w-full text-lg md:text-xl text-brand-950 placeholder:text-slate-300 border-none focus:ring-0 px-0"
-                                        placeholder="Describe your business case..."
-                                    />
-                                    <button className="bg-brand-600 text-white p-3 rounded-lg hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20">
+                                <div className="flex items-start gap-4 px-4 py-3">
+                                    <ArrowRight className="text-brand-500 shrink-0 mt-1.5" size={20} />
+                                    <div className="w-full text-lg md:text-xl text-brand-950 font-medium leading-relaxed min-h-[3.5rem] py-1">
+                                        {inputValue}
+                                        {inputValue.length < 1 && <span className="text-slate-300">Describe your business case...</span>}
+                                        {phase === 'input' && inputValue.length > 0 && inputValue.length < 120 && (
+                                            <span className="inline-block w-0.5 h-6 bg-brand-500 ml-1 align-middle animate-pulse"></span>
+                                        )}
+                                    </div>
+                                    <button className="bg-brand-600 text-white p-3 rounded-lg hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/20 shrink-0 mt-0.5">
                                         <ArrowRight size={20} />
                                     </button>
                                 </div>
