@@ -5,6 +5,7 @@ import Navigation from './Navigation';
 import RiskSimulator from './RiskSimulator';
 import DesignSystem from './DesignSystem';
 import KnitWorkflowDemo from './KnitWorkflowDemo';
+import FeatureShowcase from './FeatureShowcase';
 
 // --- Animation Components ---
 
@@ -223,74 +224,7 @@ const LandingPage: React.FC = () => {
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[100px] animate-pulse-slow"></div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                            <div className="lg:col-span-5 pt-8">
-                                <Reveal>
-                                    <div className="inline-flex items-center gap-2 text-brand-400 font-mono text-[10px] uppercase tracking-widest mb-6 border border-brand-800 px-3 py-1 rounded-full bg-brand-900/50 backdrop-blur-sm">
-                                        <Zap size={12} /> Neural Risk Engine
-                                    </div>
-                                    <h2 className="text-4xl font-semibold tracking-tight mb-6">
-                                        Immunize your balance sheet.
-                                    </h2>
-                                    <p className="text-slate-400 mb-10 leading-relaxed text-lg font-light">
-                                        Knit doesn't just collect; it predicts. By analyzing thousands of behavioral data points, our models detect friction before a payment is missed.
-                                    </p>
-                                </Reveal>
-
-                                <div className="space-y-6 border-t border-brand-800 pt-8">
-                                    {[
-                                        {
-                                            title: '1. Describe your business',
-                                            desc: 'Provision your business infrastructure for any installment vertical in under 15 minutes.'
-                                        },
-                                        {
-                                            title: '2. Screen customers',
-                                            desc: 'Automate customer screening and checks in a compliant manner. Understand and predict what risk you’re potentially opening your business up to.'
-                                        },
-                                        {
-                                            title: '3. Automate payments and collections',
-                                            desc: 'Orchestrate payment rails to reduce payment and collections friction by up to 20%. Make payments as simple as a Netflix subscription.'
-                                        },
-                                        {
-                                            title: '4. Contextualise recoveries',
-                                            desc: 'Recover revenue via automated AI-negotiated payment plans, reducing delinquency by 20%. Send whatsapp, SMS, execute first line voice in an empathetic manner.'
-                                        },
-                                        {
-                                            title: '5. Propagate a compliance fortress',
-                                            desc: 'Spin up a compliance fortress. Ensure your business operates within the prescribed regulatory parameters e.g. NCR, POPIA, and HPCSA compliance directly into your financial OS.'
-                                        }
-                                    ].map((item: { title: string; desc: string; highlight?: string }, idx) => (
-                                        <Reveal key={idx} delay={idx * 150}>
-                                            <div className="flex gap-4 group cursor-default">
-                                                <div className="w-5 h-5 rounded-sm border border-brand-700 bg-brand-900 flex items-center justify-center shrink-0 mt-0.5 text-brand-400 group-hover:bg-brand-800 transition-colors group-hover:scale-110 duration-300">
-                                                    <div className="w-1.5 h-1.5 bg-brand-400 rounded-full group-hover:animate-pulse"></div>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-white text-sm group-hover:text-brand-200 transition-colors">{item.title}</h4>
-                                                    <p className="text-slate-500 text-xs mt-1 leading-relaxed group-hover:text-slate-400 transition-colors">{item.desc}</p>
-                                                    {item.highlight && <p className="text-brand-400 text-xs mt-2 font-medium italic border-l-2 border-brand-800 pl-2">{item.highlight}</p>}
-                                                </div>
-                                            </div>
-                                        </Reveal>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Interactive Demo Component */}
-                            <div className="lg:col-span-7">
-                                <Reveal delay={300}>
-                                    <div className="relative group perspective-1000">
-                                        {/* Glow effect behind simulator */}
-                                        <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 to-indigo-600 rounded opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-1000"></div>
-                                        <RiskSimulator />
-                                        <div className="flex justify-between items-center mt-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider opacity-60">
-                                            <span className="flex items-center gap-2"><Server size={10} /> Live Inference</span>
-                                            <span>Gemini 1.5 Flash</span>
-                                        </div>
-                                    </div>
-                                </Reveal>
-                            </div>
-                        </div>
+                        <FeatureShowcase />
                     </div>
                 </section>
 
