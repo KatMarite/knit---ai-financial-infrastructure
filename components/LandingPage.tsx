@@ -207,7 +207,7 @@ const LandingPage: React.FC = () => {
                             <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">Trusted by modern financial teams</h2>
 
                             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
-                                <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+                                {/* <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" /> */}
                                 <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                                 <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                             </div>
