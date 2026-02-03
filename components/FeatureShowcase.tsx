@@ -10,8 +10,8 @@ const FeatureShowcase = () => {
 
     const features = [
         {
-            title: '1. Describe your business',
-            desc: 'Provision your business infrastructure for any installment vertical in under 15 minutes.',
+            title: '1. Describe your school',
+            desc: 'Knit’s AI learns how your school operates — student count, fee structures, payment behavior, and historical collection patterns.',
             icon: <Settings size={20} />,
             visual: (
                 <div className="bg-surface-950 p-6 rounded-lg text-white font-mono text-xs h-full flex flex-col">
@@ -39,8 +39,8 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '2. Screen customers',
-            desc: 'Automate customer screening and checks in a compliant manner. Understand and predict what risk you’re potentially opening your business up to.',
+            title: '2. Predict parent payment behavior',
+            desc: 'Knit segments parents by likelihood to pay — distinguishing late-but-reliable families from high-risk delinquencies.',
             icon: <User size={20} />,
             visual: (
                 <div className="bg-slate-900 p-6 rounded-lg text-white h-full relative overflow-hidden">
@@ -82,8 +82,8 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '3. Automate payments and collections',
-            desc: 'Orchestrate payment rails to reduce payment and collections friction by up to 20%. Make payments as simple as a Netflix subscription.',
+            title: '3. Digitise school fee payments',
+            desc: 'Set up digital payment rails to replace EFTs, reduce reconciliation, and enable automated follow-ups.',
             icon: <CreditCard size={20} />,
             visual: (
                 <div className="bg-[#0f172a] p-6 rounded-lg text-white h-full flex flex-col relative">
@@ -131,8 +131,8 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '4. Contextualise recoveries',
-            desc: 'Recover revenue via automated AI-negotiated payment plans, reducing delinquency by 20%. Send whatsapp, SMS, execute first line voice in an empathetic manner.',
+            title: '4. Contextual collections and recoveries',
+            desc: 'Knit’s AI decides who to follow up, how, and when — setting up payment plans, adjusting tone, and reducing delinquencies automatically.',
             icon: <MessageSquare size={20} />,
             visual: (
                 <div className="bg-white rounded-lg h-full overflow-hidden flex flex-col border border-slate-200 shadow-xl">
@@ -175,8 +175,8 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '5. Propagate a compliance fortress',
-            desc: 'Spin up a compliance fortress. Ensure your business operates within the prescribed regulatory parameters e.g. NCR, POPIA, and HPCSA compliance directly into your financial OS.',
+            title: '5. Built-in compliance, enforced by AI',
+            desc: 'Knit helps schools stay compliant with POPIA, SASA, and NCR requirements — applying policy consistently and reducing legal risk.',
             icon: <Shield size={20} />,
             visual: (
                 <div className="bg-slate-900 p-8 rounded-lg text-white h-full flex flex-col items-center justify-center relative overlow-hidden">
