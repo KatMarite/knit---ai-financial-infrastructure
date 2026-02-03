@@ -139,7 +139,7 @@ const LandingPage: React.FC = () => {
                                 </Reveal>
                                 <Reveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                                        Knit uses AI to decide who to follow up, how, and when — combining payments, empathetic messaging, and intelligent escalation. We automate decisions, not reminders.
+                                        Knit uses agents to decide who to follow up, how, and when — combining payments, empathetic messaging, and intelligent escalation. We automate decisions, not reminders.
                                     </p>
                                 </Reveal>
 
@@ -640,7 +640,7 @@ const LandingPage: React.FC = () => {
                                     onClick={() => window.location.href = '/contact'}
                                     className="px-8 py-4 bg-white text-brand-900 border border-surface-300 rounded-sm text-sm font-medium hover:bg-white hover:border-surface-400 transition-all hover:-translate-y-0.5"
                                 >
-                                    Contact Sales
+                                    Book a Demo
                                 </button>
                             </div>
                         </Reveal>

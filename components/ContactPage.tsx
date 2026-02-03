@@ -52,7 +52,7 @@ const ContactPage: React.FC = () => {
                     <div>
                         <div className="mb-10">
                             <h1 className="text-4xl font-bold tracking-tight text-brand-950 mb-4">
-                                Contact Sales
+                                Book a Demo
                             </h1>
                             <p className="text-slate-600 leading-relaxed">
                                 Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.

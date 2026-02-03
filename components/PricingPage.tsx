@@ -112,7 +112,7 @@ const PricingPage: React.FC = () => {
                             ))}
                         </ul>
                         <a href="https://wa.me/27659520478" target="_blank" className="block w-full py-3 px-4 bg-white border border-brand-200 text-brand-900 text-center font-bold text-sm rounded shadow-sm hover:bg-brand-50 transition-colors">
-                            Contact Sales
+                            Book a Demo
                         </a>
                     </div>
                 </div>

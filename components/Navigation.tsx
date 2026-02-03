@@ -122,7 +122,7 @@ const Navigation: React.FC = () => {
             onClick={(e) => handleNavigation(e, '/contact')}
             className="text-sm font-medium text-slate-900 hover:text-brand-600"
           >
-            Contact Sales
+            Book a Demo
           </button>
           <button
             onClick={(e) => handleNavigation(e, '#contact')}
@@ -161,7 +161,7 @@ const Navigation: React.FC = () => {
               onClick={(e) => handleNavigation(e, '/contact')}
               className="w-full text-slate-900 font-medium py-2 text-left px-2"
             >
-              Contact Sales
+              Book a Demo
             </button>
             <button
               onClick={(e) => handleNavigation(e, '#contact')}
