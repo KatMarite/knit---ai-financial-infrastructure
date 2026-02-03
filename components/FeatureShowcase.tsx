@@ -1,6 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Zap, Server, Shield, MessageSquare, CheckCircle, AlertTriangle, User, CreditCard, Activity, Lock, Settings } from 'lucide-react';
 
+const Counter = ({ target }: { target: number }) => {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        let start = 0;
+        const duration = 1000;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                setCount(target);
+                clearInterval(timer);
+            } else {
+                setCount(Math.floor(start));
+            }
+        }, stepTime);
+        return () => clearInterval(timer);
+    }, [target]);
+    return <>{count}</>;
+};
+
 const FeatureShowcase = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
@@ -18,9 +41,22 @@ const FeatureShowcase = () => {
                     <img
                         src="/feature-1-architecture-complete.png"
                         alt="School Architecture Configuration"
-                        className="w-full h-full object-cover rounded shadow-lg opacity-90 group-hover:opacity-100 transition-opacity"
+                        className={`w-full h-full object-cover rounded shadow-lg opacity-90 transition-opacity duration-1000 ${activeTab === 0 ? 'scale-105' : 'scale-100'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-950/50 to-transparent pointer-events-none"></div>
+
+                    {/* Overlay Animation: Status Terminal */}
+                    {activeTab === 0 && (
+                        <div className="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur border border-slate-700 p-3 rounded-lg shadow-xl text-xs font-mono text-emerald-400 animate-slide-up-fade">
+                            <div className="flex items-center gap-2 mb-1">
+                                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                                <span className="opacity-75">System Status</span>
+                            </div>
+                            <div className="overflow-hidden whitespace-nowrap animate-typing w-[14ch]">
+                                Configuration Loaded
+                            </div>
+                        </div>
+                    )}
                 </div>
             )
         },
@@ -29,40 +65,49 @@ const FeatureShowcase = () => {
             desc: 'Knit segments parents by likelihood to pay — distinguishing late-but-reliable families from high-risk delinquencies.',
             icon: <User size={20} />,
             visual: (
-                <div className="bg-slate-900 p-6 rounded-lg text-white h-full relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-3xl rounded-full"></div>
-
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="w-16 h-16 rounded-full bg-slate-700 flex items-center justify-center text-2xl">👤</div>
-                        <div>
-                            <h4 className="text-lg font-bold">Applicant #8492</h4>
-                            <p className="text-slate-400 text-sm">ID Verification: <span className="text-green-400">Verified</span></p>
-                        </div>
-                        <div className="ml-auto text-right">
-                            <div className="text-3xl font-bold text-emerald-400">94/100</div>
-                            <div className="text-xs text-slate-500 uppercase tracking-wider">Credit Score</div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-slate-800 p-3 rounded border border-slate-700">
-                            <div className="text-xs text-slate-500 mb-1">Affordability Index</div>
-                            <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div className="h-full bg-blue-500 w-[85%]"></div>
+                <div className="bg-surface-950 p-2 rounded-lg h-full overflow-hidden flex flex-col relative group">
+                    <div className="w-full h-full bg-white rounded shadow-lg overflow-hidden relative flex flex-col">
+                        <div className="bg-white border-b border-slate-200 p-4 flex justify-between items-center">
+                            <div className="flex items-center gap-4">
+                                <div className={`w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-2xl border border-slate-200 ${activeTab === 1 ? 'animate-pop-in' : ''}`}>👤</div>
+                                <div>
+                                    <h4 className={`text-lg font-bold text-slate-800 ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>Applicant #8492</h4>
+                                    <p className={`text-slate-500 text-xs uppercase tracking-wide ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                                        ID Verification: <span className="text-emerald-600 font-bold animate-pulse">Verified</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div className="text-right text-xs mt-1 text-blue-400">High</div>
-                        </div>
-                        <div className="bg-slate-800 p-3 rounded border border-slate-700">
-                            <div className="text-xs text-slate-500 mb-1">Fraud Probability</div>
-                            <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div className="h-full bg-red-500 w-[2%]"></div>
+                            <div className="text-right">
+                                <div className={`text-3xl font-bold text-emerald-600 ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+                                    {activeTab === 1 ? <Counter target={94} /> : '0'}/100
+                                </div>
+                                <div className={`text-[10px] text-slate-400 uppercase tracking-wider font-bold ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>Credit Score</div>
                             </div>
-                            <div className="text-right text-xs mt-1 text-emerald-400">Low (0.2%)</div>
                         </div>
-                    </div>
 
-                    <div className="mt-6 p-3 bg-emerald-900/20 border border-emerald-500/30 rounded flex items-center gap-2 text-emerald-400 text-sm">
-                        <CheckCircle size={16} /> Automated Approval Recommended
+                        <div className="p-6 space-y-6 bg-slate-50 flex-1">
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className={`bg-white p-4 rounded-lg border border-slate-200 shadow-sm ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+                                    <div className="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Affordability Index</div>
+                                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
+                                        <div className="h-full bg-blue-500 w-[85%] animate-grow-width" style={{ width: activeTab === 1 ? '85%' : '0%' }}></div>
+                                    </div>
+                                    <div className="text-right text-xs font-bold text-blue-600">High Capacity</div>
+                                </div>
+                                <div className={`bg-white p-4 rounded-lg border border-slate-200 shadow-sm ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
+                                    <div className="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Fraud Probability</div>
+                                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
+                                        <div className="h-full bg-red-500 w-[2%] animate-grow-width" style={{ width: activeTab === 1 ? '2%' : '0%' }}></div>
+                                    </div>
+                                    <div className="text-right text-xs font-bold text-emerald-600">Low (0.2%)</div>
+                                </div>
+                            </div>
+
+                            <div className={`p-3 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center gap-3 text-emerald-700 text-sm font-medium ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+                                <CheckCircle size={18} className="text-emerald-500" />
+                                <span>Automated Approval Recommended</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
@@ -76,9 +121,27 @@ const FeatureShowcase = () => {
                     <img
                         src="/feature-3-tuition-fees.png"
                         alt="Tuition & Fees Interface"
-                        className="w-full h-full object-cover rounded shadow-lg opacity-90 group-hover:opacity-100 transition-opacity"
+                        className={`w-full h-full object-cover rounded shadow-lg opacity-90 transition-opacity duration-1000 ${activeTab === 2 ? 'scale-105' : 'scale-100'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-950/50 to-transparent pointer-events-none"></div>
+
+                    {/* Overlay: Payment Processing */}
+                    {activeTab === 2 && (
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/95 backdrop-blur shadow-2xl rounded-xl p-4 border border-surface-200 animate-pop-in min-w-[200px]">
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
+                                    <Zap size={16} fill="currentColor" />
+                                </div>
+                                <div>
+                                    <div className="text-xs font-bold text-slate-800">Payment Processed</div>
+                                    <div className="text-[10px] text-slate-500">Just now via Stripe</div>
+                                </div>
+                            </div>
+                            <div className="h-1 bg-surface-100 rounded-full overflow-hidden">
+                                <div className="h-full bg-emerald-500 animate-grow-width w-full" style={{ width: '100%' }}></div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )
         },
@@ -91,9 +154,21 @@ const FeatureShowcase = () => {
                     <img
                         src="/feature-4-bursar-collections.png"
                         alt="Bursar & Collections Interface"
-                        className="w-full h-full object-cover rounded shadow-lg opacity-90 group-hover:opacity-100 transition-opacity"
+                        className={`w-full h-full object-cover rounded shadow-lg opacity-90 transition-opacity duration-1000 ${activeTab === 3 ? 'scale-105' : 'scale-100'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-950/50 to-transparent pointer-events-none"></div>
+
+                    {/* Overlay: AI Action */}
+                    {activeTab === 3 && (
+                        <div className="absolute top-20 right-10 bg-brand-900/90 backdrop-blur text-white p-3 rounded-lg shadow-xl border border-brand-700 animate-slide-left-fade max-w-[200px]">
+                            <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-brand-200 uppercase tracking-wider">
+                                <MessageSquare size={12} /> AI Agent Action
+                            </div>
+                            <p className="text-xs text-white leading-relaxed">
+                                "Sent gentle reminder to Parent #402 via WhatsApp"
+                            </p>
+                        </div>
+                    )}
                 </div>
             )
         },
@@ -106,9 +181,19 @@ const FeatureShowcase = () => {
                     <img
                         src="/feature-5-compliance-shield.png"
                         alt="Compliance Shield Interface"
-                        className="w-full h-full object-cover rounded shadow-lg opacity-90 group-hover:opacity-100 transition-opacity"
+                        className={`w-full h-full object-cover rounded shadow-lg opacity-90 transition-opacity duration-1000 ${activeTab === 4 ? 'scale-105' : 'scale-100'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-950/50 to-transparent pointer-events-none"></div>
+
+                    {/* Overlay: Scanning */}
+                    {activeTab === 4 && (
+                        <div className="absolute inset-0 bg-emerald-500/5 pointer-events-none animate-pulse">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent animate-scan"></div>
+                            <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold border border-emerald-200 shadow-lg flex items-center gap-2 animate-slide-up-fade">
+                                <Shield size={14} fill="currentColor" /> Policy Compliance Verified
+                            </div>
+                        </div>
+                    )}
                 </div>
             )
         },
@@ -179,7 +264,7 @@ const FeatureShowcase = () => {
                                     </h4>
                                     <p className={`
                     text-xs mt-2 leading-relaxed transition-all duration-300
-                    ${activeTab === idx ? 'text-slate-300 opacity-100 max-h-20' : 'text-slate-500 opacity-0 max-h-0 overflow-hidden'}
+                    ${activeTab === idx ? 'text-slate-300 opacity-100 max-h-20 delay-100' : 'text-slate-500 opacity-0 max-h-0 overflow-hidden'}
                   `}>
                                         {feature.desc}
                                     </p>
@@ -193,6 +278,55 @@ const FeatureShowcase = () => {
             @keyframes shrink {
                 from { width: 0%; }
                 to { width: 100%; }
+            }
+            @keyframes subtle-zoom {
+                from { transform: scale(1); }
+                to { transform: scale(1.05); }
+            }
+            @keyframes slide-up-fade {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+             @keyframes slide-left-fade {
+                from { opacity: 0; transform: translateX(20px); }
+                to { opacity: 1; transform: translateX(0); }
+            }
+            @keyframes pop-in {
+                0% { transform: scale(0.8); opacity: 0; }
+                100% { transform: scale(1); opacity: 1; }
+            }
+            @keyframes grow-width {
+                from { width: 0%; }
+            }
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+            @keyframes scan {
+                0% { top: 0%; opacity: 0.5; }
+                50% { opacity: 1; }
+                100% { top: 100%; opacity: 0.5; }
+            }
+            .animate-subtle-zoom {
+                animation: subtle-zoom 10s ease-out forwards;
+            }
+            .animate-slide-up-fade {
+                animation: slide-up-fade 0.5s ease-out forwards;
+            }
+            .animate-slide-left-fade {
+                animation: slide-left-fade 0.5s ease-out forwards;
+            }
+            .animate-pop-in {
+                animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            }
+            .animate-grow-width {
+                transition: width 1s ease-out;
+            }
+            .animate-typing {
+                animation: typing 2s steps(20, end);
+            }
+            .animate-scan {
+                animation: scan 2s linear infinite;
             }
         `}</style>
             </div>

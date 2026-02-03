@@ -221,6 +221,9 @@ const LandingPage: React.FC = () => {
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[100px] animate-pulse-slow"></div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div className="mb-12 md:mb-20">
+                            <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">How It Works</h2>
+                        </div>
                         <FeatureShowcase />
                     </div>
                 </section>
