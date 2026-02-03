@@ -113,7 +113,7 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '3. Digitise school fee payments',
+            title: '3. Digitise payments',
             desc: 'Set up digital payment rails to replace EFTs, reduce reconciliation, and enable automated follow-ups.',
             icon: <CreditCard size={20} />,
             visual: (
@@ -173,7 +173,7 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '5. Built-in compliance, enforced by AI',
+            title: '5. Compliance, built-in',
             desc: 'Knit helps schools stay compliant with POPIA, SASA, and NCR requirements — applying policy consistently and reducing legal risk.',
             icon: <Shield size={20} />,
             visual: (
