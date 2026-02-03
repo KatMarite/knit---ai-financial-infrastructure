@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
   const navLinks = [
     { name: 'Platform', href: '#platform' },
     { name: 'AI Engine', href: '#ai-engine' },
-    { name: 'Solutions', href: '#solutions' },
+    { name: 'Solutions', href: '#knit-architect' },
     { name: 'Pricing', href: '/pricing' },
   ];
 

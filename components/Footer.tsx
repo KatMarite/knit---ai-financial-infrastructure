@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                     </div>
                 </div>
                 <div className="pt-8 border-t border-brand-900 flex justify-between items-center text-[10px] font-mono text-slate-600">
-                    <div>San Francisco • New York • London</div>
+
                     <div className="flex gap-4 items-center">
                         {onShowDesignSystem && (
                             <button onClick={onShowDesignSystem} className="hover:text-brand-400 transition-colors flex items-center gap-1">
