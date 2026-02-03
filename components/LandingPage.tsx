@@ -205,7 +205,7 @@ const LandingPage: React.FC = () => {
                 <section id="trust" className="py-20 bg-white border-t border-surface-200">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <Reveal>
-                            <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-12">TRUSTED BY TOP TEIR SCHOOLS</h2>
+                            <h2 className="text-[20px] font-bold text-slate-400 uppercase tracking-widest mb-12">TRUSTED BY TOP TIER SCHOOLS</h2>
 
                             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
                                 {/* <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" /> */}
