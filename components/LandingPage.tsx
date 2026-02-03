@@ -149,7 +149,7 @@ const LandingPage: React.FC = () => {
                                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                                             className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 group"
                                         >
-                                            Start Integration <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                                            Start Building <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                                         </button>
                                         <button className="px-8 py-4 bg-white text-brand-950 border border-surface-300 rounded-sm text-sm font-medium hover:bg-surface-50 transition-all font-mono hover:border-surface-400">
                                             Documentation
