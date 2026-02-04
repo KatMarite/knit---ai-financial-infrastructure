@@ -1,8 +1,142 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import { ShieldCheck, Database, BrainCircuit, Users, Lock, FileText, CheckCircle2, AlertTriangle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Database, BrainCircuit, Users, Lock, FileText, CheckCircle2, AlertTriangle, ArrowRight, Check } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+
+const InteractiveApprovalCard = () => {
+    const [status, setStatus] = useState<'pending' | 'approved'>('pending');
+
+    if (status === 'approved') {
+        return (
+            <div className="p-8 flex flex-col items-center justify-center text-center animate-in fade-in duration-300">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4 text-emerald-600">
+                    <Check size={24} />
+                </div>
+                <h4 className="text-emerald-900 font-bold mb-1">Transaction Verified</h4>
+                <p className="text-sm text-slate-500">Posted with GL Code 6040</p>
+                <button
+                    onClick={() => setStatus('pending')}
+                    className="mt-4 text-xs text-brand-600 hover:underline"
+                >
+                    Undo
+                </button>
+            </div>
+        );
+    }
+
+    return (
+        <div className="p-4 space-y-4 animate-in slide-in-from-bottom-2 duration-300">
+            <div className="flex items-center gap-4 p-3 bg-brand-50/50 rounded border border-brand-100">
+                <div className="flex-1">
+                    <div className="text-xs text-slate-500 mb-1">Transaction</div>
+                    <div className="font-medium text-slate-900">R 4,250.00 &bull; AWS Web Svcs</div>
+                </div>
+                <div className="text-right">
+                    <div className="text-xs text-slate-500 mb-1">AI Suggestion</div>
+                    <div className="font-mono text-xs text-brand-700 bg-brand-100 px-2 py-1 rounded">
+                        GL: 6040 (Software)
+                        <br />
+                        Conf: 88%
+                    </div>
+                </div>
+            </div>
+            <div className="flex gap-2">
+                <button className="flex-1 bg-white border border-surface-300 text-slate-600 py-2 rounded text-sm font-medium hover:bg-surface-50 transition-colors">
+                    Edit
+                </button>
+                <button
+                    onClick={() => setStatus('approved')}
+                    className="flex-1 bg-brand-600 text-white py-2 rounded text-sm font-medium hover:bg-brand-700 transition-colors shadow-sm"
+                >
+                    Approve
+                </button>
+            </div>
+        </div>
+    );
+};
+
+const NeuralBackground = () => {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+
+        const nodes: { x: number; y: number; vx: number; vy: number }[] = [];
+        const numNodes = 30; // Number of nodes
+
+        for (let i = 0; i < numNodes; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        const animate = () => {
+            if (!ctx || !canvas) return;
+            ctx.clearRect(0, 0, width, height);
+
+            // Update and draw nodes
+            ctx.fillStyle = 'rgba(99, 102, 241, 0.2)'; // Brand colorish
+            nodes.forEach(node => {
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > width) node.vx *= -1;
+                if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Draw connections
+            ctx.strokeStyle = 'rgba(99, 102, 241, 0.1)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        };
+
+        const handleResize = () => {
+            if (canvas) {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        const animationId = requestAnimationFrame(animate);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            cancelAnimationFrame(animationId);
+        };
+    }, []);
+
+    return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />;
+};
 
 
 
@@ -14,6 +148,8 @@ const AIEnginePage: React.FC = () => {
             {/* Hero Section */}
             <section className="pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] z-0 pointer-events-none"></div>
+                {/* Neural Background Animation */}
+                <NeuralBackground />
                 <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-brand-100/30 rounded-full blur-3xl -z-10 animate-blob"></div>
                 <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-surface-200/40 rounded-full blur-3xl -z-10 animate-blob animation-delay-2000"></div>
 
@@ -53,8 +189,9 @@ const AIEnginePage: React.FC = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <ScrollReveal delay={0} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-200 transition-colors group h-full">
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
                                     <BrainCircuit size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-lg font-semibold text-brand-950 mb-3">Multi-Way Reconciliation</h3>
@@ -66,8 +203,9 @@ const AIEnginePage: React.FC = () => {
                         </ScrollReveal>
 
                         <ScrollReveal delay={150} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-200 transition-colors group h-full">
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
                                     <AlertTriangle size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-lg font-semibold text-brand-950 mb-3">Anomaly Detection</h3>
@@ -79,8 +217,9 @@ const AIEnginePage: React.FC = () => {
                         </ScrollReveal>
 
                         <ScrollReveal delay={300} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-200 transition-colors group h-full">
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
                                     <FileText size={24} strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-lg font-semibold text-brand-950 mb-3">Context Extraction</h3>
@@ -141,19 +280,28 @@ const AIEnginePage: React.FC = () => {
                             <div className="aspect-square bg-gradient-to-br from-brand-800 to-brand-900 rounded-2xl border border-brand-700/50 p-6 flex flex-col justify-between shadow-2xl">
                                 {/* Visual representation of data flow */}
                                 <div className="space-y-4 font-mono text-xs relative">
-                                    <div className="bg-brand-900/50 p-3 rounded border border-brand-700 text-brand-100 hover:bg-brand-800/50 transition-colors">
+                                    <div className="bg-brand-900/50 p-3 rounded border border-brand-700 text-brand-100 hover:bg-brand-800/50 transition-colors z-10 relative">
                                         <span className="text-brand-500">INPUT:</span> TRANSACTION_ID: tx_98234
                                     </div>
-                                    <div className="flex justify-center text-brand-600"><ArrowRight className="rotate-90 py-1 animate-pulse" /></div>
-                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 animate-pulse-slow">
+                                    <div className="flex justify-center h-8 relative overflow-hidden">
+                                        <div className="h-full w-0.5 bg-brand-800"></div>
+                                        <div className="absolute top-0 w-1.5 h-1.5 bg-brand-400 rounded-full animate-flow-down shadow-lg shadow-brand-400/50"></div>
+                                    </div>
+                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 z-10 relative">
                                         <span className="text-brand-400">PROCESS:</span> NLP_CONTEXT_ANALYSIS()
                                     </div>
-                                    <div className="flex justify-center text-brand-600"><ArrowRight className="rotate-90 py-1 animate-pulse" style={{ animationDelay: '0.5s' }} /></div>
-                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 animate-pulse-slow" style={{ animationDelay: '1s' }}>
+                                    <div className="flex justify-center h-8 relative overflow-hidden">
+                                        <div className="h-full w-0.5 bg-brand-800"></div>
+                                        <div className="absolute top-0 w-1.5 h-1.5 bg-brand-400 rounded-full animate-flow-down shadow-lg shadow-brand-400/50" style={{ animationDelay: '0.4s' }}></div>
+                                    </div>
+                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 z-10 relative">
                                         <span className="text-brand-400">PROCESS:</span> HISTORICAL_MATCH(prob &gt; 98%)
                                     </div>
-                                    <div className="flex justify-center text-brand-600"><ArrowRight className="rotate-90 py-1 animate-pulse" style={{ animationDelay: '1.5s' }} /></div>
-                                    <div className="bg-green-900/20 p-3 rounded border border-green-800 text-green-100 animate-slide-up-fade" style={{ animationDelay: '2s' }}>
+                                    <div className="flex justify-center h-8 relative overflow-hidden">
+                                        <div className="h-full w-0.5 bg-brand-800"></div>
+                                        <div className="absolute top-0 w-1.5 h-1.5 bg-green-400 rounded-full animate-flow-down shadow-lg shadow-green-400/50" style={{ animationDelay: '0.8s' }}></div>
+                                    </div>
+                                    <div className="bg-green-900/20 p-3 rounded border border-green-800 text-green-100 animate-slide-up-fade z-10 relative" style={{ animationDelay: '1.2s' }}>
                                         <span className="text-green-500">OUTPUT:</span> PROPOSE_JOURNAL_ENTRY
                                     </div>
                                 </div>
@@ -272,37 +420,14 @@ const AIEnginePage: React.FC = () => {
                                 </div>
 
                                 <div className="flex-1 w-full max-w-md">
-                                    <div className="bg-white rounded-xl shadow-xl border border-surface-200 overflow-hidden">
+                                    <div className="bg-white rounded-xl shadow-xl border border-surface-200 overflow-hidden relative">
                                         <div className="bg-surface-50 px-4 py-3 border-b border-surface-200 flex justify-between items-center">
                                             <span className="text-xs font-mono text-slate-500">APPROVAL_QUEUE.tsx</span>
                                             <span className="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-full border border-orange-200">
                                                 Review Needed
                                             </span>
                                         </div>
-                                        <div className="p-4 space-y-4">
-                                            <div className="flex items-center gap-4 p-3 bg-brand-50/50 rounded border border-brand-100">
-                                                <div className="flex-1">
-                                                    <div className="text-xs text-slate-500 mb-1">Transaction</div>
-                                                    <div className="font-medium text-slate-900">R 4,250.00 &bull; AWS Web Svcs</div>
-                                                </div>
-                                                <div className="text-right">
-                                                    <div className="text-xs text-slate-500 mb-1">AI Suggestion</div>
-                                                    <div className="font-mono text-xs text-brand-700 bg-brand-100 px-2 py-1 rounded">
-                                                        GL: 6040 (Software)
-                                                        <br />
-                                                        Conf: 88%
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-2">
-                                                <button className="flex-1 bg-white border border-surface-300 text-slate-600 py-2 rounded text-sm font-medium hover:bg-surface-50">
-                                                    Edit
-                                                </button>
-                                                <button className="flex-1 bg-brand-600 text-white py-2 rounded text-sm font-medium hover:bg-brand-700">
-                                                    Approve
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <InteractiveApprovalCard />
                                     </div>
                                 </div>
                             </div>
@@ -323,6 +448,15 @@ const AIEnginePage: React.FC = () => {
             }
             .animate-pulse-slow {
                 animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            @keyframes flow-down {
+                0% { top: -10%; opacity: 0; }
+                20% { opacity: 1; }
+                80% { opacity: 1; }
+                100% { top: 110%; opacity: 0; }
+            }
+            .animate-flow-down {
+                animation: flow-down 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
             }
             .animate-slide-up-fade {
                 animation: slide-up-fade 0.5s ease-out forwards;
