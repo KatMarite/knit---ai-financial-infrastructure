@@ -7,44 +7,9 @@ import DesignSystem from './DesignSystem';
 import KnitWorkflowDemo from './KnitWorkflowDemo';
 import FeatureShowcase from './FeatureShowcase';
 import Footer from './Footer';
+import ScrollReveal from './ScrollReveal';
 
-// --- Animation Components ---
 
-interface RevealProps {
-    children: React.ReactNode;
-    className?: string;
-    delay?: number;
-}
-
-const Reveal: React.FC<RevealProps> = ({ children, className = "", delay = 0 }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.1 }
-        );
-        if (ref.current) observer.observe(ref.current);
-        return () => observer.disconnect();
-    }, []);
-
-    return (
-        <div
-            ref={ref}
-            className={`transition-all duration-1000 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                } ${className}`}
-            style={{ transitionDelay: `${delay}ms` }}
-        >
-            {children}
-        </div>
-    );
-};
 
 const CountUp = ({ end, duration = 2000, prefix = '' }: { end: number, duration?: number, prefix?: string }) => {
     const [count, setCount] = useState(0);
@@ -126,24 +91,24 @@ const LandingPage: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                             <div className="max-w-2xl">
-                                <Reveal>
+                                <ScrollReveal>
                                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-50 border border-surface-200 text-slate-600 text-[10px] font-mono uppercase tracking-widest mb-8 rounded-full shadow-sm hover:shadow-md transition-shadow cursor-default">
                                         <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
                                         Predictive Revenue Infrastructure
                                     </div>
-                                </Reveal>
-                                <Reveal delay={100}>
+                                </ScrollReveal>
+                                <ScrollReveal delay={100}>
                                     <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-semibold tracking-tight text-brand-950 mb-8 leading-[1.05]">
                                         AI that manages missed school fees<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">end-to-end</span>
                                     </h1>
-                                </Reveal>
-                                <Reveal delay={200}>
+                                </ScrollReveal>
+                                <ScrollReveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
                                         Knit uses agents to decide who to follow up, how, and when — combining payments, empathetic messaging, and intelligent escalation. We automate decisions, not reminders.
                                     </p>
-                                </Reveal>
+                                </ScrollReveal>
 
-                                <Reveal delay={300}>
+                                <ScrollReveal delay={300}>
                                     <div className="flex flex-wrap gap-4">
                                         <button
                                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -155,9 +120,9 @@ const LandingPage: React.FC = () => {
                                             Documentation
                                         </button>
                                     </div>
-                                </Reveal>
+                                </ScrollReveal>
 
-                                <Reveal delay={400}>
+                                <ScrollReveal delay={400}>
                                     <div className="mt-12 flex items-center gap-8 text-slate-400">
                                         <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider hover:text-brand-600 transition-colors cursor-help" title="Service Organization Control 2">
                                             <Shield size={14} /> SOC2 Type II
@@ -166,7 +131,7 @@ const LandingPage: React.FC = () => {
                                             <Lock size={14} /> 256-bit Encryption
                                         </div>
                                     </div>
-                                </Reveal>
+                                </ScrollReveal>
                             </div>
 
                             {/* Hero Visual - Dashboard Abstract */}
@@ -204,7 +169,7 @@ const LandingPage: React.FC = () => {
                 {/* Trust Section */}
                 <section id="trust" className="py-20 bg-white border-t border-surface-200">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <Reveal>
+                        <ScrollReveal>
                             <h2 className="text-[20px] font-bold text-slate-400 uppercase tracking-widest mb-12">TRUSTED BY TOP TIER SCHOOLS</h2>
 
                             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
@@ -212,7 +177,7 @@ const LandingPage: React.FC = () => {
                                 <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                                 <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                             </div>
-                        </Reveal>
+                        </ScrollReveal>
                     </div>
                 </section>
                 <section id="ai-engine" className="py-24 bg-brand-950 text-white relative overflow-hidden border-t border-brand-900">
@@ -221,17 +186,21 @@ const LandingPage: React.FC = () => {
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[100px] animate-pulse-slow"></div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <div className="mb-12 md:mb-20">
-                            <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">How Knit Agents Execute</h2>
-                        </div>
-                        <FeatureShowcase />
+                        <ScrollReveal>
+                            <div className="mb-12 md:mb-20">
+                                <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">How Knit Agents Execute</h2>
+                            </div>
+                        </ScrollReveal>
+                        <ScrollReveal delay={200}>
+                            <FeatureShowcase />
+                        </ScrollReveal>
                     </div>
                 </section>
 
                 {/* Workflow Logic Section - 3 Buckets */}
                 <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <Reveal>
+                        <ScrollReveal>
                             <div className="text-center mb-20 max-w-3xl mx-auto">
                                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-surface-200 text-brand-600 text-[10px] font-mono uppercase tracking-widest mb-6 rounded-full shadow-sm">
                                     <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse"></span>
@@ -242,12 +211,12 @@ const LandingPage: React.FC = () => {
                                     Our API-first architecture sits between your systems and your customers, acting as an intelligent firewall against revenue loss.
                                 </p>
                             </div>
-                        </Reveal>
+                        </ScrollReveal>
 
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
                             {/* Bucket 1: Workflows (Logic) */}
-                            <Reveal delay={100} className="h-full">
+                            <ScrollReveal delay={100} className="h-full">
                                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
                                     <style>{`
                     @keyframes slideUpFade {
@@ -327,10 +296,10 @@ const LandingPage: React.FC = () => {
                                         </ul>
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
                             {/* Bucket 2: Integrations (Connectors) */}
-                            <Reveal delay={200} className="h-full">
+                            <ScrollReveal delay={200} className="h-full">
                                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group relative z-10">
                                     <div className="bg-brand-950 rounded-lg p-6 border-b border-brand-900 flex-1 relative overflow-hidden flex items-center justify-center">
                                         {/* Visual: Integration Logos */}
@@ -427,10 +396,10 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
                             {/* Bucket 3: Security (Guardrails) */}
-                            <Reveal delay={300} className="h-full">
+                            <ScrollReveal delay={300} className="h-full">
                                 <div className="bg-white rounded-xl border border-surface-200 shadow-sm hover:shadow-md transition-all duration-300 p-1 h-full flex flex-col group">
                                     <div className="bg-surface-50/50 rounded-lg p-6 border-b border-surface-100 flex-1 relative overflow-hidden flex flex-col justify-center">
                                         <style>{`
@@ -482,7 +451,7 @@ const LandingPage: React.FC = () => {
                                         </ul>
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
                         </div>
                     </div>
@@ -492,7 +461,7 @@ const LandingPage: React.FC = () => {
                 {/* Financial Operating System Section */}
                 <section className="hidden">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <Reveal>
+                        <ScrollReveal>
                             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                                 <div className="max-w-2xl">
                                     <h2 className="text-3xl md:text-4xl font-semibold text-brand-950 mb-4 tracking-tight">The AI Financial Infrastructure</h2>
@@ -504,11 +473,11 @@ const LandingPage: React.FC = () => {
                                     Explore all modules <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </a>
                             </div>
-                        </Reveal>
+                        </ScrollReveal>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 bg-white border border-surface-200 rounded-2xl shadow-sm divide-y md:divide-y-0 md:divide-x divide-surface-200 overflow-hidden">
                             {/* Card 1: Identity & Risk */}
-                            <Reveal delay={100} className="h-full">
+                            <ScrollReveal delay={100} className="h-full">
                                 <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
                                     <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                                         <Users size={24} strokeWidth={1.5} />
@@ -521,10 +490,10 @@ const LandingPage: React.FC = () => {
                                         View Specs <ChevronRight size={12} />
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
                             {/* Card 2: Revenue Management */}
-                            <Reveal delay={200} className="h-full">
+                            <ScrollReveal delay={200} className="h-full">
                                 <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
                                     <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                                         <BarChart3 size={24} strokeWidth={1.5} />
@@ -537,10 +506,10 @@ const LandingPage: React.FC = () => {
                                         View Specs <ChevronRight size={12} />
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
                             {/* Card 3: Intelligent Recovery */}
-                            <Reveal delay={300} className="h-full">
+                            <ScrollReveal delay={300} className="h-full">
                                 <div className="p-8 group hover:bg-surface-50/50 transition-colors h-full">
                                     <div className="w-12 h-12 bg-surface-50 rounded-lg border border-surface-200 flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse">
                                         <TrendingUp size={24} strokeWidth={1.5} />
@@ -553,7 +522,7 @@ const LandingPage: React.FC = () => {
                                         View Specs <ChevronRight size={12} />
                                     </div>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </section>
@@ -566,10 +535,10 @@ const LandingPage: React.FC = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                             <div className="max-w-2xl">
-                                <Reveal>
+                                <ScrollReveal>
                                     <h2 className="text-2xl font-semibold text-brand-950 mb-3">Vertical-Specific Solutions</h2>
                                     <p className="text-slate-600 text-sm">Tailored data models and workflows for high-stakes financial environments.</p>
-                                </Reveal>
+                                </ScrollReveal>
                             </div>
                             <button className="text-brand-600 font-medium text-sm hover:underline flex items-center gap-1">
                                 View all industries <ArrowRight size={14} />
@@ -577,7 +546,7 @@ const LandingPage: React.FC = () => {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <Reveal delay={100}>
+                            <ScrollReveal delay={100}>
                                 <div className="group bg-white border border-surface-200 p-8 rounded-md hover:border-brand-300 transition-all shadow-sm hover:shadow-lg relative overflow-hidden h-full transform hover:-translate-y-1 duration-300">
                                     <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-500 grayscale group-hover:scale-110 group-hover:rotate-6 origin-top-right">
                                         <BookOpen size={160} />
@@ -596,9 +565,9 @@ const LandingPage: React.FC = () => {
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
                                     <a href="#" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Edu &rarr;</a>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
 
-                            <Reveal delay={200}>
+                            <ScrollReveal delay={200}>
                                 <div className="group bg-white border border-surface-200 p-8 rounded-md hover:border-brand-300 transition-all shadow-sm hover:shadow-lg relative overflow-hidden h-full transform hover:-translate-y-1 duration-300">
                                     <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-500 grayscale group-hover:scale-110 group-hover:rotate-6 origin-top-right">
                                         <Landmark size={160} />
@@ -617,7 +586,7 @@ const LandingPage: React.FC = () => {
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
                                     <a href="#" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Capital &rarr;</a>
                                 </div>
-                            </Reveal>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </section>
@@ -627,7 +596,7 @@ const LandingPage: React.FC = () => {
                 {/* CTA Footer */}
                 <section id="contact" className="bg-surface-50 py-24 border-t border-surface-200">
                     <div className="max-w-4xl mx-auto px-4 text-center">
-                        <Reveal>
+                        <ScrollReveal>
                             <h2 className="text-3xl font-semibold text-brand-950 mb-6 tracking-tight">Ready to modernize your financial infrastructure?</h2>
                             <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto font-light">
                                 Schedule a technical consultation to see how Knit can integrate with your existing payment stack.
@@ -643,7 +612,7 @@ const LandingPage: React.FC = () => {
                                     Book a Demo
                                 </button>
                             </div>
-                        </Reveal>
+                        </ScrollReveal>
                     </div>
                 </section>
 

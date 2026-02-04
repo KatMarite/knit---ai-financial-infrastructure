@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { Send, ChevronDown } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -50,14 +51,16 @@ const ContactPage: React.FC = () => {
 
                     {/* Left Column: Form */}
                     <div>
-                        <div className="mb-10">
-                            <h1 className="text-4xl font-bold tracking-tight text-brand-950 mb-4">
-                                Book a Demo
-                            </h1>
-                            <p className="text-slate-600 leading-relaxed">
-                                Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.
-                            </p>
-                        </div>
+                        <ScrollReveal>
+                            <div className="mb-10">
+                                <h1 className="text-4xl font-bold tracking-tight text-brand-950 mb-4">
+                                    Book a Demo
+                                </h1>
+                                <p className="text-slate-600 leading-relaxed">
+                                    Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.
+                                </p>
+                            </div>
+                        </ScrollReveal>
 
                         {status === 'success' ? (
                             <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
@@ -74,124 +77,126 @@ const ContactPage: React.FC = () => {
                                 </button>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4">
+                            <ScrollReveal delay={100}>
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label htmlFor="firstName" className="sr-only">First name</label>
+                                            <input
+                                                type="text"
+                                                id="firstName"
+                                                name="firstName"
+                                                required
+                                                value={formData.firstName}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                                placeholder="First name"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="lastName" className="sr-only">Last name</label>
+                                            <input
+                                                type="text"
+                                                id="lastName"
+                                                name="lastName"
+                                                required
+                                                value={formData.lastName}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                                placeholder="Last name"
+                                            />
+                                        </div>
+                                    </div>
+
                                     <div>
-                                        <label htmlFor="firstName" className="sr-only">First name</label>
+                                        <label htmlFor="companyName" className="sr-only">Company name</label>
                                         <input
                                             type="text"
-                                            id="firstName"
-                                            name="firstName"
-                                            required
-                                            value={formData.firstName}
+                                            id="companyName"
+                                            name="companyName"
+                                            value={formData.companyName}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
-                                            placeholder="First name"
+                                            placeholder="Company name"
                                         />
                                     </div>
+
                                     <div>
-                                        <label htmlFor="lastName" className="sr-only">Last name</label>
+                                        <label htmlFor="companyEmail" className="sr-only">Company email</label>
                                         <input
-                                            type="text"
-                                            id="lastName"
-                                            name="lastName"
+                                            type="email"
+                                            id="companyEmail"
+                                            name="companyEmail"
                                             required
-                                            value={formData.lastName}
+                                            value={formData.companyEmail}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
-                                            placeholder="Last name"
+                                            placeholder="Company email"
                                         />
                                     </div>
-                                </div>
 
-                                <div>
-                                    <label htmlFor="companyName" className="sr-only">Company name</label>
-                                    <input
-                                        type="text"
-                                        id="companyName"
-                                        name="companyName"
-                                        value={formData.companyName}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
-                                        placeholder="Company name"
-                                    />
-                                </div>
+                                    <div>
+                                        <label htmlFor="message" className="sr-only">Message</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows={4}
+                                            required
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400 resize-none"
+                                            placeholder="What are you building, and in what countries? Details are helpful!"
+                                        />
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="companyEmail" className="sr-only">Company email</label>
-                                    <input
-                                        type="email"
-                                        id="companyEmail"
-                                        name="companyEmail"
-                                        required
-                                        value={formData.companyEmail}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
-                                        placeholder="Company email"
-                                    />
-                                </div>
+                                    <div>
+                                        <label htmlFor="phone" className="sr-only">Phone number</label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
+                                            placeholder="Phone number (optional)"
+                                        />
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="message" className="sr-only">Message</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows={4}
-                                        required
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400 resize-none"
-                                        placeholder="What are you building, and in what countries? Details are helpful!"
-                                    />
-                                </div>
+                                    <div className="relative">
+                                        <label htmlFor="country" className="sr-only">Country</label>
+                                        <select
+                                            id="country"
+                                            name="country"
+                                            value={formData.country}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white text-slate-900 appearance-none cursor-pointer"
+                                        >
+                                            <option value="" disabled className="text-slate-400">Country</option>
+                                            <option value="US">United States</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="ZA">South Africa</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="phone" className="sr-only">Phone number</label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
-                                        placeholder="Phone number (optional)"
-                                    />
-                                </div>
-
-                                <div className="relative">
-                                    <label htmlFor="country" className="sr-only">Country</label>
-                                    <select
-                                        id="country"
-                                        name="country"
-                                        value={formData.country}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white text-slate-900 appearance-none cursor-pointer"
-                                    >
-                                        <option value="" disabled className="text-slate-400">Country</option>
-                                        <option value="US">United States</option>
-                                        <option value="GB">United Kingdom</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="ZA">South Africa</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
-                                </div>
-
-                                <div className="pt-4">
-                                    <button
-                                        type="submit"
-                                        disabled={status === 'submitting'}
-                                        className="px-8 py-3 bg-brand-900 text-white rounded-sm font-medium hover:bg-brand-800 transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
-                                    >
-                                        {status === 'submitting' ? 'Sending...' : 'Submit'}
-                                    </button>
-                                </div>
-                            </form>
+                                    <div className="pt-4">
+                                        <button
+                                            type="submit"
+                                            disabled={status === 'submitting'}
+                                            className="px-8 py-3 bg-brand-900 text-white rounded-sm font-medium hover:bg-brand-800 transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                                        >
+                                            {status === 'submitting' ? 'Sending...' : 'Submit'}
+                                        </button>
+                                    </div>
+                                </form>
+                            </ScrollReveal>
                         )}
                     </div>
 
                     {/* Right Column: Visual */}
-                    <div className="hidden lg:flex justify-center items-center h-full min-h-[600px] relative">
+                    <ScrollReveal delay={200} className="hidden lg:flex justify-center items-center h-full min-h-[600px] relative">
                         {/* Placeholder for the Hand/Phone Illustration */}
                         <div className="relative w-full max-w-md aspect-[3/4]">
                             {/* Abstract Graphic as Placeholder */}
@@ -207,7 +212,7 @@ const ContactPage: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                 </div>
             </div>

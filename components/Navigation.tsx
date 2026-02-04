@@ -43,6 +43,12 @@ const Navigation: React.FC = () => {
       return;
     }
 
+    if (target === '/ai-engine') {
+      navigate('/ai-engine');
+      window.scrollTo(0, 0);
+      return;
+    }
+
     if (target === '/contact') {
       navigate('/contact');
       window.scrollTo(0, 0);
@@ -81,7 +87,7 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { name: 'Platform', href: '#platform' },
-    { name: 'AI Engine', href: '#ai-engine' },
+    { name: 'AI Engine', href: '/ai-engine' },
     { name: 'Solutions', href: '#knit-architect' },
     { name: 'Pricing', href: '/pricing' },
   ];
