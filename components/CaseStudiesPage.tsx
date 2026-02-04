@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
 import { ArrowRight, TrendingUp, Clock, CheckCircle2, MapPin, School, GraduationCap } from 'lucide-react';
+import CountUp from './CountUp';
 
 const CaseStudiesPage: React.FC = () => {
     return (
@@ -10,21 +11,21 @@ const CaseStudiesPage: React.FC = () => {
             <Navigation />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 relative overflow-hidden bg-brand-950 text-white">
-                <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] z-0 pointer-events-none"></div>
+            <section className="pt-32 pb-20 relative overflow-hidden bg-white text-slate-900 border-b border-surface-200">
+                <div className="absolute inset-0 grid-bg opacity-[0.6] z-0 pointer-events-none"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <ScrollReveal>
                         <div className="max-w-3xl">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900 border border-brand-800 text-brand-300 text-xs font-medium mb-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-medium mb-6">
                                 <TrendingUp size={14} />
                                 <span>Customer Success Stories</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
+                            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-brand-950 mb-6">
                                 Real Results from <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400">Real Customers.</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Real Customers.</span>
                             </h1>
-                            <p className="text-xl text-brand-100/80 leading-relaxed max-w-2xl">
+                            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
                                 Discover how education and life services providers are transforming their businesses with Knit's embedded finance solutions.
                             </p>
                         </div>
@@ -38,19 +39,25 @@ const CaseStudiesPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <ScrollReveal delay={0} className="h-full">
                             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-colors h-full flex flex-col justify-center">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">15%+</div>
+                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                                    <CountUp end={15} suffix="%+" />
+                                </div>
                                 <div className="text-brand-100/70 font-medium">Collection Improvement</div>
                             </div>
                         </ScrollReveal>
                         <ScrollReveal delay={100} className="h-full">
                             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-colors h-full flex flex-col justify-center">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">&lt; 5%</div>
+                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                                    <CountUp end={5} prefix="< " suffix="%" />
+                                </div>
                                 <div className="text-brand-100/70 font-medium">Portfolio Loss</div>
                             </div>
                         </ScrollReveal>
                         <ScrollReveal delay={200} className="h-full">
                             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-colors h-full flex flex-col justify-center">
-                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">4 Days</div>
+                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                                    <CountUp end={4} suffix=" Days" />
+                                </div>
                                 <div className="text-brand-100/70 font-medium">Mitigations</div>
                             </div>
                         </ScrollReveal>
