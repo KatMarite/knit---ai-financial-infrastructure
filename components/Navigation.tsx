@@ -49,6 +49,12 @@ const Navigation: React.FC = () => {
       return;
     }
 
+    if (target === '/case-studies') {
+      navigate('/case-studies');
+      window.scrollTo(0, 0);
+      return;
+    }
+
     if (target === '/contact') {
       navigate('/contact');
       window.scrollTo(0, 0);
@@ -88,7 +94,7 @@ const Navigation: React.FC = () => {
   const navLinks = [
     { name: 'Platform', href: '#platform' },
     { name: 'AI Engine', href: '/ai-engine' },
-    { name: 'Solutions', href: '#knit-architect' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Pricing', href: '/pricing' },
   ];
 

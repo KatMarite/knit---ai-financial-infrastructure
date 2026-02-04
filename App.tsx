@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage';
 import PricingPage from './components/PricingPage';
 import ContactPage from './components/ContactPage';
 import AIEnginePage from './components/AIEnginePage';
+import CaseStudiesPage from './components/CaseStudiesPage';
 
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ai-engine" element={<AIEnginePage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
 
       </Routes>
     </BrowserRouter>
