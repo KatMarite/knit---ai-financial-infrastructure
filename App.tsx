@@ -5,6 +5,8 @@ import PricingPage from './components/PricingPage';
 import ContactPage from './components/ContactPage';
 import AIEnginePage from './components/AIEnginePage';
 import CaseStudiesPage from './components/CaseStudiesPage';
+import BlogImplementationNightmare from './components/BlogImplementationNightmare';
+import BlogImplementationNightmareEditorial from './components/BlogImplementationNightmareEditorial';
 
 
 const App: React.FC = () => {
@@ -16,6 +18,8 @@ const App: React.FC = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ai-engine" element={<AIEnginePage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/blog/from-months-to-days" element={<BlogImplementationNightmare />} />
+        <Route path="/blog/editorial/from-months-to-days" element={<BlogImplementationNightmareEditorial />} />
 
       </Routes>
     </BrowserRouter>
