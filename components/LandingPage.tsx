@@ -176,6 +176,7 @@ const LandingPage: React.FC = () => {
                                 {/* <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" /> */}
                                 <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                                 <img src="/links-college-logo.jpg" alt="Links Combined College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                                <img src="/canny-kids-logo.png" alt="CaNNY KiDS Academy" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
                             </div>
                         </ScrollReveal>
                     </div>
