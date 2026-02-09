@@ -26,7 +26,7 @@ const CaseStudiesPage: React.FC = () => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Real Customers.</span>
                             </h1>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                                Discover how education and life services providers are transforming their businesses with Knit's embedded finance solutions.
+                                Discover how education and life services providers are transforming their businesses with Knit's finance infrastructure solutions.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -58,7 +58,7 @@ const CaseStudiesPage: React.FC = () => {
                                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                                     <CountUp end={4} suffix=" Days" />
                                 </div>
-                                <div className="text-brand-100/70 font-medium">Mitigations</div>
+                                <div className="text-brand-100/70 font-medium">Migrations</div>
                             </div>
                         </ScrollReveal>
                     </div>

@@ -168,149 +168,65 @@ const AIEnginePage: React.FC = () => {
                         </ScrollReveal>
                         <ScrollReveal delay={200}>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                                Deterministic precision meets probabilistic intelligence. Our AI engine is built for
-                                regulatory compliance, providing auditable, explainable, and secure financial automation.
+                                We combine rock-solid accuracy with smart technology. Our AI is designed specifically for school regulations, making your financial tasks automatic, secure, and easy to double-check.
                             </p>
                         </ScrollReveal>
                     </div>
                 </div>
             </section>
 
-            {/* Section 1: What the AI Does */}
+            {/* Section 1: Human-in-the-Loop (Was Core Capabilities) */}
             <section className="py-20 bg-white border-t border-surface-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="mb-16">
-                        <h2 className="text-3xl font-bold text-brand-950 mb-4">Core Capabilities</h2>
-                        <p className="text-slate-600 max-w-2xl">
-                            Knit acts as an intelligent layer between your bank accounts and accounting ledger,
-                            automating complex reconciliation tasks with human-level accuracy.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <ScrollReveal delay={0} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
-                                    <BrainCircuit size={24} strokeWidth={1.5} />
-                                </div>
-                                <h3 className="text-lg font-semibold text-brand-950 mb-3">Multi-Way Reconciliation</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    Automatically matches transactions across banks, payment gateways, and ERPs.
-                                    Handles 1-to-1, 1-to-many, and many-to-many matches with &gt;99% accuracy.
-                                </p>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={150} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
-                                    <AlertTriangle size={24} strokeWidth={1.5} />
-                                </div>
-                                <h3 className="text-lg font-semibold text-brand-950 mb-3">Anomaly Detection</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    Identifies duplicate payments, unexpected fees, and fraudulent patterns in real-time.
-                                    Flags irregularities for immediate human review.
-                                </p>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={300} className="h-full">
-                            <div className="p-8 bg-surface-50 rounded-lg border border-surface-200 hover:border-brand-300 transition-all duration-300 group h-full hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                                <div className="w-12 h-12 bg-white rounded-lg border border-surface-200 flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 group-hover:bg-brand-50 group-hover:text-brand-700 transition-all duration-300">
-                                    <FileText size={24} strokeWidth={1.5} />
-                                </div>
-                                <h3 className="text-lg font-semibold text-brand-950 mb-3">Context Extraction</h3>
-                                <p className="text-slate-600 text-sm leading-relaxed">
-                                    Reads and understands unstructured data from invoices, emails, and transaction memos
-                                    to assign correct GL codes and tax categories.
-                                </p>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 2: Data Inputs & Privacy */}
-            <section className="py-20 bg-brand-950 text-white relative overflow-hidden">
-                {/* Background elements */}
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-700 to-transparent opacity-50"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <ScrollReveal>
-                            <div>
-                                <h2 className="text-3xl font-bold mb-6">Data Inputs & Learning Model</h2>
-                                <div className="space-y-6">
-                                    <p className="text-brand-100/80 leading-relaxed">
-                                        The Knit Engine ingests data securely from authorised sources only. We utilize a
-                                        federated learning approach where customer data isolates are maintained to ensure privacy
-                                        while allowing the global model to learn generic financial patterns.
+                    <ScrollReveal>
+                        <div className="bg-gradient-to-br from-brand-50 to-white rounded-2xl border border-brand-100 p-8 md:p-12">
+                            <div className="flex flex-col md:flex-row gap-12 items-center">
+                                <div className="flex-1">
+                                    <div className="inline-flex items-center gap-2 text-brand-600 font-semibold mb-4">
+                                        <Users size={20} />
+                                        <span>Human-in-the-Loop Control</span>
+                                    </div>
+                                    <h2 className="text-3xl font-bold text-brand-950 mb-6">You Are Always the Pilot.</h2>
+                                    <p className="text-slate-600 mb-6 leading-relaxed">
+                                        Knit is designed as a co-pilot, not a replacement for financial oversight.
+                                        Our "Human-in-the-Loop" architecture ensures that critical decisions always remain in your control.
                                     </p>
-
-                                    <ul className="space-y-4">
+                                    <ul className="space-y-4 mb-8">
                                         {[
-                                            "Read-only access to Bank Feeds & Payment Gateways",
-                                            "Historical GL transaction data for pattern recognition",
-                                            "Invoice and Receipt documents (PDF, IMG, EDI)",
-                                            "Vendor master data and Tax rules"
+                                            "AI Proposals require one-click approval (can be batched)",
+                                            "Full audit trail of what was AI-suggested vs. Human-edited",
+                                            "Confidence thresholds are configurable by your risk team",
+                                            "Ability to rollback any automated action instantly"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <div className="mt-1 min-w-[18px] text-brand-400">
-                                                    <Database size={18} />
-                                                </div>
-                                                <span className="text-surface-100">{item}</span>
+                                            <li key={i} className="flex items-center gap-3 text-slate-700">
+                                                <CheckCircle2 size={18} className="text-green-500 flex-shrink-0" />
+                                                <span>{item}</span>
                                             </li>
                                         ))}
                                     </ul>
+                                    <button className="bg-brand-900 text-white px-6 py-3 rounded font-medium hover:bg-brand-800 transition-colors shadow-lg shadow-brand-900/20">
+                                        Read Our Security Whitepaper
+                                    </button>
+                                </div>
 
-                                    <div className="mt-8 pt-8 border-t border-brand-800">
-                                        <div className="flex items-center gap-3 text-sm text-brand-300">
-                                            <Lock size={16} />
-                                            <span>SOC2 Type II Compliant &bull; End-to-End Encryption &bull; GDPR Ready</span>
+                                <div className="flex-1 w-full max-w-md">
+                                    <div className="bg-white rounded-xl shadow-xl border border-surface-200 overflow-hidden relative">
+                                        <div className="bg-surface-50 px-4 py-3 border-b border-surface-200 flex justify-between items-center">
+                                            <span className="text-xs font-mono text-slate-500">APPROVAL_QUEUE.tsx</span>
+                                            <span className="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-full border border-orange-200">
+                                                Review Needed
+                                            </span>
                                         </div>
+                                        <InteractiveApprovalCard />
                                     </div>
                                 </div>
-                            </div>
-                        </ScrollReveal>
-
-                        <div className="relative">
-                            <div className="aspect-square bg-gradient-to-br from-brand-800 to-brand-900 rounded-2xl border border-brand-700/50 p-6 flex flex-col justify-between shadow-2xl">
-                                {/* Visual representation of data flow */}
-                                <div className="space-y-4 font-mono text-xs relative">
-                                    <div className="bg-brand-900/50 p-3 rounded border border-brand-700 text-brand-100 hover:bg-brand-800/50 transition-colors z-10 relative">
-                                        <span className="text-brand-500">INPUT:</span> TRANSACTION_ID: tx_98234
-                                    </div>
-                                    <div className="flex justify-center h-8 relative overflow-hidden">
-                                        <div className="h-full w-0.5 bg-brand-800"></div>
-                                        <div className="absolute top-0 w-1.5 h-1.5 bg-brand-400 rounded-full animate-flow-down shadow-lg shadow-brand-400/50"></div>
-                                    </div>
-                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 z-10 relative">
-                                        <span className="text-brand-400">PROCESS:</span> NLP_CONTEXT_ANALYSIS()
-                                    </div>
-                                    <div className="flex justify-center h-8 relative overflow-hidden">
-                                        <div className="h-full w-0.5 bg-brand-800"></div>
-                                        <div className="absolute top-0 w-1.5 h-1.5 bg-brand-400 rounded-full animate-flow-down shadow-lg shadow-brand-400/50" style={{ animationDelay: '0.4s' }}></div>
-                                    </div>
-                                    <div className="bg-brand-800/50 p-3 rounded border border-brand-600 text-brand-100 z-10 relative">
-                                        <span className="text-brand-400">PROCESS:</span> HISTORICAL_MATCH(prob &gt; 98%)
-                                    </div>
-                                    <div className="flex justify-center h-8 relative overflow-hidden">
-                                        <div className="h-full w-0.5 bg-brand-800"></div>
-                                        <div className="absolute top-0 w-1.5 h-1.5 bg-green-400 rounded-full animate-flow-down shadow-lg shadow-green-400/50" style={{ animationDelay: '0.8s' }}></div>
-                                    </div>
-                                    <div className="bg-green-900/20 p-3 rounded border border-green-800 text-green-100 animate-slide-up-fade z-10 relative" style={{ animationDelay: '1.2s' }}>
-                                        <span className="text-green-500">OUTPUT:</span> PROPOSE_JOURNAL_ENTRY
-                                    </div>
-                                </div>
-                                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-brand-500 rounded-full blur-3xl opacity-20"></div>
                             </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
+
+
 
             {/* Section 3: Decision Logic */}
             <section className="py-20 bg-surface-50">
@@ -385,56 +301,7 @@ const AIEnginePage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Section 4: Human-in-the-Loop */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <ScrollReveal>
-                        <div className="bg-gradient-to-br from-brand-50 to-white rounded-2xl border border-brand-100 p-8 md:p-12">
-                            <div className="flex flex-col md:flex-row gap-12 items-center">
-                                <div className="flex-1">
-                                    <div className="inline-flex items-center gap-2 text-brand-600 font-semibold mb-4">
-                                        <Users size={20} />
-                                        <span>Human-in-the-Loop Control</span>
-                                    </div>
-                                    <h2 className="text-3xl font-bold text-brand-950 mb-6">You Are Always the Pilot.</h2>
-                                    <p className="text-slate-600 mb-6 leading-relaxed">
-                                        Knit is designed as a co-pilot, not a replacement for financial oversight.
-                                        Our "Human-in-the-Loop" architecture ensures that critical decisions always remain in your control.
-                                    </p>
-                                    <ul className="space-y-4 mb-8">
-                                        {[
-                                            "AI Proposals require one-click approval (can be batched)",
-                                            "Full audit trail of what was AI-suggested vs. Human-edited",
-                                            "Confidence thresholds are configurable by your risk team",
-                                            "Ability to rollback any automated action instantly"
-                                        ].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-3 text-slate-700">
-                                                <CheckCircle2 size={18} className="text-green-500 flex-shrink-0" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <button className="bg-brand-900 text-white px-6 py-3 rounded font-medium hover:bg-brand-800 transition-colors shadow-lg shadow-brand-900/20">
-                                        Read Our Security Whitepaper
-                                    </button>
-                                </div>
 
-                                <div className="flex-1 w-full max-w-md">
-                                    <div className="bg-white rounded-xl shadow-xl border border-surface-200 overflow-hidden relative">
-                                        <div className="bg-surface-50 px-4 py-3 border-b border-surface-200 flex justify-between items-center">
-                                            <span className="text-xs font-mono text-slate-500">APPROVAL_QUEUE.tsx</span>
-                                            <span className="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-full border border-orange-200">
-                                                Review Needed
-                                            </span>
-                                        </div>
-                                        <InteractiveApprovalCard />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
 
             <Footer />
             <style>{`
