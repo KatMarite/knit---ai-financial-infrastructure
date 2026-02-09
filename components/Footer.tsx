@@ -34,16 +34,17 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                         <ul className="space-y-3 text-xs font-light">
                             <li><a href="#" className="hover:text-brand-400 transition-colors">About Us</a></li>
                             <li><a href="#" className="hover:text-brand-400 transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Blog</a></li>
+                            <li><a href="/faq" className="hover:text-brand-400 transition-colors">FAQs</a></li>
+                            <li><a href="/blog" className="hover:text-brand-400 transition-colors">Blog</a></li>
                             <li><a href="/contact" className="hover:text-brand-400 transition-colors">Contact</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Legal</h4>
                         <ul className="space-y-3 text-xs font-light">
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Security</a></li>
+                            <li><a href="/privacy" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms" className="hover:text-brand-400 transition-colors">Terms of Service</a></li>
+                            <li><a href="/security" className="hover:text-brand-400 transition-colors">Security</a></li>
                             <li><a href="#" className="hover:text-brand-400 transition-colors">Status</a></li>
                         </ul>
                     </div>
