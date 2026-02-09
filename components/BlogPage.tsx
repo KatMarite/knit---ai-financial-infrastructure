@@ -23,6 +23,17 @@ const BlogPage: React.FC = () => {
             author: 'Knit Team',
             image: '/blog/timeline-header.png',
             slug: '/blog/editorial/from-months-to-days'
+        },
+        {
+            id: 'ai-saving-schools-money',
+            title: 'How AI Is Quietly Saving Schools Hundreds of Thousands Each Year',
+            excerpt: 'Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual collections, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.',
+            date: 'Feb 9, 2026',
+            readTime: '4 min read',
+            category: 'Industry Insights',
+            author: 'Knit Team',
+            image: '/feature-4-bursar-collections.png',
+            slug: '/blog/editorial/ai-saving-schools-money'
         }
     ];
 
@@ -71,8 +82,8 @@ const BlogPage: React.FC = () => {
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
                                 className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeCategory === category
-                                        ? 'bg-brand-950 text-white shadow-lg shadow-brand-900/20 transform scale-105'
-                                        : 'bg-surface-50 text-slate-600 hover:bg-surface-100 border border-surface-200 hover:border-surface-300'
+                                    ? 'bg-brand-950 text-white shadow-lg shadow-brand-900/20 transform scale-105'
+                                    : 'bg-surface-50 text-slate-600 hover:bg-surface-100 border border-surface-200 hover:border-surface-300'
                                     }`}
                             >
                                 {category}
