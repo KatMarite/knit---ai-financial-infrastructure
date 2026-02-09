@@ -5,6 +5,7 @@ import PricingPage from './components/PricingPage';
 import ContactPage from './components/ContactPage';
 import AIEnginePage from './components/AIEnginePage';
 import CaseStudiesPage from './components/CaseStudiesPage';
+import AboutPage from './components/AboutPage';
 import BlogImplementationNightmare from './components/BlogImplementationNightmare';
 import BlogImplementationNightmareEditorial from './components/BlogImplementationNightmareEditorial';
 import BlogPage from './components/BlogPage';
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/blog/from-months-to-days" element={<BlogImplementationNightmare />} />
         <Route path="/blog/editorial/from-months-to-days" element={<BlogImplementationNightmareEditorial />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
