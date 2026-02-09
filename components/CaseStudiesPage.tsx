@@ -74,7 +74,7 @@ const CaseStudiesPage: React.FC = () => {
                             <div className="lg:w-1/2">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 bg-white rounded-lg p-2 shadow-sm border border-surface-200 flex items-center justify-center text-brand-600">
-                                        <GraduationCap size={24} />
+                                        <img src="/links-college-logo.png" alt="Links Combined College" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement?.classList.add('bg-brand-50'); }} />
                                     </div>
                                     <div>
                                         <div className="text-[10px] font-mono text-brand-600 uppercase tracking-widest mb-1">knit Edu</div>
