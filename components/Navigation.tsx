@@ -61,6 +61,12 @@ const Navigation: React.FC = () => {
       return;
     }
 
+    if (target === '/blog') {
+      navigate('/blog');
+      window.scrollTo(0, 0);
+      return;
+    }
+
     if (target === '/') {
       navigate('/');
       window.scrollTo(0, 0);
@@ -95,6 +101,7 @@ const Navigation: React.FC = () => {
     { name: 'Platform', href: '#platform' },
     { name: 'AI Engine', href: '/ai-engine' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Pricing', href: '/pricing' },
   ];
 
