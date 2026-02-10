@@ -10,7 +10,7 @@ const BlogPage: React.FC = () => {
 
     const [activeCategory, setActiveCategory] = useState('All Posts');
 
-    const categories = ['All Posts', 'Product Updates', 'Industry Insights', 'Case Studies', 'Compliance'];
+    const categories = ['All Posts', 'Product Updates', 'Industry Insights', 'Compliance'];
 
     const blogPosts = [
         {

@@ -139,15 +139,9 @@ const Navigation: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={(e) => handleNavigation(e, '/contact')}
-            className="text-sm font-medium text-slate-900 hover:text-brand-600"
+            className="text-sm font-medium text-slate-900 hover:text-brand-600 bg-brand-50 px-4 py-2 rounded border border-brand-100"
           >
             Book a Demo
-          </button>
-          <button
-            onClick={(e) => handleNavigation(e, '#contact')}
-            className="bg-brand-900 text-white px-4 py-2 rounded text-sm font-medium hover:bg-brand-800 transition-all shadow-sm"
-          >
-            Start Building
           </button>
         </div>
 
@@ -178,15 +172,9 @@ const Navigation: React.FC = () => {
           <div className="pt-2 flex flex-col gap-3">
             <button
               onClick={(e) => handleNavigation(e, '/contact')}
-              className="w-full text-slate-900 font-medium py-2 text-left px-2"
+              className="w-full text-slate-900 font-medium py-2 text-left px-2 bg-brand-50 rounded border border-brand-100"
             >
               Book a Demo
-            </button>
-            <button
-              onClick={(e) => handleNavigation(e, '#contact')}
-              className="w-full bg-brand-900 text-white px-5 py-3 rounded text-base font-medium"
-            >
-              Start Building
             </button>
           </div>
         </div>

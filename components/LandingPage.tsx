@@ -111,13 +111,10 @@ const LandingPage: React.FC = () => {
                                 <ScrollReveal delay={300}>
                                     <div className="flex flex-wrap gap-4">
                                         <button
-                                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                            onClick={() => window.location.href = '/contact'}
                                             className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 group"
                                         >
-                                            Start Building <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-                                        </button>
-                                        <button className="px-8 py-4 bg-white text-brand-950 border border-surface-300 rounded-sm text-sm font-medium hover:bg-surface-50 transition-all font-mono hover:border-surface-400">
-                                            Documentation
+                                            Book a Demo <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                                         </button>
                                     </div>
                                 </ScrollReveal>
@@ -605,9 +602,6 @@ const LandingPage: React.FC = () => {
                                 Schedule a technical consultation to see how Knit can integrate with your existing payment stack.
                             </p>
                             <div className="flex justify-center gap-4">
-                                <button className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg shadow-brand-900/10 hover:shadow-brand-900/20 hover:-translate-y-0.5">
-                                    Start Building
-                                </button>
                                 <button
                                     onClick={() => window.location.href = '/contact'}
                                     className="px-8 py-4 bg-white text-brand-900 border border-surface-300 rounded-sm text-sm font-medium hover:bg-white hover:border-surface-400 transition-all hover:-translate-y-0.5"
