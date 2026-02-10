@@ -204,7 +204,10 @@ const AIEnginePage: React.FC = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="bg-brand-900 text-white px-6 py-3 rounded font-medium hover:bg-brand-800 transition-colors shadow-lg shadow-brand-900/20">
+                                    <button
+                                        onClick={() => window.location.href = '/security'}
+                                        className="bg-brand-900 text-white px-6 py-3 rounded font-medium hover:bg-brand-800 transition-colors shadow-lg shadow-brand-900/20"
+                                    >
                                         Read Our Security Whitepaper
                                     </button>
                                 </div>

@@ -176,7 +176,7 @@ const AboutPage: React.FC = () => {
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </button>
                             <button
-                                onClick={() => window.location.href = '/careers'}
+                                onClick={() => window.location.href = '/contact'}
                                 className="px-8 py-4 bg-white text-brand-700 font-semibold rounded-lg border border-surface-200 hover:bg-surface-50 transition-all"
                             >
                                 View Careers

@@ -23,8 +23,8 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Product</h4>
                         <ul className="space-y-3 text-xs font-light">
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Platform Overview</a></li>
-                            <li><a href="#" className="hover:text-brand-400 transition-colors">Integration</a></li>
+                            <li><a href="/#platform" className="hover:text-brand-400 transition-colors">Platform Overview</a></li>
+                            <li><a href="/#platform" className="hover:text-brand-400 transition-colors">Integration</a></li>
                             <li><a href="/pricing" className="hover:text-brand-400 transition-colors">Pricing</a></li>
                         </ul>
                     </div>

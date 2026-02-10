@@ -198,7 +198,7 @@ const LandingPage: React.FC = () => {
                 </section>
 
                 {/* Workflow Logic Section - 3 Buckets */}
-                <section className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
+                <section id="platform" className="py-24 bg-surface-50 border-b border-surface-200 overflow-hidden relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <ScrollReveal>
                             <div className="text-center mb-20 max-w-3xl mx-auto">
@@ -563,7 +563,7 @@ const LandingPage: React.FC = () => {
                                         <li className="flex items-center gap-3 text-xs text-slate-700 font-mono"><Check size={14} className="text-brand-600" /> Enrollment Retention</li>
                                     </ul>
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
-                                    <a href="#" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Edu &rarr;</a>
+                                    <a href="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Edu &rarr;</a>
                                 </div>
                             </ScrollReveal>
 
@@ -584,7 +584,7 @@ const LandingPage: React.FC = () => {
                                         <li className="flex items-center gap-3 text-xs text-slate-700 font-mono"><Check size={14} className="text-brand-600" /> Audit-Proof Compliance</li>
                                     </ul>
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
-                                    <a href="#" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Capital &rarr;</a>
+                                    <a href="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Capital &rarr;</a>
                                 </div>
                             </ScrollReveal>
                         </div>
