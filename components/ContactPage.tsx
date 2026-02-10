@@ -197,20 +197,13 @@ const ContactPage: React.FC = () => {
 
                     {/* Right Column: Visual */}
                     <ScrollReveal delay={200} className="hidden lg:flex justify-center items-center h-full min-h-[600px] relative">
-                        {/* Placeholder for the Hand/Phone Illustration */}
-                        <div className="relative w-full max-w-md aspect-[3/4]">
-                            {/* Abstract Graphic as Placeholder */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-50 to-indigo-50 rounded-2xl border border-surface-200 overflow-hidden flex items-center justify-center">
-                                <div className="text-center p-8 opacity-40">
-                                    <div className="w-32 h-64 bg-white border-4 border-slate-200 rounded-[3rem] mx-auto mb-4 shadow-xl flex flex-col overflow-hidden">
-                                        <div className="h-6 w-24 bg-slate-100 rounded-b-xl mx-auto absolute top-0 left-1/2 -translate-x-1/2 z-10"></div>
-                                        <div className="flex-1 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
-                                            <div className="w-12 h-12 border-4 border-white/50 rounded rotate-45"></div>
-                                        </div>
-                                    </div>
-                                    <p className="text-sm font-mono text-slate-400 uppercase tracking-widest">Illustration Space</p>
-                                </div>
-                            </div>
+                        {/* 3D Contact Illustration */}
+                        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-surface-200">
+                            <img
+                                src="/contact-hero.jpg"
+                                alt="Get in touch illustration"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </ScrollReveal>
 
