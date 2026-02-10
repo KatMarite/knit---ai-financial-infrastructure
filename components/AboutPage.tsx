@@ -31,7 +31,7 @@ const AboutPage: React.FC = () => {
                         </ScrollReveal>
                         <ScrollReveal delay={200}>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mb-8">
-                                Knit is on a mission to bring banking-grade financial infrastructure to the industries that power our communities—schools, funeral homes, and beyond.
+                                Knit is on a mission to bring banking-grade financial infrastructure to the industries that power our communities—schools and beyond.
                             </p>
                         </ScrollReveal>
                     </div>
@@ -55,7 +55,7 @@ const AboutPage: React.FC = () => {
                         <ScrollReveal delay={200}>
                             <h2 className="text-3xl font-bold text-brand-950 mb-6">Our Mission</h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                For too long, essential industries like education and funeral services have been underserved by traditional financial institutions. They've been forced to rely on manual processes, cash payments, and fragmented systems that create risk and inefficiency.
+                                For too long, essential industries like education have been underserved by traditional financial institutions. They've been forced to rely on manual processes, cash payments, and fragmented systems that create risk and inefficiency.
                             </p>
                             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                                 We built Knit to change that. By embedding powerful financial tools directly into the workflows of these businesses, we help them digitize payments, automate collections, and access the financial services they need to thrive.
@@ -135,29 +135,7 @@ const AboutPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className="py-20 bg-surface-50 border-y border-surface-200">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                        <ScrollReveal>
-                            <div className="text-4xl font-bold text-brand-600 mb-2">500+</div>
-                            <div className="text-slate-600 font-medium">Institutions</div>
-                        </ScrollReveal>
-                        <ScrollReveal delay={100}>
-                            <div className="text-4xl font-bold text-brand-600 mb-2">R2B+</div>
-                            <div className="text-slate-600 font-medium">Processed Annually</div>
-                        </ScrollReveal>
-                        <ScrollReveal delay={200}>
-                            <div className="text-4xl font-bold text-brand-600 mb-2">99.9%</div>
-                            <div className="text-slate-600 font-medium">Uptime</div>
-                        </ScrollReveal>
-                        <ScrollReveal delay={300}>
-                            <div className="text-4xl font-bold text-brand-600 mb-2">24/7</div>
-                            <div className="text-slate-600 font-medium">Support</div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
+
 
             {/* CTA Section */}
             <section className="py-24 bg-white">
@@ -167,7 +145,7 @@ const AboutPage: React.FC = () => {
                             Join us on our journey.
                         </h2>
                         <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-                            Whether you're a school looking to modernize, a funeral home wanting to grow, or a talented individual looking to make an impact.
+                            Whether you're a school looking to modernize, or a talented individual looking to make an impact.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             <button

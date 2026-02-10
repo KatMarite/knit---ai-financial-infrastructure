@@ -23,7 +23,6 @@ const FAQPage: React.FC = () => {
             case "Compliance & Regulatory": return <Shield className="text-blue-600" size={24} />;
             case "Data Security & Privacy": return <Database className="text-red-600" size={24} />;
             case "Collections & Payment Management": return <CreditCard className="text-indigo-600" size={24} />;
-            case "Funeral Homes Specific": return <Users className="text-teal-600" size={24} />;
             case "Technical & Integration": return <Code className="text-rose-600" size={24} />;
             case "Account Management & Support": return <FileText className="text-amber-600" size={24} />;
             case "Getting Started": return <BookOpen className="text-cyan-600" size={24} />;
@@ -55,15 +54,15 @@ const FAQPage: React.FC = () => {
             questions: [
                 {
                     question: "What is Knit?",
-                    answer: "Knit is a B2B embedded finance SaaS platform that helps schools and funeral homes manage their complete customer lifecycle—from application and credit screening through payment collection, automated reminders, and debt recovery. We combine screening, payments, and customer lifecycle management in a single cloud-based solution."
+                    answer: "Knit is a B2B embedded finance SaaS platform that helps schools manage their complete customer lifecycle—from application and credit screening through payment collection, automated reminders, and debt recovery. We combine screening, payments, and customer lifecycle management in a single cloud-based solution."
                 },
                 {
                     question: "Which industries does Knit serve?",
-                    answer: "Currently, Knit serves two primary verticals: Schools (private schools, independent schools, and fee-paying public schools in Quintiles 4-5) for tuition fee management, application processing, and parent lifecycle management; and Funeral Homes (funeral parlours, burial societies, and funeral service providers) for policy administration, premium collection, and claims management. We're building toward future expansion into healthcare, rental housing, and transportation."
+                    answer: "Currently, Knit serves schools (private schools, independent schools, and fee-paying public schools in Quintiles 4-5) for tuition fee management, application processing, and parent lifecycle management. We're building toward future expansion into healthcare, rental housing, and transportation."
                 },
                 {
                     question: "What problems does Knit solve?",
-                    answer: "For Schools: Only 66% of independent school fees and 42% of public school fees are paid on time (Q1 2024 data), manual collections processes, inability to assess parent affordability before admission, fragmented systems, poor parent mobile experience, and complex regulatory compliance. For Funeral Homes: Premium collection challenges from informal settlements, managing both insured and uncovered members, balancing upfront service with deferred payment, claims processing delays, and multiple payment methods required."
+                    answer: "For Schools: Only 66% of independent school fees and 42% of public school fees are paid on time (Q1 2024 data), manual collections processes, inability to assess parent affordability before admission, fragmented systems, poor parent mobile experience, and complex regulatory compliance."
                 },
                 {
                     question: "How is Knit different from existing school management systems?",
@@ -80,7 +79,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "What payment methods does Knit support?",
-                    answer: "Knit supports Debit Orders (automated monthly collections with DebiCheck authentication), Instant EFT (Pay-by-Bank with real-time transfers), Credit/Debit Cards (via our payment provider), Cash (for funeral homes in informal settlements), and Mobile Wallets (major mobile payment solutions)."
+                    answer: "Knit supports Debit Orders (automated monthly collections with DebiCheck authentication), Instant EFT (Pay-by-Bank with real-time transfers), Credit/Debit Cards (via our payment provider), and Mobile Wallets (major mobile payment solutions)."
                 },
                 {
                     question: "Does Knit process payments directly or use third-party providers?",
@@ -113,7 +112,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "Do you offer pricing options for multi-campus institutions?",
-                    answer: "Yes, we offer tailored pricing for groups with multiple locations. Enterprise arrangements are available for institutions with multiple campuses under single management, funeral home chains, burial societies with regional chapters, and educational groups. Benefits include consolidated billing/reporting, dedicated account management, priority implementation, and enhanced support. Contact sales@knit.cash for enterprise pricing."
+                    answer: "Yes, we offer tailored pricing for groups with multiple locations. Enterprise arrangements are available for institutions with multiple campuses under single management and educational groups. Benefits include consolidated billing/reporting, dedicated account management, priority implementation, and enhanced support. Contact sales@knit.cash for enterprise pricing."
                 },
                 {
                     question: "What is included in the setup fee?",
@@ -238,36 +237,11 @@ const FAQPage: React.FC = () => {
             ]
         },
         {
-            category: "Funeral Homes Specific",
-            questions: [
-                {
-                    question: "How does Knit differ for funeral homes vs schools?",
-                    answer: "Core platform is the same, but workflows adapted. Funeral-specific features: Member types (insured vs uncovered tracking), policy management (coverage types, premium amounts, beneficiary management), claims workflow (Home Affairs integration, death verification, claims processing, beneficiary payout), burial society integration (group scheme management, society admin portals), service upsells (casket upgrades, catering, venue hire with BNPL), cash payment support (field agent collections for informal settlements), and repatriation (cross-border body transport). Similar capabilities: Onboarding, credit screening, recurring payments, collections automation, debt recovery."
-                },
-                {
-                    question: "How does Knit handle insured vs uncovered members?",
-                    answer: "Members with existing cover: Already have funeral insurance through another provider, registered for administrative and claims coordination, premium collection not required through Knit, marked with coverage status, not included in payment collection workflows. Members requiring premium collection: Enrolled in funeral home's payment plan or policy, monthly premium collection via debit order, active in collections workflow, payment history tracked. System handling: Single database for all member types, automatic workflow routing based on member status, administrative coordination for both categories, coverage status tracking, status transition handling when circumstances change. Important: Knit provides administrative and payment collection technology; coverage arrangements managed between your funeral home and members according to your business model and applicable regulations."
-                },
-                {
-                    question: "How does claims processing work for funeral homes?",
-                    answer: "Claims workflow: (1) Death notification - family contacts funeral home, staff creates claim in Knit. (2) Death verification - Knit integrates with Home Affairs database (DHA), automated verification of death certificate, confirms identity matches member, flags fraudulent claims. (3) Policy validation - system checks member status (active, lapsed, waiting period), confirms coverage amount and type, verifies premium payment history, calculates payout eligibility. (4) Beneficiary confirmation - system retrieves beneficiary details, funeral home contacts beneficiary for service arrangement. (5) Service arrangement - funeral home creates estimate, coverage amount applied automatically, shortfall calculated if service exceeds coverage, BNPL offer for shortfall. (6) Claims payout - for uncovered members: funds from member's policy balance; for insured members: claim submitted to insurance provider via API. (7) Claims closing - service completion documented, final invoice reconciled, member account closed/updated. Turnaround: Death verification real-time (<1 minute), policy validation instant, service arrangement 1-2 days, payout same day for uncovered/3-5 days for insured."
-                },
-                {
-                    question: "Can Knit help with field agent collections for informal settlements?",
-                    answer: "Yes, mobile collections supported. Field agent module: Mobile app for field agents (Android/iOS), offline payment recording (syncs when internet available), cash collection with photo receipt, member lookup by ID/phone/name, premium history display, GPS tracking of collection routes. Payment methods: Cash (most common), mobile money (M-Pesa, MTN MoMo), card reader integration (POS devices), QR code for bank instant EFT. Agent management: Commission tracking (% of collections), performance dashboards, route optimization, collection targets/incentives, daily float reconciliation. Risk mitigation: Photo verification of cash collections, GPS stamps on transactions, same-day deposit requirements, discrepancy alerts, agent accountability scoring."
-                },
-                {
-                    question: "How does Knit handle burial society group schemes?",
-                    answer: "Society-level administration: Society admin portal (separate login), bulk member management, group policy configuration, society financial reports, member enrollment approval workflow. Member enrollment: Society admin uploads member list, Knit sends enrollment invitations, members complete onboarding online or via USSD, credit screening optional (at society's discretion), debit order mandate capture. Premium collection: Society-level premium rates, individual member debit orders, consolidated reporting to society, automatic lapse notifications, society-funded premium rescue programs. Claims management: Society notified of member death, society admin verifies membership, claims processed per society rules, payout to beneficiary or society account, society can top up coverage. Financial transparency: Real-time membership counts, collection rate analytics, lapse tracking, claims history, society fund balance."
-                }
-            ]
-        },
-        {
             category: "Technical & Integration",
             questions: [
                 {
                     question: "What technical requirements are needed to use Knit?",
-                    answer: "Minimal requirements: Internet connectivity (broadband or 4G/5G mobile), modern web browser (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+). No special hardware required, no server or IT infrastructure needed. Recommended setup: Dual monitors for admin users, printer for physical receipts/reports (optional), scanner for document uploads (optional, can use smartphone), backup internet connection (mobile hotspot) for critical operations. Browser-based platform benefits: No software installation, automatic updates (always latest version), access from any device (desktop, laptop, tablet), work from home capability, multi-location access. Mobile access: Responsive design works on smartphones, dedicated mobile app for field agents (funeral homes), parent/member portal optimized for mobile."
+                    answer: "Minimal requirements: Internet connectivity (broadband or 4G/5G mobile), modern web browser (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+). No special hardware required, no server or IT infrastructure needed. Recommended setup: Dual monitors for admin users, printer for physical receipts/reports (optional), scanner for document uploads (optional, can use smartphone), backup internet connection (mobile hotspot) for critical operations. Browser-based platform benefits: No software installation, automatic updates (always latest version), access from any device (desktop, laptop, tablet), work from home capability, multi-location access. Mobile access: Responsive design works on smartphones, parent/member portal optimized for mobile."
                 },
                 {
                     question: "Can Knit integrate with our existing school management system?",
@@ -275,7 +249,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "What APIs does Knit offer?",
-                    answer: "REST API endpoints: Student/Member management (CRUD operations), Payment processing (initiate, query, reverse), Credit bureau queries, Collections status, Reporting and analytics, Webhook management. Authentication: OAuth 2.0 with JWT tokens, API keys for server-to-server, scoped permissions by endpoint, rate limiting to prevent abuse. Webhook notifications: Payment success/failure, debit order run completion, account status changes, collections escalation triggers, claims processed (funeral homes). API documentation: OpenAPI 3.0 specification, interactive Swagger UI, code samples (Python, JavaScript, PHP, C#), Postman collection, sandbox environment for testing. Enterprise features: Dedicated API keys per environment, higher rate limits, custom webhook endpoints, priority support for API issues."
+                    answer: "REST API endpoints: Student/Member management (CRUD operations), Payment processing (initiate, query, reverse), Credit bureau queries, Collections status, Reporting and analytics, Webhook management. Authentication: OAuth 2.0 with JWT tokens, API keys for server-to-server, scoped permissions by endpoint, rate limiting to prevent abuse. Webhook notifications: Payment success/failure, debit order run completion, account status changes, collections escalation triggers. API documentation: OpenAPI 3.0 specification, interactive Swagger UI, code samples (Python, JavaScript, PHP, C#), Postman collection, sandbox environment for testing. Enterprise features: Dedicated API keys per environment, higher rate limits, custom webhook endpoints, priority support for API issues."
                 },
                 {
                     question: "Can we export our data?",
@@ -325,11 +299,11 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "Who should I involve in the evaluation process?",
-                    answer: "Recommended stakeholders: For Schools - Principal/Head (strategic decision, budget approval), Bursar/Finance Manager (day-to-day user, process owner), Admissions Manager (application screening workflows), IT Manager (integration and technical requirements), School Governing Body (final approval for public schools). For Funeral Homes - Owner/Managing Director (strategic decision, budget approval), Operations Manager (day-to-day user, process owner), Finance Manager (reconciliation and reporting), Field Agents (mobile collections if applicable). Demo customization: Separate demos for different stakeholders, technical demo for IT, financial demo for bursar, strategic demo for leadership."
+                    answer: "Recommended stakeholders: Principal/Head (strategic decision, budget approval), Bursar/Finance Manager (day-to-day user, process owner), Admissions Manager (application screening workflows), IT Manager (integration and technical requirements), School Governing Body (final approval for public schools). Demo customization: Separate demos for different stakeholders, technical demo for IT, financial demo for bursar, strategic demo for leadership."
                 },
                 {
                     question: "What information do I need to provide for a quote?",
-                    answer: "Quote requirements: Basic information (institution name and location, type - private school/public school/funeral home/burial society, contact person and email). For Schools: Number of students, annual fee revenue, current payment collection rate, existing systems in use (D6, Edupac, etc.). For Funeral Homes: Number of active members/policies, monthly premium revenue, insured vs uncovered member split, field agent collections required (Yes/No). Optional but helpful: Current pain points and priorities, timeline for implementation, budget range, decision-making process and stakeholders. Response time: Standard quote 2 business days, enterprise quote 5 business days (requires custom analysis)."
+                    answer: "Quote requirements: Basic information (institution name and location, type - private school/public school, contact person and email), number of students, annual fee revenue, current payment collection rate, existing systems in use (D6, Edupac, etc.). Optional but helpful: Current pain points and priorities, timeline for implementation, budget range, decision-making process and stakeholders. Response time: Standard quote 2 business days, enterprise quote 5 business days (requires custom analysis)."
                 },
                 {
                     question: "Do you offer pilots or trial periods?",
@@ -350,7 +324,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "Does Knit work for multi-campus institutions?",
-                    answer: "Yes, multi-location support built-in. Features: Single login for all campuses, campus-specific configuration (fee schedules, payment dates), consolidated or campus-level reporting, centralized vs. distributed collections, shared parent records across campuses (siblings). Reporting options: Group-level dashboard, campus-level detail, consolidated financial reports, cross-campus analytics. Billing: Volume discounts for multiple locations, single invoice or campus-by-campus (your choice), shared user licenses across campuses. Ideal for: School groups with multiple branches, funeral home chains, burial societies with regional chapters, franchise operations."
+                    answer: "Yes, multi-location support built-in. Features: Single login for all campuses, campus-specific configuration (fee schedules, payment dates), consolidated or campus-level reporting, centralized vs. distributed collections, shared parent records across campuses (siblings). Reporting options: Group-level dashboard, campus-level detail, consolidated financial reports, cross-campus analytics. Billing: Volume discounts for multiple locations, single invoice or campus-by-campus (your choice), shared user licenses across campuses. Ideal for: School groups with multiple branches and franchise operations."
                 },
                 {
                     question: "Can Knit handle international payments?",
@@ -358,11 +332,11 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "What languages does Knit support?",
-                    answer: "Current: English only - Platform interface in English, communications (emails, SMS, WhatsApp) in English, support available in English. Planned: Afrikaans and isiZulu (2026) - Interface translation, multi-language communications, language preference selection. Workaround: School/funeral home can customize email/SMS templates, translate communications manually, parent portal supports browser translation extensions."
+                    answer: "Current: English only - Platform interface in English, communications (emails, SMS, WhatsApp) in English, support available in English. Planned: Afrikaans and isiZulu (2026) - Interface translation, multi-language communications, language preference selection. Workaround: Schools can customize email/SMS templates, translate communications manually, parent portal supports browser translation extensions."
                 },
                 {
                     question: "How does Knit help with financial planning and forecasting?",
-                    answer: "Forecasting tools: Cash flow projection (expected collections by payment date, historical success rate analysis, seasonal patterns identified, 30-day rolling forecast, 90-day forward projection). Scenario modeling: 'What if' collection rate analysis, fee increase impact modeling, new student enrollment projections, payment plan adoption scenarios. Budget vs. actual: Track budgeted revenue vs. collections, variance analysis and alerts, course corrections recommended. Predictive analytics: At-risk parent identification (likely to default), lapse prediction (funeral homes), enrollment trends, revenue forecasting. Reports for CFO/Board: Executive dashboard, financial performance summary, KPI tracking (collection rate, DSO, bad debt %), industry benchmarking."
+                    answer: "Forecasting tools: Cash flow projection (expected collections by payment date, historical success rate analysis, seasonal patterns identified, 30-day rolling forecast, 90-day forward projection). Scenario modeling: 'What if' collection rate analysis, fee increase impact modeling, new student enrollment projections, payment plan adoption scenarios. Budget vs. actual: Track budgeted revenue vs. collections, variance analysis and alerts, course corrections recommended. Predictive analytics: At-risk parent identification (likely to default), enrollment trends, revenue forecasting. Reports for CFO/Board: Executive dashboard, financial performance summary, KPI tracking (collection rate, DSO, bad debt %), industry benchmarking."
                 },
                 {
                     question: "Does Knit offer financial literacy resources for parents/members?",
@@ -379,7 +353,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "Where can I see Knit in action?",
-                    answer: "Demo options: (1) Live demo (recommended) - 30-minute video call tailored to your vertical (school or funeral home), walk through your specific workflows, Q&A with product expert, schedule at sales@knit.cash. (2) Self-guided demo - Interactive product tour on website, video walkthroughs of key features, sample reports and dashboards, available 24/7 at www.knit.cash/tour. (3) Customer testimonials - Video case studies, written success stories, reference calls available (with customer permission). (4) Site visit - Visit existing Knit customer (schools/funeral homes), see platform in daily use, speak with administrators using Knit, arranged through sales team."
+                    answer: "Demo options: (1) Live demo (recommended) - 30-minute video call tailored to your specific workflows, Q&A with product expert, schedule at sales@knit.cash. (2) Self-guided demo - Interactive product tour on website, video walkthroughs of key features, sample reports and dashboards, available 24/7 at www.knit.cash/tour. (3) Customer testimonials - Video case studies, written success stories, reference calls available (with customer permission). (4) Site visit - Visit existing Knit customer, see platform in daily use, speak with administrators using Knit, arranged through sales team."
                 },
                 {
                     question: "What are the next steps after this FAQ?",

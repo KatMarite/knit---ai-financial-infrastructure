@@ -68,7 +68,7 @@ const TermsOfServicePage: React.FC = () => {
                                         2. Description of Service
                                     </h2>
                                     <p className="text-slate-600">
-                                        Knit provides embedded financial infrastructure for schools, funeral homes, and other institutions. This includes tools for credit screening, payment processing, automated collections, and customer lifecycle management.
+                                        Knit provides embedded financial infrastructure for schools and other institutions. This includes tools for credit screening, payment processing, automated collections, and customer lifecycle management.
                                     </p>
                                     <p className="text-slate-600 mt-4">
                                         We reserve the right to modify, suspend, or discontinue the Service (or any part or content thereof) at any time with or without notice to you, though we will make reasonable efforts to notify you of significant changes.
