@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Shield, TrendingUp, Users, Lock, Zap, ArrowRight, BarChart3, BookOpen, Landmark, ChevronRight, Check, Server, GitMerge, Database, FileText } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import RiskSimulator from './RiskSimulator';
 import DesignSystem from './DesignSystem';
@@ -72,6 +73,7 @@ const data = [
 
 const LandingPage: React.FC = () => {
     const [showDesignSystem, setShowDesignSystem] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div id="top" className="min-h-screen bg-white text-slate-900 selection:bg-brand-100 selection:text-brand-900 font-sans overflow-x-hidden">
@@ -111,7 +113,7 @@ const LandingPage: React.FC = () => {
                                 <ScrollReveal delay={300}>
                                     <div className="flex flex-wrap gap-4">
                                         <button
-                                            onClick={() => window.location.href = '/contact'}
+                                            onClick={() => navigate('/contact')}
                                             className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 group"
                                         >
                                             Book a Demo <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
@@ -563,7 +565,7 @@ const LandingPage: React.FC = () => {
                                         <li className="flex items-center gap-3 text-xs text-slate-700 font-mono"><Check size={14} className="text-brand-600" /> Enrollment Retention</li>
                                     </ul>
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
-                                    <a href="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Edu &rarr;</a>
+                                    <Link to="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Edu &rarr;</Link>
                                 </div>
                             </ScrollReveal>
 
@@ -584,7 +586,7 @@ const LandingPage: React.FC = () => {
                                         <li className="flex items-center gap-3 text-xs text-slate-700 font-mono"><Check size={14} className="text-brand-600" /> Audit-Proof Compliance</li>
                                     </ul>
                                     <div className="w-full h-px bg-surface-100 mb-6"></div>
-                                    <a href="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Capital &rarr;</a>
+                                    <Link to="/contact" className="inline-flex items-center text-brand-900 font-bold text-xs uppercase tracking-wider hover:text-brand-600 transition-colors">Explore Knit Capital &rarr;</Link>
                                 </div>
                             </ScrollReveal>
                         </div>
@@ -603,7 +605,7 @@ const LandingPage: React.FC = () => {
                             </p>
                             <div className="flex justify-center gap-4">
                                 <button
-                                    onClick={() => window.location.href = '/contact'}
+                                    onClick={() => navigate('/contact')}
                                     className="px-8 py-4 bg-white text-brand-900 border border-surface-300 rounded-sm text-sm font-medium hover:bg-white hover:border-surface-400 transition-all hover:-translate-y-0.5"
                                 >
                                     Book a Demo

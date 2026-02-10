@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
@@ -251,12 +252,12 @@ const CaseStudiesPage: React.FC = () => {
                             Join the schools and institutions automating their financial infrastructure with Knit.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/contact" className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                            <Link to="/contact" className="px-8 py-4 bg-brand-900 text-white rounded-sm text-sm font-medium hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                                 Book a Demo
-                            </a>
-                            <a href="/pricing" className="px-8 py-4 bg-white text-brand-900 border border-surface-300 rounded-sm text-sm font-medium hover:bg-brand-50 transition-all">
+                            </Link>
+                            <Link to="/pricing" className="px-8 py-4 bg-white text-brand-900 border border-surface-300 rounded-sm text-sm font-medium hover:bg-brand-50 transition-all">
                                 View Pricing
-                            </a>
+                            </Link>
                         </div>
                     </ScrollReveal>
                 </div>

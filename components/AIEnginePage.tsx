@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { ShieldCheck, Database, BrainCircuit, Users, Lock, FileText, CheckCircle2, AlertTriangle, ArrowRight, Check } from 'lucide-react';
@@ -141,6 +142,7 @@ const NeuralBackground = () => {
 
 
 const AIEnginePage: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-brand-100 selection:text-brand-900">
             <Navigation />
@@ -205,7 +207,7 @@ const AIEnginePage: React.FC = () => {
                                         ))}
                                     </ul>
                                     <button
-                                        onClick={() => window.location.href = '/security'}
+                                        onClick={() => navigate('/security')}
                                         className="bg-brand-900 text-white px-6 py-3 rounded font-medium hover:bg-brand-800 transition-colors shadow-lg shadow-brand-900/20"
                                     >
                                         Read Our Security Whitepaper

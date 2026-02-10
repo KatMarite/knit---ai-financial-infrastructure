@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     onShowDesignSystem?: () => void;
@@ -23,26 +24,26 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Product</h4>
                         <ul className="space-y-3 text-xs font-light">
-                            <li><a href="/#platform" className="hover:text-brand-400 transition-colors">Platform Overview</a></li>
-                            <li><a href="/#platform" className="hover:text-brand-400 transition-colors">Integration</a></li>
-                            <li><a href="/pricing" className="hover:text-brand-400 transition-colors">Pricing</a></li>
+                            <li><Link to="/#platform" className="hover:text-brand-400 transition-colors">Platform Overview</Link></li>
+                            <li><Link to="/#platform" className="hover:text-brand-400 transition-colors">Integration</Link></li>
+                            <li><Link to="/pricing" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Pricing</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Company</h4>
                         <ul className="space-y-3 text-xs font-light">
-                            <li><a href="/about" className="hover:text-brand-400 transition-colors">About Us</a></li>
-                            <li><a href="/faq" className="hover:text-brand-400 transition-colors">FAQs</a></li>
-                            <li><a href="/blog" className="hover:text-brand-400 transition-colors">Blog</a></li>
-                            <li><a href="/contact" className="hover:text-brand-400 transition-colors">Contact</a></li>
+                            <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">About Us</Link></li>
+                            <li><Link to="/faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">FAQs</Link></li>
+                            <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Blog</Link></li>
+                            <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Contact</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Legal</h4>
                         <ul className="space-y-3 text-xs font-light">
-                            <li><a href="/privacy" className="hover:text-brand-400 transition-colors">Privacy Policy</a></li>
-                            <li><a href="/terms" className="hover:text-brand-400 transition-colors">Terms of Service</a></li>
-                            <li><a href="/security" className="hover:text-brand-400 transition-colors">Security</a></li>
+                            <li><Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Privacy Policy</Link></li>
+                            <li><Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Terms of Service</Link></li>
+                            <li><Link to="/security" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Security</Link></li>
                         </ul>
                     </div>
                 </div>

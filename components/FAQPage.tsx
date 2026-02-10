@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
 import { HelpCircle, ChevronDown, Search, Layout, Settings, DollarSign, Clock, Shield, Database, CreditCard, Users, Code, FileText, BookOpen, MessageCircle, ArrowRight } from 'lucide-react';
 
 const FAQPage: React.FC = () => {
+    const navigate = useNavigate();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -555,7 +557,7 @@ const FAQPage: React.FC = () => {
                                 Contact Support
                             </button>
                             <button
-                                onClick={() => window.location.href = '/contact'}
+                                onClick={() => navigate('/contact')}
                                 className="px-6 py-3 border border-brand-700 text-white font-medium rounded-md hover:bg-brand-900 transition-colors"
                             >
                                 Contact Sales

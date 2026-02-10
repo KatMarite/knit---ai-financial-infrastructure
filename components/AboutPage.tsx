@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
 import { Users, Target, Heart, Globe, ArrowRight, ShieldCheck, Zap, Lightbulb } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-brand-100 selection:text-brand-900">
             <Navigation />
@@ -169,14 +171,14 @@ const AboutPage: React.FC = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             <button
-                                onClick={() => window.location.href = '/contact'}
+                                onClick={() => navigate('/contact')}
                                 className="px-8 py-4 bg-brand-600 text-white font-semibold rounded-lg shadow-lg hover:bg-brand-700 hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
                             >
                                 Contact Us
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </button>
                             <button
-                                onClick={() => window.location.href = '/contact'}
+                                onClick={() => navigate('/contact')}
                                 className="px-8 py-4 bg-white text-brand-700 font-semibold rounded-lg border border-surface-200 hover:bg-surface-50 transition-all"
                             >
                                 View Careers
