@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
                             <div className="relative">
                                 <div className="absolute -inset-4 bg-brand-100/50 rounded-2xl transform -rotate-2"></div>
                                 <img
-                                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80"
+                                    src="/about-mission.jpg"
                                     alt="Modern office space"
                                     className="relative rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
                                 />

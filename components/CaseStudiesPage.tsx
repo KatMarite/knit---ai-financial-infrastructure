@@ -74,7 +74,7 @@ const CaseStudiesPage: React.FC = () => {
                             <div className="lg:w-1/2">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 bg-white rounded-lg p-2 shadow-sm border border-surface-200 flex items-center justify-center text-brand-600">
-                                        <img src="/links-college-logo.png" alt="Links Combined College" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement?.classList.add('bg-brand-50'); }} />
+                                        <img src="/links-college-logo.png" alt="Links Combined College" className="w-full h-full object-contain" />
                                     </div>
                                     <div>
                                         <div className="text-[10px] font-mono text-brand-600 uppercase tracking-widest mb-1">knit Edu</div>
@@ -138,7 +138,7 @@ const CaseStudiesPage: React.FC = () => {
                                     <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-surface-200 aspect-[4/3] group">
                                         {/* Using a generic modern school/campus image as placeholder */}
                                         <img
-                                            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop"
+                                            src="/school-campus-modern.jpg"
                                             alt="Modern school campus with students"
                                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                         />
@@ -165,7 +165,7 @@ const CaseStudiesPage: React.FC = () => {
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 bg-white rounded-lg p-2 shadow-sm border border-surface-200 flex items-center justify-center text-brand-600">
                                         {/* Using the Southdowns logo if available, or fallback */}
-                                        <img src="/southdowns-logo.jpg" alt="Southdowns Logo" className="w-full h-full object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement?.classList.add('bg-brand-50'); }} />
+                                        <img src="/southdowns-logo.jpg" alt="Southdowns Logo" className="w-full h-full object-contain" />
                                     </div>
                                     <div>
                                         <div className="text-[10px] font-mono text-brand-600 uppercase tracking-widest mb-1">knit Edu</div>
