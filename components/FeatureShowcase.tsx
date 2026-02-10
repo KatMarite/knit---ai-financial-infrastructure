@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Zap, Server, Shield, MessageSquare, CheckCircle, AlertTriangle, User, CreditCard, Activity, Lock, Settings } from 'lucide-react';
+import { Zap, Server, Shield, MessageSquare, CheckCircle, AlertTriangle, User, CreditCard, Activity, Lock, Settings, ArrowLeft, FileText, X, DollarSign, TrendingUp, Check } from 'lucide-react';
 
 const Counter = ({ target }: { target: number }) => {
     const [count, setCount] = useState(0);
@@ -66,47 +66,146 @@ const FeatureShowcase = () => {
             icon: <User size={20} />,
             visual: (
                 <div className="bg-surface-950 p-2 rounded-lg h-full overflow-hidden flex flex-col relative group">
-                    <div className="w-full h-full bg-white rounded shadow-lg overflow-hidden relative flex flex-col">
-                        <div className="bg-white border-b border-slate-200 p-4 flex justify-between items-center">
-                            <div className="flex items-center gap-4">
-                                <div className={`w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-2xl border border-slate-200 ${activeTab === 1 ? 'animate-pop-in' : ''}`}>👤</div>
-                                <div>
-                                    <h4 className={`text-lg font-bold text-slate-800 ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>Applicant #8492</h4>
-                                    <p className={`text-slate-500 text-xs uppercase tracking-wide ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-                                        ID Verification: <span className="text-emerald-600 font-bold animate-pulse">Verified</span>
-                                    </p>
+                    <div className="w-full h-full bg-slate-50 rounded shadow-lg overflow-hidden relative flex flex-col font-sans">
+                        {/* Header */}
+                        <div className="bg-white border-b border-slate-200 p-4 flex items-center justify-between shrink-0">
+                            <div className="flex items-center gap-2 text-slate-400">
+                                <ArrowLeft size={16} />
+                                <span className="text-sm font-medium">Back</span>
+                            </div>
+                            <div className="flex gap-3 text-slate-400">
+                                <FileText size={18} className="hover:text-slate-600 cursor-pointer" />
+                                <X size={18} className="hover:text-slate-600 cursor-pointer" />
+                            </div>
+                        </div>
+                        <div className="bg-white px-6 pb-4 pt-2 shrink-0 border-b border-slate-100">
+                            <h3 className="text-xl font-bold text-slate-900">Decision Support</h3>
+                            <div className="text-slate-500 text-sm font-medium">Sarah Jenkins</div>
+                        </div>
+
+                        {/* Content Scrollable */}
+                        <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-hide">
+                            {/* Results Card */}
+                            <div className={`bg-[#0f1048] rounded-2xl p-6 text-white shadow-xl relative overflow-hidden transition-all duration-700 ${activeTab === 1 ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '0.1s' }}>
+                                <div className="text-lg font-semibold mb-6">Results</div>
+                                <div className="flex justify-between items-center relative z-10">
+                                    {/* Left Stats */}
+                                    <div className="space-y-6">
+                                        <div>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <div className="p-1.5 bg-indigo-900/50 rounded text-indigo-300"><DollarSign size={14} /></div>
+                                                <span className="text-xl md:text-2xl font-bold">R2,762</span>
+                                                <span className="text-[10px] md:text-xs bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-medium">+5.2%</span>
+                                            </div>
+                                            <div className="text-indigo-200/60 text-[10px] md:text-xs ml-1">Monthly Income Estimate</div>
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <div className="p-1.5 bg-indigo-900/50 rounded text-indigo-300"><CheckCircle size={14} /></div>
+                                                <span className="text-xl md:text-2xl font-bold">R1,704</span>
+                                                <span className="text-[10px] md:text-xs bg-rose-500/20 text-rose-400 px-1.5 py-0.5 rounded font-medium">Low</span>
+                                            </div>
+                                            <div className="text-indigo-200/60 text-[10px] md:text-xs ml-1">Disposable Income</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Center Gauge (Simplistic for CSS animation) */}
+                                    <div className="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center shrink-0 mx-2">
+                                        <svg className="w-full h-full transform -rotate-90">
+                                            <circle cx="50%" cy="50%" r="40%" stroke="#312e81" strokeWidth="8" fill="transparent" />
+                                            <circle
+                                                cx="50%"
+                                                cy="50%"
+                                                r="40%"
+                                                stroke="#10b981"
+                                                strokeWidth="8"
+                                                fill="transparent"
+                                                strokeDasharray="251"
+                                                strokeDashoffset={activeTab === 1 ? 251 - (251 * 0.65) : 251}
+                                                strokeLinecap="round"
+                                                className="transition-all duration-1000 ease-out delay-500"
+                                            />
+                                        </svg>
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                            <span className={`text-3xl md:text-4xl font-bold transition-all duration-700 delay-300 ${activeTab === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>65</span>
+                                            <span className="text-[10px] text-indigo-300">Confidence %</span>
+                                        </div>
+                                        <div className={`absolute -bottom-4 bg-indigo-800/80 px-3 py-1 rounded-full text-xs font-medium text-emerald-300 transition-all duration-500 delay-700 ${activeTab === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                                            Good
+                                        </div>
+                                    </div>
+
+                                    {/* Right Stats */}
+                                    <div className="space-y-6 text-right">
+                                        <div>
+                                            <div className="flex items-center justify-end gap-2 mb-1">
+                                                <span className="text-xl md:text-2xl font-bold">146.7%</span>
+                                                <span className="text-[10px] md:text-xs bg-rose-500/20 text-rose-400 px-1.5 py-0.5 rounded font-medium">High Risk</span>
+                                                <div className="p-1.5 bg-indigo-900/50 rounded text-indigo-300"><TrendingUp size={14} /></div>
+                                            </div>
+                                            <div className="text-indigo-200/60 text-[10px] md:text-xs mr-1">Fee vs Income</div>
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center justify-end gap-2 mb-1">
+                                                <span className="text-xl md:text-2xl font-bold text-rose-400">RED</span>
+                                                <div className="p-1.5 bg-indigo-900/50 rounded text-indigo-300"><AlertTriangle size={14} /></div>
+                                            </div>
+                                            <div className="text-indigo-200/60 text-[10px] md:text-xs mr-1">Risk Assessment</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                <div className={`text-3xl font-bold text-emerald-600 ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-                                    {activeTab === 1 ? <Counter target={94} /> : '0'}/100
+
+                            {/* Decision Analysis */}
+                            <div>
+                                <h4 className={`font-semibold text-slate-800 mb-4 transition-opacity duration-500 delay-300 ${activeTab === 1 ? 'opacity-100' : 'opacity-0'}`}>Decision Analysis</h4>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {[
+                                        { id: 1, text: "Moderately consistent income patterns", color: "bg-emerald-500", delay: '0.4s' },
+                                        { id: 2, text: "Rent and transport expenses are consistent", color: "bg-emerald-500", delay: '0.5s' },
+                                        { id: 3, text: "School fee exceeds 147% of disposable income (high risk)", color: "bg-rose-500", delay: '0.6s' },
+                                        { id: 4, text: "Adequate liquidity buffer maintained", color: "bg-emerald-500", delay: '0.7s' }
+                                    ].map(item => (
+                                        <div
+                                            key={item.id}
+                                            className={`bg-white p-3 rounded-lg border border-slate-100 shadow-sm flex items-start gap-3 transition-all duration-500 ${activeTab === 1 ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                                            style={{ transitionDelay: item.delay }}
+                                        >
+                                            <div className={`${item.color} text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5`}>{item.id}</div>
+                                            <div className="text-[11px] text-slate-600 font-medium leading-tight">{item.text}</div>
+                                        </div>
+                                    ))}
                                 </div>
-                                <div className={`text-[10px] text-slate-400 uppercase tracking-wider font-bold ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>Credit Score</div>
+                            </div>
+
+                            {/* Additional Metrics */}
+                            <div className={`transition-all duration-500 delay-700 ${activeTab === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                                <h4 className="font-semibold text-slate-800 mb-4">Additional Metrics</h4>
+                                <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm grid grid-cols-3 divide-x divide-slate-100">
+                                    <div className="text-center px-2">
+                                        <div className="text-lg md:text-xl font-bold text-slate-900">R624</div>
+                                        <div className="text-[10px] text-slate-500 mt-1">Average Balance</div>
+                                    </div>
+                                    <div className="text-center px-2">
+                                        <div className="text-lg md:text-xl font-bold text-slate-900">84%</div>
+                                        <div className="text-[10px] text-slate-500 mt-1">Realization Score</div>
+                                    </div>
+                                    <div className="text-center px-2">
+                                        <div className="text-lg md:text-xl font-bold text-slate-900">65%</div>
+                                        <div className="text-[10px] text-slate-500 mt-1">Overall Confidence</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="p-6 space-y-6 bg-slate-50 flex-1">
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className={`bg-white p-4 rounded-lg border border-slate-200 shadow-sm ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-                                    <div className="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Affordability Index</div>
-                                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
-                                        <div className="h-full bg-blue-500 w-[85%] animate-grow-width" style={{ width: activeTab === 1 ? '85%' : '0%' }}></div>
-                                    </div>
-                                    <div className="text-right text-xs font-bold text-blue-600">High Capacity</div>
-                                </div>
-                                <div className={`bg-white p-4 rounded-lg border border-slate-200 shadow-sm ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-                                    <div className="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Fraud Probability</div>
-                                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
-                                        <div className="h-full bg-red-500 w-[2%] animate-grow-width" style={{ width: activeTab === 1 ? '2%' : '0%' }}></div>
-                                    </div>
-                                    <div className="text-right text-xs font-bold text-emerald-600">Low (0.2%)</div>
-                                </div>
-                            </div>
-
-                            <div className={`p-3 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center gap-3 text-emerald-700 text-sm font-medium ${activeTab === 1 ? 'animate-slide-up-fade' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
-                                <CheckCircle size={18} className="text-emerald-500" />
-                                <span>Automated Approval Recommended</span>
-                            </div>
+                        {/* Footer Actions */}
+                        <div className={`bg-white border-t border-slate-100 p-4 flex gap-4 shrink-0 transition-all duration-500 delay-1000 ${activeTab === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'}`}>
+                            <button className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-md font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-sm">
+                                <Check size={16} /> Accept Admission
+                            </button>
+                            <button className="flex-1 bg-rose-500 hover:bg-rose-600 text-white py-3 rounded-md font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-sm">
+                                <X size={16} /> Decline Admission
+                            </button>
                         </div>
                     </div>
                 </div>
