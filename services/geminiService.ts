@@ -1,8 +1,26 @@
+/// <reference types="vite/client" />
 import { GoogleGenAI, Type } from "@google/genai";
 import { RiskProfile, GeminiRiskAnalysis } from "../types";
 
-// Safely access process.env to avoid ReferenceError in browser environments
-const apiKey = (typeof process !== 'undefined' && process.env && process.env.API_KEY) || '';
+// Safely access API key in browser (Vite) and Node environments
+// Vite replaces process.env.API_KEY with the string value if defined in vite.config.ts
+// Standard Vite env vars are in import.meta.env.VITE_*
+let apiKey = '';
+try {
+  apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
+} catch (e) {
+  // Ignore
+}
+
+if (!apiKey) {
+  try {
+    // @ts-ignore
+    apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
+  } catch (e) {
+    // Ignore ReferenceError for process is not defined
+  }
+}
+
 const ai = new GoogleGenAI({ apiKey });
 
 export const analyzeRiskProfile = async (profile: RiskProfile): Promise<GeminiRiskAnalysis> => {
@@ -107,15 +125,28 @@ export const generateChatResponse = async (history: { role: string, content: str
 
     const fullPrompt = `${systemPrompt}\n\nConversation History:\n${conversationContext}\n\nUser: ${message}\nKnit:`;
 
+    // Correct format for @google/genai SDK v0.2.0
     const response = await ai.models.generateContent({
       model: 'gemini-1.5-flash',
-      contents: fullPrompt,
+      contents: [{
+        role: 'user',
+        parts: [{ text: fullPrompt }]
+      }],
     });
 
     return response.text || "I apologize, I couldn't process that request at the moment.";
 
-  } catch (error) {
+  } catch (error: any) {
     console.error("Chat generation failed:", error);
+
+    // safe check for error properties
+    const status = error?.status || error?.response?.status;
+    const errorMessage = error?.message || '';
+
+    if (status === 400 || status === 403 || errorMessage.includes('API key')) {
+      return "Using a placeholder API Key? Please check your .env.local file and ensure VITE_GEMINI_API_KEY is set to a valid Google Gemini API Key.";
+    }
+
     return "I'm having trouble connecting to my knowledge base right now. Please try again or contact our support team.";
   }
 };
