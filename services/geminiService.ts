@@ -60,7 +60,7 @@ export const analyzeRiskProfile = async (profile: RiskProfile): Promise<GeminiRi
     `;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.0-flash',
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -127,7 +127,7 @@ export const generateChatResponse = async (history: { role: string, content: str
 
     // Correct format for @google/genai SDK v0.2.0
     const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.0-flash',
       contents: [{
         role: 'user',
         parts: [{ text: fullPrompt }]
@@ -142,6 +142,10 @@ export const generateChatResponse = async (history: { role: string, content: str
     // safe check for error properties
     const status = error?.status || error?.response?.status;
     const errorMessage = error?.message || '';
+
+    if (status === 429) {
+      return "I'm currently experiencing high traffic (Quota Exceeded). Please try again in a moment.";
+    }
 
     if (status === 400 || status === 403 || errorMessage.includes('API key')) {
       return "Using a placeholder API Key? Please check your .env.local file and ensure VITE_GEMINI_API_KEY is set to a valid Google Gemini API Key.";
