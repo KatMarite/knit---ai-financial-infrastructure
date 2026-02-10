@@ -66,7 +66,7 @@ const SecurityPage: React.FC = () => {
                                                 Cloud Infrastructure
                                             </h2>
                                             <p className="text-slate-600">
-                                                Knit is hosted on top-tier cloud providers (AWS and Azure) within South Africa to ensure data sovereignty and low latency.
+                                                Knit is hosted on top-tier cloud providers (Google Cloud) within South Africa to ensure data sovereignty and low latency.
                                             </p>
                                             <ul className="list-disc pl-6 space-y-2 text-slate-600 mt-4">
                                                 <li><strong>Data Centers:</strong> Hosted in SOC 2 Type II compliant data centers.</li>
