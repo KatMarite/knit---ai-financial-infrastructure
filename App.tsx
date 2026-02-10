@@ -14,6 +14,7 @@ import FAQPage from './components/FAQPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import SecurityPage from './components/SecurityPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
+import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Route path="/security" element={<SecurityPage />} />
 
       </Routes>
+      <Chatbot />
     </BrowserRouter>
   );
 };

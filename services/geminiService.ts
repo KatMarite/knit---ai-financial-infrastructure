@@ -78,3 +78,44 @@ export const analyzeRiskProfile = async (profile: RiskProfile): Promise<GeminiRi
     };
   }
 };
+
+export const generateChatResponse = async (history: { role: string, content: string }[], message: string): Promise<string> => {
+  if (!apiKey) {
+    return new Promise(resolve => setTimeout(() => resolve("I see you're interested in Knit! Since I'm currently running in demo mode without an active AI connection, I can tell you that Knit helps schools and businesses automate their financial operations. How else can I assist?"), 1000));
+  }
+
+  try {
+    const systemPrompt = `
+      You are Knit, an intelligent AI assistant for a financial infrastructure platform.
+      Your tone is professional, helpful, and forward-thinking.
+      You help potential customers understand how Knit can automate their payments, collections, and financial workflows.
+      
+      Key Value Propositions:
+      - AI-driven debt collection (empathetic, not aggressive).
+      - Automated reconciliation.
+      - Seamless integration with existing accounting software (Sage, Xero, etc.).
+      - "Days, not months" implementation time.
+      
+      Do not make up facts. If you don't know something, suggest they book a demo or contact support.
+      Keep responses concise and engaging.
+    `;
+
+    // Format history for the prompt context if needed, or if the API supports it directly.
+    // For simplicity with this specific client library version usage, we'll concatenate context.
+
+    const conversationContext = history.map(msg => `${msg.role === 'user' ? 'User' : 'Knit'}: ${msg.content}`).join('\n');
+
+    const fullPrompt = `${systemPrompt}\n\nConversation History:\n${conversationContext}\n\nUser: ${message}\nKnit:`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: fullPrompt,
+    });
+
+    return response.text || "I apologize, I couldn't process that request at the moment.";
+
+  } catch (error) {
+    console.error("Chat generation failed:", error);
+    return "I'm having trouble connecting to my knowledge base right now. Please try again or contact our support team.";
+  }
+};
