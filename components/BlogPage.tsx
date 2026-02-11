@@ -10,7 +10,7 @@ const BlogPage: React.FC = () => {
 
     const [activeCategory, setActiveCategory] = useState('All Posts');
 
-    const categories = ['All Posts', 'Product Updates', 'Industry Insights', 'Compliance'];
+    const categories = ['All Posts', 'AI in Collections', 'Risk Intelligence', 'African Finance', 'Compliance & Automation'];
 
     const blogPosts = [
         {
@@ -19,7 +19,7 @@ const BlogPage: React.FC = () => {
             excerpt: 'The traditional school software implementation timeline is a 6-month operational chaos. At Knit, we believe implementation shouldn’t be a project—it should be an event. Here is how we’ve compressed months into 72 hours.',
             date: 'Feb 15, 2026',
             readTime: '5 min read',
-            category: 'Industry Insights',
+            category: 'Compliance & Automation',
             author: 'Knit Team',
             image: '/blog/timeline-header.png',
             slug: '/blog/editorial/from-months-to-days'
@@ -30,7 +30,7 @@ const BlogPage: React.FC = () => {
             excerpt: 'Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual collections, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.',
             date: 'Feb 9, 2026',
             readTime: '4 min read',
-            category: 'Industry Insights',
+            category: 'AI in Collections',
             author: 'Knit Team',
             image: '/feature-4-bursar-collections.png',
             slug: '/blog/editorial/ai-saving-schools-money'
@@ -60,12 +60,12 @@ const BlogPage: React.FC = () => {
                         </ScrollReveal>
                         <ScrollReveal delay={100}>
                             <h1 className="text-4xl md:text-6xl font-bold text-brand-950 tracking-tight mb-6">
-                                The Knit Blog
+                                Insights
                             </h1>
                         </ScrollReveal>
                         <ScrollReveal delay={200}>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                                Insights on school finance, AI infrastructure, and the future of educational administration.
+                                Thought leadership and system intelligence on the predictable nature of risk and the future of African financial infrastructure.
                             </p>
                         </ScrollReveal>
                     </div>

@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                         <ul className="space-y-3 text-xs font-light">
                             <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">About Us</Link></li>
                             <li><Link to="/faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">FAQs</Link></li>
-                            <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Blog</Link></li>
+                            <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Insights</Link></li>
                             <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Contact</Link></li>
                         </ul>
                     </div>

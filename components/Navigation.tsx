@@ -101,7 +101,7 @@ const Navigation: React.FC = () => {
     { name: 'Platform', href: '#platform' },
     { name: 'AI Engine', href: '/ai-engine' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Insights', href: '/blog' },
     { name: 'Pricing', href: '/pricing' },
   ];
 
