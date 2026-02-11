@@ -31,6 +31,15 @@ const Chatbot: React.FC = () => {
         if (!inputValue.trim()) return;
 
         const userMessage = inputValue.trim();
+
+        // Prevent abuse: limit message length
+        if (userMessage.length > 1000) {
+            setMessages(prev => [
+                ...prev,
+                { role: 'assistant', content: "Message too long. Please keep messages under 1000 characters." }
+            ]);
+            return;
+        }
         setInputValue('');
 
         // Add user message immediately
@@ -110,8 +119,8 @@ const Chatbot: React.FC = () => {
                             >
                                 <div
                                     className={`w-8 h-8 rounded-full flex shrink-0 items-center justify-center border ${msg.role === 'user'
-                                            ? 'bg-white border-surface-200 text-brand-600'
-                                            : 'bg-brand-100 border-brand-200 text-brand-700'
+                                        ? 'bg-white border-surface-200 text-brand-600'
+                                        : 'bg-brand-100 border-brand-200 text-brand-700'
                                         }`}
                                 >
                                     {msg.role === 'user' ? <User size={14} /> : <Bot size={14} />}
@@ -119,8 +128,8 @@ const Chatbot: React.FC = () => {
 
                                 <div
                                     className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${msg.role === 'user'
-                                            ? 'bg-brand-600 text-white rounded-tr-sm'
-                                            : 'bg-white border border-surface-200 text-slate-700 rounded-tl-sm'
+                                        ? 'bg-brand-600 text-white rounded-tr-sm'
+                                        : 'bg-white border border-surface-200 text-slate-700 rounded-tl-sm'
                                         }`}
                                 >
                                     {msg.content}
@@ -153,6 +162,7 @@ const Chatbot: React.FC = () => {
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyDown={handleKeyPress}
                                 placeholder="Ask about integration, pricing..."
+                                maxLength={1000}
                                 className="w-full pl-4 pr-12 py-3 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 text-sm text-slate-700 placeholder:text-slate-400 transition-all"
                                 disabled={isLoading}
                             />

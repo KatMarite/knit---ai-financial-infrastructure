@@ -28,14 +28,13 @@ const DesignSystem: React.FC<DesignSystemProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-in fade-in duration-300 print:relative print:inset-auto print:h-auto print:overflow-visible print:bg-white print:z-auto">
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style>{`
         @media print {
           @page { margin: 10mm; size: auto; }
           body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
           html, body { height: auto !important; overflow: visible !important; }
         }
-      `}} />
+      `}</style>
 
       {/* No-print Header */}
       <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-surface-200 px-8 py-4 flex justify-between items-center print:hidden">

@@ -51,7 +51,7 @@ const PricingPage: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="https://wa.me/27659520478" target="_blank" className="block w-full py-3 px-4 bg-white border border-brand-200 text-brand-900 text-center font-bold text-sm rounded shadow-sm hover:bg-brand-50 transition-colors">
+                            <a href="https://wa.me/27659520478" target="_blank" rel="noopener noreferrer" className="block w-full py-3 px-4 bg-white border border-brand-200 text-brand-900 text-center font-bold text-sm rounded shadow-sm hover:bg-brand-50 transition-colors">
                                 Get Started
                             </a>
                         </div>
@@ -87,7 +87,7 @@ const PricingPage: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="https://wa.me/27659520478" target="_blank" className="block w-full py-3 px-4 bg-brand-600 text-white text-center font-bold text-sm rounded shadow-lg hover:bg-brand-500 transition-colors">
+                            <a href="https://wa.me/27659520478" target="_blank" rel="noopener noreferrer" className="block w-full py-3 px-4 bg-brand-600 text-white text-center font-bold text-sm rounded shadow-lg hover:bg-brand-500 transition-colors">
                                 Start Free Trial
                             </a>
                         </div>
@@ -119,7 +119,7 @@ const PricingPage: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="https://wa.me/27659520478" target="_blank" className="block w-full py-3 px-4 bg-white border border-brand-200 text-brand-900 text-center font-bold text-sm rounded shadow-sm hover:bg-brand-50 transition-colors">
+                            <a href="https://wa.me/27659520478" target="_blank" rel="noopener noreferrer" className="block w-full py-3 px-4 bg-white border border-brand-200 text-brand-900 text-center font-bold text-sm rounded shadow-sm hover:bg-brand-50 transition-colors">
                                 Book a Demo
                             </a>
                         </div>

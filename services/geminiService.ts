@@ -2,6 +2,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { RiskProfile, GeminiRiskAnalysis } from "../types";
 
+// SECURITY WARNING:
+// This application currently uses a client-side API key for the Gemini API.
+// In a production environment, this key is exposed to anyone who visits the site.
+// For a production deployment, you MUST move this logic to a backend server (e.g., node.js, python, or serverless functions) to protect your API key.
+// The current implementation is suitable for DEMO purposes or local development only.
+
 // Safely access API key in browser (Vite) and Node environments
 // Vite replaces process.env.API_KEY with the string value if defined in vite.config.ts
 // Standard Vite env vars are in import.meta.env.VITE_*

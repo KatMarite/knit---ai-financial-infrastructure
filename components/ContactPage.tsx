@@ -87,6 +87,7 @@ const ContactPage: React.FC = () => {
                                                 id="firstName"
                                                 name="firstName"
                                                 required
+                                                maxLength={50}
                                                 value={formData.firstName}
                                                 onChange={handleChange}
                                                 className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
@@ -100,6 +101,7 @@ const ContactPage: React.FC = () => {
                                                 id="lastName"
                                                 name="lastName"
                                                 required
+                                                maxLength={50}
                                                 value={formData.lastName}
                                                 onChange={handleChange}
                                                 className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
@@ -114,6 +116,7 @@ const ContactPage: React.FC = () => {
                                             type="text"
                                             id="companyName"
                                             name="companyName"
+                                            maxLength={100}
                                             value={formData.companyName}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
@@ -128,6 +131,7 @@ const ContactPage: React.FC = () => {
                                             id="companyEmail"
                                             name="companyEmail"
                                             required
+                                            maxLength={100}
                                             value={formData.companyEmail}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
@@ -142,6 +146,7 @@ const ContactPage: React.FC = () => {
                                             name="message"
                                             rows={4}
                                             required
+                                            maxLength={2000}
                                             value={formData.message}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400 resize-none"
@@ -155,6 +160,7 @@ const ContactPage: React.FC = () => {
                                             type="tel"
                                             id="phone"
                                             name="phone"
+                                            maxLength={20}
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
