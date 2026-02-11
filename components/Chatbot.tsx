@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, User, Bot } from 'lucide-react';
-import { generateChatResponse } from '../services/geminiService';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -50,9 +49,13 @@ const Chatbot: React.FC = () => {
         setMessages(newMessages);
         setIsLoading(true);
 
+        // Simulate a brief delay for more natural feel
+        await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 500));
+
         try {
-            // Get AI response
-            const response = await generateChatResponse(newMessages, userMessage);
+            // Use local knowledge base instead of external API
+            const { findBestMatch } = await import('../services/knowledgeBase');
+            const response = findBestMatch(userMessage);
 
             setMessages(prev => [
                 ...prev,
@@ -62,7 +65,7 @@ const Chatbot: React.FC = () => {
             console.error("Failed to get response", error);
             setMessages(prev => [
                 ...prev,
-                { role: 'assistant', content: "I'm having trouble connecting right now. Please try again later." }
+                { role: 'assistant', content: "I'm having trouble processing your request. Please try again." }
             ]);
         } finally {
             setIsLoading(false);
@@ -176,7 +179,7 @@ const Chatbot: React.FC = () => {
                         </div>
                         <div className="text-center mt-2">
                             <p className="text-[10px] text-slate-400">
-                                Powered by Gemini • AI can make mistakes.
+                                Powered by Knit Knowledge Base
                             </p>
                         </div>
                     </div>

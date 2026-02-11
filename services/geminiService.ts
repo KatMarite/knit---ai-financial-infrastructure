@@ -9,22 +9,17 @@ import { RiskProfile, GeminiRiskAnalysis } from "../types";
 // The current implementation is suitable for DEMO purposes or local development only.
 
 // Safely access API key in browser (Vite) and Node environments
-// Vite replaces process.env.API_KEY with the string value if defined in vite.config.ts
 // Standard Vite env vars are in import.meta.env.VITE_*
 let apiKey = '';
 try {
   apiKey = import.meta.env.VITE_GEMINI_API_KEY || '';
-} catch (e) {
-  // Ignore
-}
-
-if (!apiKey) {
-  try {
-    // @ts-ignore
-    apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
-  } catch (e) {
-    // Ignore ReferenceError for process is not defined
+  if (apiKey) {
+    console.log('✅ Gemini API key loaded successfully');
+  } else {
+    console.warn('⚠️ No Gemini API key found. Check your .env.local file and restart the dev server.');
   }
+} catch (e) {
+  console.error('❌ Error loading API key:', e);
 }
 
 const ai = new GoogleGenAI({ apiKey });
