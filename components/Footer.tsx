@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Mail, Phone, MapPin } from 'lucide-react';
+import { FileText, Mail, Phone, MapPin, Facebook, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface FooterProps {
@@ -19,8 +19,14 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                             Next-generation financial infrastructure for the AI era.
                             <br /><br />
                             © 2026 Knit Group (Pty) Ltd.<br />
-
-
+                            <div className="flex gap-4 mt-4">
+                                <a href="#" className="text-slate-500 hover:text-brand-400 transition-colors">
+                                    <Facebook size={18} />
+                                </a>
+                                <a href="#" className="text-slate-500 hover:text-brand-400 transition-colors">
+                                    <Linkedin size={18} />
+                                </a>
+                            </div>
                         </p>
                     </div>
                     <div>

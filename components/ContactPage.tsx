@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import { Send, ChevronDown } from 'lucide-react';
+import { Send } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const ContactPage: React.FC = () => {
@@ -11,8 +11,7 @@ const ContactPage: React.FC = () => {
         companyName: '',
         companyEmail: '',
         message: '',
-        phone: '',
-        country: ''
+        phone: ''
     });
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
@@ -36,8 +35,7 @@ const ContactPage: React.FC = () => {
                 companyName: '',
                 companyEmail: '',
                 message: '',
-                phone: '',
-                country: ''
+                phone: ''
             });
         }, 1500);
     };
@@ -168,24 +166,7 @@ const ContactPage: React.FC = () => {
                                         />
                                     </div>
 
-                                    <div className="relative">
-                                        <label htmlFor="country" className="sr-only">Country</label>
-                                        <select
-                                            id="country"
-                                            name="country"
-                                            value={formData.country}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white text-slate-900 appearance-none cursor-pointer"
-                                        >
-                                            <option value="" disabled className="text-slate-400">Country</option>
-                                            <option value="US">United States</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="CA">Canada</option>
-                                            <option value="ZA">South Africa</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
-                                    </div>
+
 
                                     <div className="pt-4">
                                         <button
