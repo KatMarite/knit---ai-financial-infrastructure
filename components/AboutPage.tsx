@@ -74,8 +74,8 @@ const AboutPage: React.FC = () => {
                     </div>
 
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <ScrollReveal delay={300}>
-                            <div className="p-8 rounded-xl border border-surface-200 bg-white shadow-sm hover:shadow-md transition-all">
+                        <ScrollReveal delay={300} className="h-full">
+                            <div className="p-8 rounded-xl border border-surface-200 bg-white shadow-sm hover:shadow-md transition-all h-full">
                                 <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 mb-6">
                                     <BrainCircuit size={24} />
                                 </div>
@@ -85,8 +85,8 @@ const AboutPage: React.FC = () => {
                                 </p>
                             </div>
                         </ScrollReveal>
-                        <ScrollReveal delay={400}>
-                            <div className="p-8 rounded-xl border border-surface-200 bg-white shadow-sm hover:shadow-md transition-all">
+                        <ScrollReveal delay={400} className="h-full">
+                            <div className="p-8 rounded-xl border border-surface-200 bg-white shadow-sm hover:shadow-md transition-all h-full">
                                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
                                     <Users size={24} />
                                 </div>
