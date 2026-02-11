@@ -61,7 +61,11 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                             </li>
                             <li className="flex items-start gap-2">
                                 <MapPin size={14} className="text-brand-500 shrink-0 mt-0.5" />
-                                <span>Rosebank, Johannesburg, SA</span>
+                                <span>
+                                    The Zone @ Rosebank<br />
+                                    Rosebank, Johannesburg<br />
+                                    Gauteng, South Africa
+                                </span>
                             </li>
                         </ul>
                     </div>
