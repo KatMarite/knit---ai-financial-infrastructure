@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText } from 'lucide-react';
+import { FileText, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface FooterProps {
@@ -10,7 +10,7 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
     return (
         <footer className="bg-brand-950 text-slate-400 py-16 border-t border-brand-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div className="grid grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
                     <div className="col-span-2">
                         <div className="text-white font-bold text-xl mb-4 flex items-center gap-2">
                             <img src="/knit-logo.png" alt="Knit" className="h-28 w-auto brightness-0 invert" />
@@ -18,7 +18,9 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                         <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
                             Next-generation financial infrastructure for the AI era.
                             <br /><br />
-                            © 2024 Knit Financial Technologies Inc.
+                            © 2026 Knit Group (Pty) Ltd.<br />
+
+
                         </p>
                     </div>
                     <div>
@@ -44,6 +46,23 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                             <li><Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Privacy Policy</Link></li>
                             <li><Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Terms of Service</Link></li>
                             <li><Link to="/security" onClick={() => window.scrollTo(0, 0)} className="hover:text-brand-400 transition-colors">Security</Link></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="text-white font-medium mb-4 text-sm">Get in Touch</h4>
+                        <ul className="space-y-3 text-xs font-light text-slate-400">
+                            <li className="flex items-start gap-2">
+                                <Mail size={14} className="text-brand-500 shrink-0 mt-0.5" />
+                                <a href="mailto:info@knit.cash" className="hover:text-brand-400 transition-colors">info@knit.cash</a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <Phone size={14} className="text-brand-500 shrink-0 mt-0.5" />
+                                <a href="tel:+27101412770" className="hover:text-brand-400 transition-colors">+27 10 141 2770</a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <MapPin size={14} className="text-brand-500 shrink-0 mt-0.5" />
+                                <span>Rosebank, Johannesburg, SA</span>
+                            </li>
                         </ul>
                     </div>
                 </div>

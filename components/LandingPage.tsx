@@ -106,7 +106,7 @@ const LandingPage: React.FC = () => {
                                 </ScrollReveal>
                                 <ScrollReveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                                        Knit uses agents to decide who to follow up, how, and when — combining payments, empathetic messaging, and intelligent escalation. We automate decisions, not reminders.
+                                        Knit is school finance managers’ co-pilot. We use AI agents to improve manual processes by up to 50% - automating decisions on who to follow up, how, when and through which appropriate channel. This combines payments, collections, intelligent escalation and empathy with automated back office operations.
                                     </p>
                                 </ScrollReveal>
 
@@ -240,7 +240,7 @@ const LandingPage: React.FC = () => {
                                                     <FileText size={16} />
                                                 </div>
                                                 <div className="flex-1">
-                                                    <div className="text-xs font-semibold text-brand-950">Draft Lease Agreement</div>
+                                                    <div className="text-xs font-semibold text-brand-950">Draft Enrollment Contract</div>
                                                     <div className="text-[10px] text-slate-400 font-mono mt-0.5">Template: v2024.1</div>
                                                 </div>
                                                 <div className="text-[10px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">DONE</div>
@@ -257,7 +257,7 @@ const LandingPage: React.FC = () => {
                                                     <Users size={16} />
                                                 </div>
                                                 <div className="flex-1">
-                                                    <div className="text-xs font-semibold text-brand-950">Tenant KYC Check</div>
+                                                    <div className="text-xs font-semibold text-brand-950">Parent Affordability Check</div>
                                                     <div className="text-[10px] text-slate-400 font-mono mt-0.5">Integration: TPN</div>
                                                 </div>
                                                 <div className="text-[10px] font-mono text-amber-600 bg-amber-50 px-2 py-0.5 rounded animate-pulse">Running</div>
@@ -274,7 +274,7 @@ const LandingPage: React.FC = () => {
                                                     <Landmark size={16} />
                                                 </div>
                                                 <div className="flex-1">
-                                                    <div className="text-xs font-medium text-slate-500">Collect Deposit</div>
+                                                    <div className="text-xs font-medium text-slate-500">Collect Registration Fee</div>
                                                 </div>
                                             </div>
 
@@ -286,7 +286,7 @@ const LandingPage: React.FC = () => {
                                             Workflows
                                         </h3>
                                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                                            Drag-and-drop logic for financial operations. Automate rent collection, lease renewals, and reconciliation without writing code.
+                                            Drag-and-drop logic for financial operations. Automate fee collection, enrollment contracts, and reconciliation without writing code.
                                         </p>
                                         <ul className="space-y-2">
                                             <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
@@ -389,7 +389,7 @@ const LandingPage: React.FC = () => {
                                             Integrations
                                         </h3>
                                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                                            Unified API pipes that connect your existing stack. Sync ledgers, banks, and CRMs in real-time.
+                                            We integrate with your school’s existing systems (accounting, school management) to offer a seamless experience.
                                         </p>
                                         <div className="flex gap-2 flex-wrap">
                                             <span className="px-2 py-1 bg-surface-100 text-slate-600 text-[10px] font-bold uppercase rounded border border-surface-200">Sage</span>
@@ -438,10 +438,10 @@ const LandingPage: React.FC = () => {
                                     <div className="p-6">
                                         <h3 className="text-lg font-semibold text-brand-950 mb-2 flex items-center gap-2">
                                             <Shield size={20} className="text-brand-600 animate-pulse" />
-                                            Security
+                                            Security & Compliance
                                         </h3>
                                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                                            Bank-grade security and automated legal guardrails. Ensure every interaction is compliant with Section 32 and local regulations.
+                                            Knit has compliance - built in, ensuring the school operates within the defined regulatory parameters. The platform is built on Google foundations, ensuring hard security fortress.
                                         </p>
                                         <ul className="space-y-2">
                                             <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
@@ -601,7 +601,7 @@ const LandingPage: React.FC = () => {
                         <ScrollReveal>
                             <h2 className="text-3xl font-semibold text-brand-950 mb-6 tracking-tight">Ready to modernize your financial infrastructure?</h2>
                             <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto font-light">
-                                Schedule a technical consultation to see how Knit can integrate with your existing payment stack.
+                                Schedule a consultation to see how Knit can integrate with your existing payment stack.
                             </p>
                             <div className="flex justify-center gap-4">
                                 <button

@@ -170,7 +170,7 @@ const AIEnginePage: React.FC = () => {
                         </ScrollReveal>
                         <ScrollReveal delay={200}>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                                We combine rock-solid accuracy with smart technology. Our AI is designed specifically for school regulations, making your financial tasks automatic, secure, and easy to double-check.
+                                Knit has built a rock solid liquidity, payments and collections engine to alleviate school managers and bursars from manual work, improve their time by up to 50%. We’ve worked with multiple schools to refine our AI and make it fit for school’s purpose.
                             </p>
                         </ScrollReveal>
                     </div>
@@ -233,78 +233,7 @@ const AIEnginePage: React.FC = () => {
 
 
 
-            {/* Section 3: Decision Logic */}
-            <section className="py-20 bg-surface-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <ScrollReveal>
-                        <div className="text-center max-w-2xl mx-auto mb-16">
-                            <h2 className="text-3xl font-bold text-brand-950 mb-4">Explainable Decision Logic</h2>
-                            <p className="text-slate-600">
-                                Unlike "black box" AI, Knit provides a clear audit trail for every suggestion.
-                                Our logic engine prioritizes accuracy and regulatory compliance over speed.
-                            </p>
-                        </div>
-                    </ScrollReveal>
 
-                    <div className="relative">
-                        {/* Connecting Line */}
-                        <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-surface-200 md:left-1/2 md:-ml-px"></div>
-
-                        <div className="space-y-12">
-                            {/* Step 1 */}
-                            <ScrollReveal delay={0}>
-                                <div className="relative flex md:justify-end items-center group">
-                                    <div className="absolute left-6 md:left-1/2 -ml-3 w-6 h-6 bg-white border-2 border-brand-600 rounded-full z-10 box-content"></div>
-                                    <div className="ml-16 md:ml-0 md:mr-16 md:w-[45%] p-6 bg-white rounded-lg border border-surface-200 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <span className="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-mono font-medium rounded">LVL 1</span>
-                                            <h3 className="font-semibold text-brand-950">Deterministic Rules</h3>
-                                        </div>
-                                        <p className="text-sm text-slate-600">
-                                            The engine first applies strict if/then rules based on exact matches (e.g., Reference ID matches Invoice #).
-                                            This ensures 100% accuracy for clear-cut transactions.
-                                        </p>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-
-                            {/* Step 2 */}
-                            <ScrollReveal delay={150}>
-                                <div className="relative flex items-center group">
-                                    <div className="absolute left-6 md:left-1/2 -ml-3 w-6 h-6 bg-white border-2 border-brand-600 rounded-full z-10 box-content"></div>
-                                    <div className="ml-16 md:w-[45%] md:ml-[55%] p-6 bg-white rounded-lg border border-surface-200 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <span className="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-mono font-medium rounded">LVL 2</span>
-                                            <h3 className="font-semibold text-brand-950">Probabilistic Matching</h3>
-                                        </div>
-                                        <p className="text-sm text-slate-600">
-                                            If no exact match is found, the AI analyzes fuzzy signals (amounts, dates, vendor names) to calculate a confidence score.
-                                            Matches &gt;95% confidence are proposed automatically.
-                                        </p>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-
-                            {/* Step 3 */}
-                            <ScrollReveal delay={300}>
-                                <div className="relative flex md:justify-end items-center group">
-                                    <div className="absolute left-6 md:left-1/2 -ml-3 w-6 h-6 bg-white border-2 border-brand-600 rounded-full z-10 box-content"></div>
-                                    <div className="ml-16 md:ml-0 md:mr-16 md:w-[45%] p-6 bg-white rounded-lg border border-surface-200 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <span className="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-mono font-medium rounded">LVL 3</span>
-                                            <h3 className="font-semibold text-brand-950">Anomaly Verification</h3>
-                                        </div>
-                                        <p className="text-sm text-slate-600">
-                                            Before finalizing any proposal, the engine cross-references with historical baselines.
-                                            Significant deviations trigger a "Review Required" flag, preventing erroneous automated entries.
-                                        </p>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
 
 
