@@ -101,12 +101,12 @@ const LandingPage: React.FC = () => {
                                 </ScrollReveal>
                                 <ScrollReveal delay={100}>
                                     <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-semibold tracking-tight text-brand-950 mb-8 leading-[1.05]">
-                                        AI that manages missed school fees<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">end-to-end</span>
+                                        AI that manages school fees<br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">end-to-end</span>
                                     </h1>
                                 </ScrollReveal>
                                 <ScrollReveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                                        Knit is school finance managers’ co-pilot. We use AI agents to improve manual processes by up to 50% - automating decisions on who to follow up, how, when and through which appropriate channel. This combines payments, collections, intelligent escalation and empathy with automated back office operations.
+                                        Knit is the school finance managers’ co-pilot. Our AI agents improve manual processes by automating payments, collections, and decisions on who to follow up, how, when and through which appropriate channel.
                                     </p>
                                 </ScrollReveal>
 
