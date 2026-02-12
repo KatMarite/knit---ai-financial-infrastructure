@@ -9,6 +9,7 @@ import AboutPage from './components/AboutPage';
 import BlogImplementationNightmare from './components/BlogImplementationNightmare';
 import BlogImplementationNightmareEditorial from './components/BlogImplementationNightmareEditorial';
 import BlogSchoolSavingsEditorial from './components/BlogSchoolSavingsEditorial';
+import BlogDigitizingPayments from './components/BlogDigitizingPayments';
 import BlogPage from './components/BlogPage';
 import FAQPage from './components/FAQPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <Route path="/blog/from-months-to-days" element={<BlogImplementationNightmare />} />
         <Route path="/blog/editorial/from-months-to-days" element={<BlogImplementationNightmareEditorial />} />
         <Route path="/blog/editorial/ai-saving-schools-money" element={<BlogSchoolSavingsEditorial />} />
+        <Route path="/blog/editorial/digitizing-school-payments" element={<BlogDigitizingPayments />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/faq" element={<FAQPage />} />

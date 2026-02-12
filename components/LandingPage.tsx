@@ -171,14 +171,41 @@ const LandingPage: React.FC = () => {
                         <ScrollReveal>
                             <h2 className="text-[20px] font-bold text-slate-400 uppercase tracking-widest mb-12">TRUSTED BY TOP TIER SCHOOLS</h2>
 
-                            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
-                                {/* <img src="/argility-logo.png" alt="Argility Technology Group" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" /> */}
-                                <img src="/southdowns-logo.jpg" alt="Southdowns College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                                <img src="/laerskool-elarduspark-logo.png" alt="Laerskool Elarduspark" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                                <img src="/links-college-logo.png" alt="Links Combined College" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                                <img src="/willow-view-logo.png" alt="Willow View Academy" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                                <img src="/palmview-logo.png" alt="Palmview State Primary School" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
-                                <img src="/canny-kids-logo.png" alt="CaNNY KiDS Academy" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 mix-blend-multiply" />
+                            <style>{`
+                                @keyframes scroll {
+                                    0% { transform: translateX(0); }
+                                    100% { transform: translateX(-50%); }
+                                }
+                                .animate-scroll {
+                                    animation: scroll 40s linear infinite;
+                                }
+                                .animate-scroll:hover {
+                                    animation-play-state: paused;
+                                }
+                            `}</style>
+
+                            <div className="relative w-full overflow-hidden mask-linear-fade">
+                                <div className="flex animate-scroll w-max hover:cursor-pointer">
+                                    {[...Array(2)].map((_, i) => (
+                                        <div key={i} className="flex items-center gap-16 mx-8">
+                                            {[
+                                                { src: "/southdowns-logo.jpg", alt: "Southdowns College" },
+                                                { src: "/laerskool-elarduspark-logo.png", alt: "Laerskool Elarduspark" },
+                                                { src: "/links-college-logo.png", alt: "Links Combined College" },
+                                                { src: "/willow-view-logo.png", alt: "Willow View Academy" },
+                                                { src: "/palmview-logo.png", alt: "Palmview State Primary School" },
+                                                { src: "/canny-kids-logo.png", alt: "CaNNY KiDS Academy" }
+                                            ].map((logo, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={logo.src}
+                                                    alt={logo.alt}
+                                                    className="h-24 w-auto object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply"
+                                                />
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </ScrollReveal>
                     </div>

@@ -14,6 +14,17 @@ const BlogPage: React.FC = () => {
 
     const blogPosts = [
         {
+            id: 'digitizing-school-payments',
+            title: 'The Data-Driven Case for Digitizing School Payments: Why Cash and Manual EFT Are Costing You 30%+ in Collections',
+            excerpt: 'Schools implementing automated digital payment systems report 30% improvements in on-time payments compared to cash and manual EFT methods. The data is clear: how you collect payments matters as much as what you charge.',
+            date: 'Feb 20, 2026',
+            readTime: '6 min read',
+            category: 'African Finance',
+            author: 'Knit Team',
+            image: '/feature-3-tuition-fees.png',
+            slug: '/blog/editorial/digitizing-school-payments'
+        },
+        {
             id: 'implementation-nightmare',
             title: 'From Months to Days: Eliminating the Implementation Nightmare in School Finance',
             excerpt: 'The traditional school software implementation timeline is a 6-month operational chaos. At Knit, we believe implementation shouldn’t be a project—it should be an event. Here is how we’ve compressed months into 72 hours.',
