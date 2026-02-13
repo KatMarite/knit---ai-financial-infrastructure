@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import PricingPage from './components/PricingPage';
 import ContactPage from './components/ContactPage';
@@ -19,7 +19,7 @@ import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/pricing" element={<PricingPage />} />
@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
       </Routes>
       <Chatbot />
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
