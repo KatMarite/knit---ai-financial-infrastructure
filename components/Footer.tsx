@@ -20,10 +20,10 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                             <br /><br />
                             © 2026 Knit Group (Pty) Ltd.<br />
                             <div className="flex gap-4 mt-4">
-                                <a href="#" className="text-slate-500 hover:text-brand-400 transition-colors">
+                                <a href="https://www.facebook.com/people/Knitcash/61583909662935/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand-400 transition-colors">
                                     <Facebook size={18} />
                                 </a>
-                                <a href="#" className="text-slate-500 hover:text-brand-400 transition-colors">
+                                <a href="https://www.linkedin.com/company/knitcash/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand-400 transition-colors">
                                     <Linkedin size={18} />
                                 </a>
                             </div>
