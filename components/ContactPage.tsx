@@ -1,61 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { Send } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactPage: React.FC = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        companyName: '',
-        companyEmail: '',
-        message: '',
-        phone: ''
-    });
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('submitting');
-
-        const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID_HERE';
-
-        try {
-            const response = await fetch(formEndpoint, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                setStatus('success');
-                setFormData({
-                    firstName: '',
-                    lastName: '',
-                    companyName: '',
-                    companyEmail: '',
-                    message: '',
-                    phone: ''
-                });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            console.error("Formspree error:", error);
-            setStatus('error');
-        }
-    };
+    const [state, handleSubmit] = useForm("mykdjgjd");
 
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col">
@@ -77,15 +28,15 @@ const ContactPage: React.FC = () => {
                             </div>
                         </ScrollReveal>
 
-                        {status === 'success' ? (
+                        {state.succeeded ? (
                             <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
                                 <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Send size={24} />
                                 </div>
                                 <h3 className="text-xl font-semibold text-green-900 mb-2">Message Sent</h3>
-                                <p className="text-green-700 mb-6">We'll be in touch shortly.</p>
+                                <p className="text-green-700 mb-6">Thanks for reaching out! We'll be in touch shortly.</p>
                                 <button
-                                    onClick={() => setStatus('idle')}
+                                    onClick={() => window.location.reload()}
                                     className="text-green-700 font-medium hover:text-green-900 underline"
                                 >
                                     Send another message
@@ -103,11 +54,10 @@ const ContactPage: React.FC = () => {
                                                 name="firstName"
                                                 required
                                                 maxLength={50}
-                                                value={formData.firstName}
-                                                onChange={handleChange}
                                                 className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                                 placeholder="First name"
                                             />
+                                            <ValidationError prefix="First Name" field="firstName" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                         </div>
                                         <div>
                                             <label htmlFor="lastName" className="sr-only">Last name</label>
@@ -117,11 +67,10 @@ const ContactPage: React.FC = () => {
                                                 name="lastName"
                                                 required
                                                 maxLength={50}
-                                                value={formData.lastName}
-                                                onChange={handleChange}
                                                 className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                                 placeholder="Last name"
                                             />
+                                            <ValidationError prefix="Last Name" field="lastName" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                         </div>
                                     </div>
 
@@ -132,26 +81,24 @@ const ContactPage: React.FC = () => {
                                             id="companyName"
                                             name="companyName"
                                             maxLength={100}
-                                            value={formData.companyName}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                             placeholder="Company name"
                                         />
+                                        <ValidationError prefix="Company Name" field="companyName" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                     </div>
 
                                     <div>
-                                        <label htmlFor="companyEmail" className="sr-only">Company email</label>
+                                        <label htmlFor="email" className="sr-only">Company email</label>
                                         <input
                                             type="email"
-                                            id="companyEmail"
-                                            name="companyEmail"
+                                            id="email"
+                                            name="email"
                                             required
                                             maxLength={100}
-                                            value={formData.companyEmail}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                             placeholder="Company email"
                                         />
+                                        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                     </div>
 
                                     <div>
@@ -162,11 +109,10 @@ const ContactPage: React.FC = () => {
                                             rows={4}
                                             required
                                             maxLength={2000}
-                                            value={formData.message}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400 resize-none"
                                             placeholder="What are you building, and in what countries? Details are helpful!"
                                         />
+                                        <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                     </div>
 
                                     <div>
@@ -176,22 +122,19 @@ const ContactPage: React.FC = () => {
                                             id="phone"
                                             name="phone"
                                             maxLength={20}
-                                            value={formData.phone}
-                                            onChange={handleChange}
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                             placeholder="Phone number (optional)"
                                         />
+                                        <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-500 text-xs mt-1" />
                                     </div>
-
-
 
                                     <div className="pt-4">
                                         <button
                                             type="submit"
-                                            disabled={status === 'submitting'}
+                                            disabled={state.submitting}
                                             className="px-8 py-3 bg-brand-900 text-white rounded-sm font-medium hover:bg-brand-800 transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
                                         >
-                                            {status === 'submitting' ? 'Sending...' : 'Submit'}
+                                            {state.submitting ? 'Sending...' : 'Submit'}
                                         </button>
                                     </div>
                                 </form>
