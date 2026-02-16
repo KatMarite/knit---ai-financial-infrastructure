@@ -29,7 +29,7 @@ const PricingPage: React.FC = () => {
                     <ScrollReveal delay={100}>
                         <div className="bg-white border border-surface-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative group h-full">
                             <h3 className="text-xl font-bold text-brand-950 mb-2">Basic</h3>
-                            <p className="text-sm text-slate-500 mb-6">For small property managers and startups.</p>
+                            <p className="text-sm text-slate-500 mb-6">for small institutions</p>
                             <div className="flex items-baseline gap-1 mb-8">
                                 <span className="text-4xl font-bold text-brand-950">R 2,500</span>
                                 <span className="text-slate-500">/mo</span>
@@ -64,7 +64,7 @@ const PricingPage: React.FC = () => {
                                 <span className="bg-brand-600 text-white text-[10px] uppercase font-bold px-2 py-1 rounded">Popular</span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
-                            <p className="text-brand-200 text-sm mb-6">For growing lenders and schools.</p>
+                            <p className="text-brand-200 text-sm mb-6">for growth institutions</p>
                             <div className="flex items-baseline gap-1 mb-8">
                                 <span className="text-4xl font-bold text-white">R 4,000</span>
                                 <span className="text-brand-400">/mo</span>
@@ -97,7 +97,7 @@ const PricingPage: React.FC = () => {
                     <ScrollReveal delay={300}>
                         <div className="bg-white border border-surface-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
                             <h3 className="text-xl font-bold text-brand-950 mb-2">Enterprise</h3>
-                            <p className="text-sm text-slate-500 mb-6">For banks and large institutions.</p>
+                            <p className="text-sm text-slate-500 mb-6">for large institutions</p>
                             <div className="flex items-baseline gap-1 mb-8">
                                 <span className="text-4xl font-bold text-brand-950">Custom</span>
                             </div>

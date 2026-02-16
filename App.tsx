@@ -10,6 +10,7 @@ import BlogImplementationNightmare from './components/BlogImplementationNightmar
 import BlogImplementationNightmareEditorial from './components/BlogImplementationNightmareEditorial';
 import BlogSchoolSavingsEditorial from './components/BlogSchoolSavingsEditorial';
 import BlogDigitizingPayments from './components/BlogDigitizingPayments';
+import BlogBeyondReminders from './components/BlogBeyondReminders';
 import BlogPage from './components/BlogPage';
 import FAQPage from './components/FAQPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         <Route path="/blog/editorial/from-months-to-days" element={<BlogImplementationNightmareEditorial />} />
         <Route path="/blog/editorial/ai-saving-schools-money" element={<BlogSchoolSavingsEditorial />} />
         <Route path="/blog/editorial/digitizing-school-payments" element={<BlogDigitizingPayments />} />
+        <Route path="/blog/editorial/beyond-reminders" element={<BlogBeyondReminders />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/faq" element={<FAQPage />} />
