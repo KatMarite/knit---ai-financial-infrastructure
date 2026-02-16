@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { Send } from 'lucide-react';
@@ -8,29 +8,56 @@ import emailjs from '@emailjs/browser';
 const ContactPage: React.FC = () => {
     const form = useRef<HTMLFormElement>(null);
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect(() => {
+        // Initialize EmailJS with the public key on component mount
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        if (publicKey) {
+            emailjs.init(publicKey);
+            console.log("EmailJS initialized with key:", '***' + publicKey.slice(-4));
+        } else {
+            console.error("EmailJS Public Key missing in .env.local");
+        }
+    }, []);
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('submitting');
-
-        if (!form.current) return;
+        setErrorMessage('');
 
         const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-        if (!serviceId || !templateId || !publicKey || serviceId === 'YOUR_SERVICE_ID') {
-            console.error("EmailJS credentials not found in .env.local or placeholder used.");
+        if (!serviceId || !templateId || !publicKey) {
+            const error = "Configuration Error: Missing EmailJS keys in .env.local";
+            console.error(error);
+            setErrorMessage(error);
             setStatus('error');
             return;
         }
 
-        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+        // Manually build data object to ensure correct mapping
+        const formData = new FormData(e.target as HTMLFormElement);
+        const templateParams = {
+            user_firstname: formData.get('user_firstname'),
+            user_lastname: formData.get('user_lastname'),
+            user_company: formData.get('user_company'),
+            user_email: formData.get('user_email'),
+            message: formData.get('message'),
+            user_phone: formData.get('user_phone'),
+        };
+
+        console.log("Sending email with params:", templateParams);
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
             .then((result) => {
-                console.log(result.text);
+                console.log('EmailJS Success:', result.text);
                 setStatus('success');
             }, (error) => {
-                console.log(error.text);
+                console.error('EmailJS Error:', error);
+                setErrorMessage(`Failed to send: ${error.text || JSON.stringify(error)}`);
                 setStatus('error');
             });
     };
@@ -159,7 +186,7 @@ const ContactPage: React.FC = () => {
                                         </button>
                                         {status === 'error' && (
                                             <p className="text-red-500 text-sm mt-2">
-                                                Something went wrong. Please check your connection or try again later.
+                                                {errorMessage}
                                             </p>
                                         )}
                                     </div>

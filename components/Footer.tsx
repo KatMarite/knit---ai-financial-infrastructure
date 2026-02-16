@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                         <div className="text-white font-bold text-xl mb-4 flex items-center gap-2">
                             <img src="/knit-logo.png" alt="Knit" className="h-28 w-auto brightness-0 invert" />
                         </div>
-                        <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
+                        <div className="text-xs text-slate-500 max-w-xs leading-relaxed">
                             Next-generation financial infrastructure for the AI era.
                             <br /><br />
                             © 2026 Knit Group (Pty) Ltd.<br />
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ onShowDesignSystem }) => {
                                     <Linkedin size={18} />
                                 </a>
                             </div>
-                        </p>
+                        </div>
                     </div>
                     <div>
                         <h4 className="text-white font-medium mb-4 text-sm">Product</h4>
