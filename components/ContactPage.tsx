@@ -26,18 +26,35 @@ const ContactPage: React.FC = () => {
         e.preventDefault();
         setStatus('submitting');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({
-                firstName: '',
-                lastName: '',
-                companyName: '',
-                companyEmail: '',
-                message: '',
-                phone: ''
+        const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID_HERE';
+
+        try {
+            const response = await fetch(formEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData),
             });
-        }, 1500);
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    companyName: '',
+                    companyEmail: '',
+                    message: '',
+                    phone: ''
+                });
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Formspree error:", error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -55,7 +72,7 @@ const ContactPage: React.FC = () => {
                                     Book a Demo
                                 </h1>
                                 <p className="text-slate-600 leading-relaxed">
-                                    Ready to build the future of digital finance? Reach out to our sales team and we'll be in touch.
+                                    Ready to build the future of digital finance? Reach out to our sales team at <a href="mailto:info@knit.cash" className="text-brand-600 font-medium hover:underline">info@knit.cash</a> or use the form below.
                                 </p>
                             </div>
                         </ScrollReveal>
