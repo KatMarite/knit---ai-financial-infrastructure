@@ -69,7 +69,7 @@ const PricingPage: React.FC = () => {
                                 <span className="text-4xl font-bold text-white">R 4,000</span>
                                 <span className="text-brand-400">/mo</span>
                             </div>
-                            <div className="mb-8 font-mono text-xs text-brand-200 bg-brand-900 p-3 rounded border border-brand-800">
+                            <div className="mb-8 font-mono text-xs text-white bg-brand-900 p-3 rounded border border-brand-800">
                                 1.2% per successful transaction
                             </div>
 
