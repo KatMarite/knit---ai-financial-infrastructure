@@ -64,7 +64,7 @@ const PricingPage: React.FC = () => {
                                 <span className="bg-brand-600 text-white text-[10px] uppercase font-bold px-2 py-1 rounded">Popular</span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
-                            <p className="text-brand-200 text-sm mb-6">for growth institutions</p>
+                            <p className="text-white text-sm mb-6">for growth institutions</p>
                             <div className="flex items-baseline gap-1 mb-8">
                                 <span className="text-4xl font-bold text-white">R 4,000</span>
                                 <span className="text-brand-400">/mo</span>
