@@ -30,6 +30,13 @@ const ContactPage: React.FC = () => {
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+        console.log("Environment Debug:", {
+            SERVICE_ID: serviceId,
+            TEMPLATE_ID: templateId,
+            PUBLIC_KEY: publicKey ? '***' + publicKey.slice(-4) : 'undefined',
+            ALL_ENV: import.meta.env
+        });
+
         if (!serviceId || !templateId || !publicKey) {
             const error = "Configuration Error: Missing EmailJS keys in .env.local";
             console.error(error);
