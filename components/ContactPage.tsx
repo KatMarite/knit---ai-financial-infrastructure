@@ -21,7 +21,9 @@ const ContactPage: React.FC = () => {
         }
     }, []);
 
-    const sendEmail = (e: React.FormEvent) => {
+    const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
+
+    const sendEmail = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('submitting');
         setErrorMessage('');
@@ -47,26 +49,51 @@ const ContactPage: React.FC = () => {
 
         // Manually build data object to ensure correct mapping
         const formData = new FormData(e.target as HTMLFormElement);
+        const userEmail = formData.get('user_email') as string;
+
         const templateParams = {
             user_firstname: formData.get('user_firstname'),
             user_lastname: formData.get('user_lastname'),
             user_company: formData.get('user_company'),
-            user_email: formData.get('user_email'),
+            user_email: userEmail,
             message: formData.get('message'),
             user_phone: formData.get('user_phone'),
         };
 
         console.log("Sending email with params:", templateParams);
 
-        emailjs.send(serviceId, templateId, templateParams, publicKey)
-            .then((result) => {
-                console.log('EmailJS Success:', result.text);
-                setStatus('success');
-            }, (error) => {
-                console.error('EmailJS Error:', error);
-                setErrorMessage(`Failed to send: ${error.text || JSON.stringify(error)}`);
-                setStatus('error');
-            });
+        try {
+            // Send to EmailJS
+            const result = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+            console.log('EmailJS Success:', result.text);
+
+            // If subscribed, send to MailerLite
+            if (subscribeToNewsletter && userEmail) {
+                try {
+                    const mlFormData = new FormData();
+                    mlFormData.append('fields[email]', userEmail);
+                    mlFormData.append('ml-submit', '1');
+                    mlFormData.append('anticsrf', 'true');
+
+                    await fetch("https://assets.mailerlite.com/jsonp/2096299/forms/179649503348917659/subscribe", {
+                        method: "POST",
+                        body: mlFormData,
+                        mode: 'no-cors'
+                    });
+                    console.log('MailerLite Subscription Success');
+                } catch (mlError) {
+                    console.error('MailerLite Error:', mlError);
+                    // We don't fail the written form submission if newsletter fails, just log it
+                }
+            }
+
+            setStatus('success');
+            setSubscribeToNewsletter(false);
+        } catch (error: any) {
+            console.error('EmailJS Error:', error);
+            setErrorMessage(`Failed to send: ${error.text || JSON.stringify(error)}`);
+            setStatus('error');
+        }
     };
 
     return (
@@ -181,6 +208,19 @@ const ContactPage: React.FC = () => {
                                             className="w-full px-4 py-3 rounded border border-surface-300 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors bg-white placeholder-slate-400"
                                             placeholder="Phone number (optional)"
                                         />
+                                    </div>
+
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="checkbox"
+                                            id="newsletter_subscribe"
+                                            checked={subscribeToNewsletter}
+                                            onChange={(e) => setSubscribeToNewsletter(e.target.checked)}
+                                            className="w-4 h-4 rounded border-brand-300 text-brand-600 focus:ring-brand-500"
+                                        />
+                                        <label htmlFor="newsletter_subscribe" className="text-sm text-slate-600 cursor-pointer select-none">
+                                            Keep me updated with Knit AI financial insights
+                                        </label>
                                     </div>
 
                                     <div className="pt-4">
