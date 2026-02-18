@@ -207,6 +207,22 @@ const LandingPage: React.FC = () => {
                                     ))}
                                 </div>
                             </div>
+
+                            <div className="mt-16 pt-10 border-t border-surface-100 flex flex-col items-center">
+                                <p className="text-[20px] font-bold text-slate-400 uppercase tracking-widest mb-8">Our Strategic Industry Partners</p>
+                                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 hover:opacity-100 transition-opacity">
+                                    <img
+                                        src="/sbma-logo.png"
+                                        alt="School Business Managers' Association (SBMA)"
+                                        className="h-16 md:h-20 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                    <img
+                                        src="/fedsas-logo.png"
+                                        alt="FEDSAS"
+                                        className="h-16 md:h-24 w-auto object-contain mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-300"
+                                    />
+                                </div>
+                            </div>
                         </ScrollReveal>
                     </div>
                 </section>
