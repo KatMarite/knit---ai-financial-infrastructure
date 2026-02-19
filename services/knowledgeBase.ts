@@ -23,7 +23,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['what is knit', 'about knit', 'what does knit do', 'tell me about knit', 'knit platform', 'who are you', 'explain knit', 'overview'],
         question: 'What is Knit?',
-        answer: 'Knit is an **AI-powered financial infrastructure** platform that helps schools and businesses automate their financial operations.\n\nWe specialise in:\n• **AI-driven Revenue Recovery** — empathetic, not aggressive\n• **Automated reconciliation**\n• **Seamless integration** with accounting software like Sage, Xero & QuickBooks',
+        answer: 'Knit is an **AI-powered financial infrastructure** platform that helps schools and businesses automate their financial operations.\n\nWe specialise in:\n• **Automated Decisions** — who to engage, when & how\n• **Automated Reconciliation**\n• **Digitised & Contextualised Payments**\n• **Seamless Integration** with school admin & accounting software',
         category: 'general',
         relatedTopics: ['features', 'pricing', 'use-cases'],
         priority: 10,
@@ -32,7 +32,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['how does knit work', 'how it works', 'process', 'workflow', 'explain process', 'step by step'],
         question: 'How does Knit work?',
-        answer: 'Knit uses **AI agents** to automate financial workflows end-to-end:\n\n1️⃣ **Identify** — AI analyses accounts and predicts risk\n2️⃣ **Engage** — Empathetic multi-channel outreach (email, SMS, WhatsApp)\n3️⃣ **Collect** — Automated payment processing & flexible plans\n4️⃣ **Reconcile** — Real-time matching of payments\n\nWe automate **decisions**, not just reminders.',
+        answer: 'Knit uses **AI agents** to automate financial workflows end-to-end:\n\n1️⃣ **Identify** — AI analyses accounts and predicts risk\n2️⃣ **Decide** — Automates decisions on who to engage, when, and through which medium\n3️⃣ **Collect** — Contextualised payment processing & flexible plans\n4️⃣ **Reconcile** — Real-time matching of payments\n\nWe automate **decisions**, not just reminders.',
         category: 'general',
         relatedTopics: ['features', 'ai-engine'],
         priority: 8,
@@ -90,7 +90,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['features', 'capabilities', 'what can knit do', 'functionality', 'functions', 'tools', 'offer'],
         question: 'What features does Knit offer?',
-        answer: 'Knit is a **full-stack financial automation** platform:\n\n🤖 **AI & Analytics**\n• Risk assessment & prediction\n• Real-time analytics & reporting\n\n📬 **Revenue Recovery**\n• Automated multi-channel outreach (Email, SMS, WhatsApp)\n• Empathetic, smart messaging\n\n💳 **Payments**\n• Smart payment reconciliation\n• Same-day or next-day payouts\n\n🔗 **Integrations**\n• Sage, Xero, QuickBooks, Stripe, Paystack\n• Full API access',
+        answer: 'Knit is a **full-stack financial automation** platform:\n\n🤖 **AI & Analytics**\n• Risk assessment & prediction\n• Real-time analytics & reporting\n\n📬 **Automated Engagement**\n• Smart decisions on who to email, SMS, or WhatsApp\n• Empathetic, smart messaging\n\n💳 **Contextual Payments**\n• Smart payment reconciliation\n• Same-day or next-day payouts\n\n🔗 **Integrations**\n• Sage, Xero, QuickBooks, Stripe, Paystack\n• Full API access',
         category: 'features',
         relatedTopics: ['integrations', 'ai-engine'],
         priority: 9,

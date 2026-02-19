@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Sparkles, User, Bot } from 'lucide-react';
 import type { ChatResponse } from '../services/knowledgeBase';
+import { findBestMatch } from '../services/knowledgeBase';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -150,7 +151,7 @@ const Chatbot: React.FC = () => {
         await new Promise(resolve => setTimeout(resolve, 400 + Math.random() * 400));
 
         try {
-            const { findBestMatch } = await import('../services/knowledgeBase');
+            // Static import is safer and faster for this use case
             const result: ChatResponse = findBestMatch(userMessage, newMessages);
 
             setMessages(prev => [
