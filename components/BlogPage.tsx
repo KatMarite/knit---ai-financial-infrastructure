@@ -10,24 +10,24 @@ const BlogPage: React.FC = () => {
 
     const [activeCategory, setActiveCategory] = useState('All Posts');
 
-    const categories = ['All Posts', 'AI in Collections', 'Risk Intelligence', 'African Finance', 'Compliance & Automation'];
+    const categories = ['All Posts', 'AI in Revenue Operations', 'Risk Intelligence', 'African Finance', 'Compliance & Automation'];
 
     const blogPosts = [
         {
             id: 'beyond-reminders',
             title: 'Beyond Reminders: Why Your School Needs an AI Operator, Not an Alarm Clock',
-            excerpt: 'In the world of school fee collections, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools in the education sector are just expensive alarm clocks—they send the same WhatsApp on Day 7 to every parent, regardless of history or context.',
+            excerpt: 'In the world of school fee recovery, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools in the education sector are just expensive alarm clocks—they send the same WhatsApp on Day 7 to every parent, regardless of history or context.',
             date: 'Feb 25, 2026',
             readTime: '5 min read',
-            category: 'AI in Collections',
+            category: 'AI in Revenue Operations',
             author: 'Knit Team',
             image: '/ai_operator_vs_alarm_clock.png',
             slug: '/blog/editorial/beyond-reminders'
         },
         {
             id: 'digitizing-school-payments',
-            title: 'The Data-Driven Case for Digitizing School Payments: Why Cash and Manual EFT Are Costing You 30%+ in Collections',
-            excerpt: 'Schools implementing automated digital payment systems report 30% improvements in on-time payments compared to cash and manual EFT methods. The data is clear: how you collect payments matters as much as what you charge.',
+            title: 'The Data-Driven Case for Digitizing School Payments: Why Cash and Manual EFT Are Costing You 30%+ in Revenue',
+            excerpt: 'Schools implementing automated digital payment systems report 30% improvements in on-time payments compared to cash and manual EFT methods. The data is clear: how you process payments matters as much as what you charge.',
             date: 'Feb 20, 2026',
             readTime: '6 min read',
             category: 'African Finance',
@@ -49,10 +49,10 @@ const BlogPage: React.FC = () => {
         {
             id: 'ai-saving-schools-money',
             title: 'How AI Is Quietly Saving Schools Hundreds of Thousands Each Year',
-            excerpt: 'Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual collections, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.',
+            excerpt: 'Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual recovery, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.',
             date: 'Feb 9, 2026',
             readTime: '4 min read',
-            category: 'AI in Collections',
+            category: 'AI in Revenue Operations',
             author: 'Knit Team',
             image: '/feature-4-bursar-collections.png',
             slug: '/blog/editorial/ai-saving-schools-money'

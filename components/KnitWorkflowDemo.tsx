@@ -36,7 +36,7 @@ const KnitWorkflowDemo: React.FC<KnitWorkflowDemoProps> = ({ compact = false, he
     // Auto-typing effect for the input
     useEffect(() => {
         if (phase === 'input') {
-            const text = "I run a private school in Centurion with 850 students. I need to automate tuition collection and manage annual enrollments.";
+            const text = "I run a private school in Centurion with 850 students. I need to automate tuition recovery and manage annual enrollments.";
             let i = 0;
             const timer = setInterval(() => {
                 setInputValue(text.substring(0, i + 1));
@@ -351,7 +351,7 @@ const KnitWorkflowDemo: React.FC<KnitWorkflowDemoProps> = ({ compact = false, he
                                     <div className="text-2xl font-bold text-brand-950">R 12.4M <span className="text-xs text-emerald-500 font-medium">+5.2%</span></div>
                                 </div>
                                 <div className="bg-white p-4 rounded-xl border border-surface-200 shadow-sm">
-                                    <div className="text-[10px] uppercase tracking-wider text-slate-500 mb-1">Collection Rate</div>
+                                    <div className="text-[10px] uppercase tracking-wider text-slate-500 mb-1">Recovery Rate</div>
                                     <div className="text-2xl font-bold text-brand-950">94% <span className="text-xs text-amber-500 font-medium">Target 95%</span></div>
                                 </div>
                                 <div className="bg-white p-4 rounded-xl border border-surface-200 shadow-sm">
@@ -440,7 +440,7 @@ const KnitWorkflowDemo: React.FC<KnitWorkflowDemoProps> = ({ compact = false, he
 
                                     <div className="bg-red-50 rounded-xl border border-red-100 p-6 flex-1">
                                         <div className="flex justify-between items-center mb-4">
-                                            <h3 className="font-semibold text-red-900 flex items-center gap-2"><Shield size={18} /> Watchdog Collections</h3>
+                                            <h3 className="font-semibold text-red-900 flex items-center gap-2"><Shield size={18} /> Watchdog Recovery</h3>
                                             <span className="text-[10px] bg-red-200 text-red-800 px-1.5 py-0.5 rounded font-bold">ACTIVE</span>
                                         </div>
                                         <div className="bg-white rounded-lg p-4 border border-red-100 shadow-sm">

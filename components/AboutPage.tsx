@@ -35,7 +35,7 @@ const AboutPage: React.FC = () => {
                                     South African schools are currently facing a severe liquidity crisis. With only 42% of public fee-paying school accounts and 66% of independent school accounts being paid on time, we believe that schools should worry more about education outcomes than they do finances. Unfortunately, this isn’t the current state of affairs.
                                 </p>
                                 <p className="font-medium text-brand-900">
-                                    At Knit, we are building the financial infrastructure to modernise these institutions—a comprehensive, "application-to-collections" platform.
+                                    At Knit, we are building the financial infrastructure to modernise these institutions—a comprehensive, "application-to-payment" platform.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -53,7 +53,7 @@ const AboutPage: React.FC = () => {
                                 Our mission is simple: <span className="font-semibold text-brand-700">To improve people’s dignity.</span>
                             </p>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                We do this by automating the complex, manual financial workflows that keep bursars and finance managers at their desks late into the night. By replacing fragmented systems with a unified AI-driven layer, we help schools reduce manual operations by up to 50% and improve fee collection rates by 15% to 20%.
+                                We do this by automating the complex, manual financial workflows that keep bursars and finance managers at their desks late into the night. By replacing fragmented systems with a unified AI-driven layer, we help schools reduce manual operations by up to 50% and improve fee recovery rates by 15% to 20%.
                             </p>
                         </ScrollReveal>
 
@@ -81,7 +81,7 @@ const AboutPage: React.FC = () => {
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-3">Automating Decisions</h3>
                                 <p className="text-slate-600 leading-relaxed text-sm">
-                                    We aren’t another automated reminder platform, nor is Knit an abrasive debt collector. Our AI agents conduct real affordability intelligence at the point of enrollment. This enables the school to forecast their cashflows with a realistic view of the fees they’re likely to make.
+                                    We aren’t another automated reminder platform, nor is Knit an abrasive external agency. Our AI agents conduct real affordability intelligence at the point of enrollment. This enables the school to forecast their cashflows with a realistic view of the fees they’re likely to make.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-3">Human-in-the-Loop</h3>
                                 <p className="text-slate-600 leading-relaxed text-sm">
-                                    We operate on "Human-in-the-Loop" principles. While our AI handles data-heavy routine filtering and proactive collection reminders at scale, school finance managers retain ultimate oversight. The AI provides preliminary intelligence and justifications, ensuring that nuanced, context-sensitive judgment remains in human hands.
+                                    We operate on "Human-in-the-Loop" principles. While our AI handles data-heavy routine filtering and proactive payment reminders at scale, school finance managers retain ultimate oversight. The AI provides preliminary intelligence and justifications, ensuring that nuanced, context-sensitive judgment remains in human hands.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -122,13 +122,13 @@ const AboutPage: React.FC = () => {
                             },
                             {
                                 icon: <MessageSquare size={24} />,
-                                title: "Proactive Collections",
+                                title: "Proactive Revenue Recovery",
                                 desc: "Our Google Gemini-based AI agents handle empathetic, multi-channel payment reminders via WhatsApp, SMS, Email, and Voice, preventing delinquency before it starts."
                             },
                             {
                                 icon: <Puzzle size={24} />,
                                 title: "Seamless Integration",
-                                desc: "We don't ask you to replace your current systems. We integrate with your school management and accounting systems to add a superior payments and collections layer."
+                                desc: "We don't ask you to replace your current systems. We integrate with your school management and accounting systems to add a superior payments and recovery layer."
                             },
                             {
                                 icon: <ShieldCheck size={24} />,

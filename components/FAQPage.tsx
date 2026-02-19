@@ -22,7 +22,7 @@ const FAQPage: React.FC = () => {
             case "Implementation & Onboarding": return <Clock className="text-orange-600" size={24} />;
             case "Compliance & Regulatory": return <Shield className="text-blue-600" size={24} />;
             case "Data Security & Privacy": return <Database className="text-red-600" size={24} />;
-            case "Collections & Payment Management": return <CreditCard className="text-indigo-600" size={24} />;
+            case "Revenue & Payment Management": return <CreditCard className="text-indigo-600" size={24} />;
             case "Technical & Integration": return <Code className="text-rose-600" size={24} />;
             case "Account Management & Support": return <FileText className="text-amber-600" size={24} />;
             case "Getting Started": return <BookOpen className="text-cyan-600" size={24} />;
@@ -54,7 +54,7 @@ const FAQPage: React.FC = () => {
             questions: [
                 {
                     question: "What is Knit?",
-                    answer: "Knit is a B2B embedded finance SaaS platform that helps schools manage their complete customer lifecycle—from application and credit screening through payment collection, automated reminders, and debt recovery. We combine screening, payments, and customer lifecycle management in a single cloud-based solution."
+                    answer: "Knit is a B2B embedded finance SaaS platform that helps schools manage their complete customer lifecycle—from application and credit screening through payment collection, automated reminders, and revenue recovery. We combine screening, payments, and customer lifecycle management in a single cloud-based solution."
                 },
                 {
                     question: "Which industries does Knit serve?",
@@ -62,11 +62,11 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "What problems does Knit solve?",
-                    answer: "For Schools: Only 66% of independent school fees and 42% of public school fees are paid on time (Q1 2024 data), manual collections processes, inability to assess parent affordability before admission, fragmented systems, poor parent mobile experience, and complex regulatory compliance."
+                    answer: "For Schools: Only 66% of independent school fees and 42% of public school fees are paid on time (Q1 2024 data), manual recovery processes, inability to assess parent affordability before admission, fragmented systems, poor parent mobile experience, and complex regulatory compliance."
                 },
                 {
                     question: "How is Knit different from existing school management systems?",
-                    answer: "Knit focuses specifically on the financial lifecycle and payment management, not general school administration. Our platform is designed to work alongside your existing systems by becoming your dedicated financial operations layer with application-stage credit screening, proactive collections automation, partner network integration, mobile-first parent experience, and comprehensive compliance. Knit integrates with most school management systems through APIs or data exchange."
+                    answer: "Knit focuses specifically on the financial lifecycle and payment management, not general school administration. Our platform is designed to work alongside your existing systems by becoming your dedicated financial operations layer with application-stage credit screening, proactive payment automation, partner network integration, mobile-first parent experience, and comprehensive compliance. Knit integrates with most school management systems through APIs or data exchange."
                 }
             ]
         },
@@ -75,7 +75,7 @@ const FAQPage: React.FC = () => {
             questions: [
                 {
                     question: "What are the core modules of the Knit platform?",
-                    answer: "Knit has three core modules: (1) Screening Module with instant credit bureau checks, ID verification, affordability scoring, continuous monitoring, and 200 credit queries included; (2) Payments Module with automated DebiCheck-compliant debit orders, Pay-by-Bank instant EFT, flexible payment plans, and real-time reconciliation; and (3) Customer Lifecycle Management with application workflows, automated collections, WhatsApp/email notifications, payment tracking, and MIS dashboard."
+                    answer: "Knit has three core modules: (1) Screening Module with instant credit bureau checks, ID verification, affordability scoring, continuous monitoring, and 200 credit queries included; (2) Payments Module with automated DebiCheck-compliant debit orders, Pay-by-Bank instant EFT, flexible payment plans, and real-time reconciliation; and (3) Customer Lifecycle Management with application workflows, automated payment follow-ups, WhatsApp/email notifications, payment tracking, and MIS dashboard."
                 },
                 {
                     question: "What payment methods does Knit support?",
@@ -100,7 +100,7 @@ const FAQPage: React.FC = () => {
             questions: [
                 {
                     question: "What does Knit cost?",
-                    answer: "We offer flexible pricing tailored to your institution's size and needs. Our subscription includes multi-user licenses, parent/member portal, credit bureau screening (200 queries/month included), AI affordability dashboard, payments module, automated collections, WhatsApp/email notifications, POPIA-compliant data storage, and comprehensive support. Pricing includes a one-time setup fee, recurring subscription (monthly/quarterly/annual options), and transaction-based fees on successful payments only. Contact sales@knit.cash for a customized quote."
+                    answer: "We offer flexible pricing tailored to your institution's size and needs. Our subscription includes multi-user licenses, parent/member portal, credit bureau screening (200 queries/month included), AI affordability dashboard, payments module, automated recovery, WhatsApp/email notifications, POPIA-compliant data storage, and comprehensive support. Pricing includes a one-time setup fee, recurring subscription (monthly/quarterly/annual options), and transaction-based fees on successful payments only. Contact sales@knit.cash for a customized quote."
                 },
                 {
                     question: "Are there any hidden fees?",
@@ -108,7 +108,7 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "What is the ROI for my institution?",
-                    answer: "Expected value creation includes collection rate improvement (typically 10-15% improvement in on-time payments), reduced administrative burden (10-20 hours saved per month), better financial visibility, lower payment processing costs, and risk mitigation. Most institutions see ROI exceeding 50% through combined benefits, with positive returns within the first year and compounding benefits over time. Contact our team for a customized ROI projection based on your current data."
+                    answer: "Expected value creation includes recovery rate improvement (typically 10-15% improvement in on-time payments), reduced administrative burden (10-20 hours saved per month), better financial visibility, lower payment processing costs, and risk mitigation. Most institutions see ROI exceeding 50% through combined benefits, with positive returns within the first year and compounding benefits over time. Contact our team for a customized ROI projection based on your current data."
                 },
                 {
                     question: "Do you offer pricing options for multi-campus institutions?",
@@ -158,11 +158,11 @@ const FAQPage: React.FC = () => {
                 },
                 {
                     question: "How does Knit handle credit bureau checks and NCR compliance?",
-                    answer: "Knit is registered with the NCR and maintains authorized relationships with Experian, TransUnion, and TPN. We capture written consent before each credit query, provide clear disclosure of purposes, ensure data protection per POPIA, generate 20-business day Letters of Demand before adverse credit reporting, provide NCA Regulation 19(4) compliant communications, generate Section 129 notices, monitor debt prescription (3-year limitation), and maintain comprehensive audit trails. All queries are logged with date, time, purpose, and consent evidence."
+                    answer: "Knit is registered with the NCR and maintains authorized relationships with Experian, TransUnion, and TPN. We capture written consent before each credit query, provide clear disclosure of purposes, ensure data protection per POPIA, generate 20-business day Letters of Demand before adverse credit reporting, provide NCA Regulation 19(4) compliant communications, generate Section 129 notices, monitor status, and maintain comprehensive audit trails. All queries are logged with date, time, purpose, and consent evidence."
                 },
                 {
                     question: "What about the South African Schools Act (for school clients)?",
-                    answer: "Knit automates SA Schools Act 84 of 1996 compliance with automated exemption calculator (full if income < 10× annual fee, partial 10×-30×), digital exemption application workflow, income verification, Board approval workflow. For Section 41 compliance: Cannot refuse admission for non-payment (enforced by system), cannot withhold reports for non-payment (flagged), Section 41(5) letter generation before legal action, 20-business day waiting period tracking, and 3-year debt prescription monitoring. The system prevents legal referral before Section 41 notice is sent."
+                    answer: "Knit automates SA Schools Act 84 of 1996 compliance with automated exemption calculator (full if income < 10× annual fee, partial 10×-30×), digital exemption application workflow, income verification, Board approval workflow. For Section 41 compliance: Cannot refuse admission for non-payment (enforced by system), cannot withhold reports for non-payment (flagged), Section 41(5) letter generation before legal action, 20-business day waiting period tracking, and 3-year status monitoring. The system prevents legal referral before Section 41 notice is sent."
                 },
                 {
                     question: "How does Knit ensure funds are secure?",
@@ -204,11 +204,11 @@ const FAQPage: React.FC = () => {
             ]
         },
         {
-            category: "Collections & Payment Management",
+            category: "Revenue & Payment Management",
             questions: [
                 {
                     question: "How does automated collections work?",
-                    answer: "Phase 1 Prevention (Before Due Date): T-7 days friendly reminder via WhatsApp/Email, T-3 days second reminder with payment link, T-1 day final reminder. Phase 2 Payment Processing: T-Day automated debit order run (configurable 1st-5th of month), real-time bank account validation, DebiCheck authentication, 90% success rate. Phase 3 Follow-up (After Payment Due): T+1 day notification of success/failure, T+3 days payment plan offer, T+7 days second payment attempt, T+14 days escalation notice, T+30 days debt collection referral. AI-powered optimization includes risk scoring, personalized message timing, payment plan recommendations, and channel preference learning."
+                    answer: "Phase 1 Prevention (Before Due Date): T-7 days friendly reminder via WhatsApp/Email, T-3 days second reminder with payment link, T-1 day final reminder. Phase 2 Payment Processing: T-Day automated debit order run (configurable 1st-5th of month), real-time bank account validation, DebiCheck authentication, 90% success rate. Phase 3 Follow-up (After Payment Due): T+1 day notification of success/failure, T+3 days payment plan offer, T+7 days second payment attempt, T+14 days escalation notice, T+30 days external recovery referral. AI-powered optimization includes risk scoring, personalized message timing, payment plan recommendations, and channel preference learning."
                 },
                 {
                     question: "What is a debit order and how does it work?",
@@ -227,12 +227,12 @@ const FAQPage: React.FC = () => {
                     answer: "Upfront payment plan setup: During enrollment, parents select payment frequency (Monthly standard, Quarterly 3 installments, Biannual 2 installments, 10-month academic year plan excluding Dec-Jan). System automatically calculates installment amounts, debit order mandate covers all scheduled payments. Mid-year payment arrangements: Parents experiencing difficulties can request adjusted schedules, system facilitates arrangements, outstanding balance spread over agreed period, parent accepts via digital acknowledgment, separate debit order mandate for arrangement. Features include automated calculation, schedule management, payment reminders, progress monitoring. Important: Payment arrangements are administrative agreements between your institution and parents/members. Knit provides the technology platform; your institution remains responsible for compliance with applicable regulations."
                 },
                 {
-                    question: "How does the partner referral network work for overdue accounts?",
-                    answer: "Internal collections (Days 0-60): Automated reminders and payment plan offers through Knit, personal outreach from bursar/admin team, system tracks all communication. Specialist support (Days 60-90): System flags accounts requiring additional support, generates comprehensive documentation package, presents referral recommendations for your review. Partner network engagement (Day 90+): You approve referral to specialist partners, Knit facilitates documentation transfer, partners provide specialized recovery services, you receive regular progress reports, recovered amounts flow per your agreements. Important: Knit facilitates payment workflows and partner coordination; specialist services provided by independent third-party partners selected and contracted by your institution."
+                    question: "How does the partner referral network work for outstanding accounts?",
+                    answer: "Internal recovery (Days 0-60): Automated reminders and payment plan offers through Knit, personal outreach from bursar/admin team, system tracks all communication. Specialist support (Days 60-90): System flags accounts requiring additional support, generates comprehensive documentation package, presents referral recommendations for your review. Partner network engagement (Day 90+): You approve referral to specialist partners, Knit facilitates documentation transfer, partners provide specialized recovery services, you receive regular progress reports, recovered amounts flow per your agreements. Important: Knit facilitates payment workflows and partner coordination; specialist services provided by independent third-party partners selected and contracted by your institution."
                 },
                 {
                     question: "What credit bureau data does Knit access?",
-                    answer: "Credit bureau partnerships: Experian (credit score, payment history, account status, defaults, judgments), TransUnion (credit score, comprehensive report, debt-to-income), TPN (education-specific 5-year school fee payment history). Data points: Credit score (0-999 range), payment history, current accounts/balances, defaults/adverse listings, judgments/insolvency, employment verification, property ownership, directorships. Affordability assessment: Knit's AI combines credit bureau data with stated income, household size, current debt, school fees requested, historical payment patterns. Risk rating: Low risk (90%+ on-time probability), Medium risk (70-89%), High risk (<70%). Schools use this for informed decisions about admission offers, payment plan terms, deposit requirements, fee exemption eligibility."
+                    answer: "Credit bureau partnerships: Experian (credit score, payment history, account status, defaults, judgments), TransUnion (credit score, comprehensive report, payment-to-income), TPN (education-specific 5-year school fee payment history). Data points: Credit score (0-999 range), payment history, current accounts/balances, adverse listings, judgments/insolvency, employment verification, property ownership, directorships. Affordability assessment: Knit's AI combines credit bureau data with stated income, household size, current debt, school fees requested, historical payment patterns. Risk rating: Low risk (90%+ on-time probability), Medium risk (70-89%), High risk (<70%). Schools use this for informed decisions about admission offers, payment plan terms, deposit requirements, fee exemption eligibility."
                 }
             ]
         },

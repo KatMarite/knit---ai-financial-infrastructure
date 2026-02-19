@@ -23,7 +23,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['what is knit', 'about knit', 'what does knit do', 'tell me about knit', 'knit platform', 'who are you', 'explain knit', 'overview'],
         question: 'What is Knit?',
-        answer: 'Knit is an **AI-powered financial infrastructure** platform that helps schools and businesses automate their financial operations.\n\nWe specialise in:\n• **AI-driven debt collection** — empathetic, not aggressive\n• **Automated reconciliation**\n• **Seamless integration** with accounting software like Sage, Xero & QuickBooks',
+        answer: 'Knit is an **AI-powered financial infrastructure** platform that helps schools and businesses automate their financial operations.\n\nWe specialise in:\n• **AI-driven Revenue Recovery** — empathetic, not aggressive\n• **Automated reconciliation**\n• **Seamless integration** with accounting software like Sage, Xero & QuickBooks',
         category: 'general',
         relatedTopics: ['features', 'pricing', 'use-cases'],
         priority: 10,
@@ -43,7 +43,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['pricing', 'cost', 'how much', 'price', 'plans', 'subscription', 'fees', 'expensive', 'cheap', 'afford', 'budget', 'quote', 'rand', 'zar'],
         question: 'What are your pricing plans?',
-        answer: 'We offer **three plans**:\n\n💼 **Basic** — R 2,500/mo\n• 0–500 units\n• Basic risk assessment\n• Automated email collections\n• Next-day payouts\n• 1.5% per transaction\n\n🚀 **Growth** — R 4,000/mo\n• 500–2,000 units\n• Advanced neural risk engine\n• Multi-channel collections (WhatsApp)\n• Same-day payouts & API access\n• 1.2% per transaction\n\n🏢 **Enterprise** — Custom\n• 2,000+ units\n• Custom risk models & dedicated account manager\n• On-premise deployment & SLA guarantees\n• Volume discounts',
+        answer: 'We offer **three plans**:\n\n💼 **Basic** — R 2,500/mo\n• 0–500 units\n• Basic risk assessment\n• Automated email payment follow-ups\n• Next-day payouts\n• 1.5% per transaction\n\n🚀 **Growth** — R 4,000/mo\n• 500–2,000 units\n• Advanced neural risk engine\n• Multi-channel recovery (WhatsApp)\n• Same-day payouts & API access\n• 1.2% per transaction\n\n🏢 **Enterprise** — Custom\n• 2,000+ units\n• Custom risk models & dedicated account manager\n• On-premise deployment & SLA guarantees\n• Volume discounts',
         category: 'pricing',
         relatedTopics: ['free-trial', 'implementation'],
         priority: 10,
@@ -52,7 +52,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['basic plan', 'starter plan', 'cheapest', 'smallest plan', 'entry level'],
         question: 'Tell me about the Basic plan',
-        answer: 'Our **Basic plan** is **R 2,500/mo** and is perfect for smaller organisations:\n\n• Supports **0–500 units**\n• Basic risk assessment\n• Automated **email** collections\n• **Next-day** payouts\n• 1.5% per transaction\n\nIt\'s a great starting point to automate your collections!',
+        answer: 'Our **Basic plan** is **R 2,500/mo** and is perfect for smaller organisations:\n\n• Supports **0–500 units**\n• Basic risk assessment\n• Automated **email** payment follow-ups\n• **Next-day** payouts\n• 1.5% per transaction\n\nIt\'s a great starting point to automate your revenue recovery!',
         category: 'pricing',
         relatedTopics: ['pricing', 'implementation'],
         priority: 7,
@@ -61,7 +61,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['growth plan', 'middle plan', 'whatsapp collections'],
         question: 'Tell me about the Growth plan',
-        answer: 'Our **Growth plan** is **R 4,000/mo** — our most popular choice:\n\n• Supports **500–2,000 units**\n• **Advanced neural risk engine**\n• Multi-channel collections including **WhatsApp**\n• **Same-day** payouts\n• Full **API access**\n• 1.2% per transaction\n• Includes a **free trial**!',
+        answer: 'Our **Growth plan** is **R 4,000/mo** — our most popular choice:\n\n• Supports **500–2,000 units**\n• **Advanced neural risk engine**\n• Multi-channel recovery including **WhatsApp**\n• **Same-day** payouts\n• Full **API access**\n• 1.2% per transaction\n• Includes a **free trial**!',
         category: 'pricing',
         relatedTopics: ['pricing', 'free-trial'],
         priority: 7,
@@ -90,7 +90,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['features', 'capabilities', 'what can knit do', 'functionality', 'functions', 'tools', 'offer'],
         question: 'What features does Knit offer?',
-        answer: 'Knit is a **full-stack financial automation** platform:\n\n🤖 **AI & Analytics**\n• Risk assessment & prediction\n• Real-time analytics & reporting\n\n📬 **Collections**\n• Automated multi-channel outreach (Email, SMS, WhatsApp)\n• Empathetic, smart messaging\n\n💳 **Payments**\n• Smart payment reconciliation\n• Same-day or next-day payouts\n\n🔗 **Integrations**\n• Sage, Xero, QuickBooks, Stripe, Paystack\n• Full API access',
+        answer: 'Knit is a **full-stack financial automation** platform:\n\n🤖 **AI & Analytics**\n• Risk assessment & prediction\n• Real-time analytics & reporting\n\n📬 **Revenue Recovery**\n• Automated multi-channel outreach (Email, SMS, WhatsApp)\n• Empathetic, smart messaging\n\n💳 **Payments**\n• Smart payment reconciliation\n• Same-day or next-day payouts\n\n🔗 **Integrations**\n• Sage, Xero, QuickBooks, Stripe, Paystack\n• Full API access',
         category: 'features',
         relatedTopics: ['integrations', 'ai-engine'],
         priority: 9,
@@ -116,8 +116,8 @@ export const knowledgeBase: KnowledgeItem[] = [
     },
     {
         keywords: ['collections', 'collect', 'debt', 'overdue', 'arrears', 'outstanding', 'recover', 'chase'],
-        question: 'How does automated collection work?',
-        answer: 'Our AI-powered collection process is **empathetic and effective**:\n\n1️⃣ **Early Detection** — AI flags at-risk accounts before they become overdue\n2️⃣ **Smart Outreach** — Personalised messages via email, SMS, or WhatsApp\n3️⃣ **Flexible Options** — Automatically offers payment plans when appropriate\n4️⃣ **Escalation** — Intelligent escalation only when needed\n\nThe result? **94%+ collection rates** while preserving relationships.',
+        question: 'How does automated recovery work?',
+        answer: 'Our AI-powered recovery process is **empathetic and effective**:\n\n1️⃣ **Early Detection** — AI flags at-risk accounts before they become overdue\n2️⃣ **Smart Outreach** — Personalised messages via email, SMS, or WhatsApp\n3️⃣ **Flexible Options** — Automatically offers payment plans when appropriate\n4️⃣ **Escalation** — Intelligent escalation only when needed\n\nThe result? **94%+ recovery rates** while preserving relationships.',
         category: 'features',
         relatedTopics: ['results', 'ai-engine'],
         priority: 8,
@@ -139,7 +139,7 @@ export const knowledgeBase: KnowledgeItem[] = [
         category: 'features',
         relatedTopics: ['features', 'pricing'],
         priority: 7,
-        suggestedFollowUps: ['What are your pricing plans?', 'How does automated collection work?']
+        suggestedFollowUps: ['What are your pricing plans?', 'How does automated recovery work?']
     },
 
     // Implementation
@@ -186,7 +186,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['schools', 'education', 'school fees', 'tuition', 'university', 'college', 'academy', 'learner', 'student'],
         question: 'How does Knit help schools?',
-        answer: 'Knit is **purpose-built for schools**:\n\n🎓 **Automated Fee Collection** — reduces admin burden by 15+ hours/week\n🔮 **Early Warning** — AI identifies at-risk accounts before they become overdue\n💬 **Empathetic Outreach** — preserves parent relationships\n📊 **Real-Time Visibility** — track collection rates live\n💰 **Flexible Plans** — automatically offer payment plans\n\nSchools using Knit achieve **94%+ collection rates** — up from a typical 75–85%.',
+        answer: 'Knit is **purpose-built for schools**:\n\n🎓 **Automated Fee Recovery** — reduces admin burden by 15+ hours/week\n🔮 **Early Warning** — AI identifies at-risk accounts before they become overdue\n💬 **Empathetic Outreach** — preserves parent relationships\n📊 **Real-Time Visibility** — track recovery rates live\n💰 **Flexible Plans** — automatically offer payment plans\n\nSchools using Knit achieve **94%+ recovery rates** — up from a typical 75–85%.',
         category: 'use-cases',
         relatedTopics: ['results', 'features'],
         priority: 8,
@@ -206,7 +206,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['results', 'roi', 'benefits', 'outcomes', 'success', 'performance', 'improvement', 'better', 'statistics', 'stats', 'numbers'],
         question: 'What results can I expect?',
-        answer: 'Our clients consistently see **transformational results**:\n\n📈 **94%+** collection rates (up from 75–85%)\n⏰ **15+ hours** saved per week on admin\n📉 **40% reduction** in overdue accounts\n⚡ **60% faster** payment processing\n❤️ **Improved relationships** through empathetic communication\n\nKnit typically pays for itself within the **first month**.',
+        answer: 'Our clients consistently see **transformational results**:\n\n📈 **94%+** recovery rates (up from 75–85%)\n⏰ **15+ hours** saved per week on admin\n📉 **40% reduction** in overdue accounts\n⚡ **60% faster** payment processing\n❤️ **Improved relationships** through empathetic communication\n\nKnit typically pays for itself within the **first month**.',
         category: 'results',
         relatedTopics: ['use-cases', 'features'],
         priority: 9,
@@ -276,7 +276,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['vs', 'compared to', 'alternative', 'competitor', 'difference', 'better than', 'why knit', 'why choose', 'unique', 'special'],
         question: 'What makes Knit different?',
-        answer: 'What sets Knit apart:\n\n🧠 **AI-First** — Intelligent decisions, not just reminders\n❤️ **Empathetic** — Preserves relationships while collecting\n⚡ **Fast Setup** — Days, not months\n🔗 **All-in-One** — Payments + collections + reconciliation\n📈 **Proven** — 94%+ collection rates\n💰 **ROI** — Typically pays for itself in month one\n\nWe don\'t just chase payments — we **transform** how you manage revenue.',
+        answer: 'What sets Knit apart:\n\n🧠 **AI-First** — Intelligent decisions, not just reminders\n❤️ **Empathetic** — Preserves relationships while recovering revenue\n⚡ **Fast Setup** — Days, not months\n🔗 **All-in-One** — Payments + recovery + reconciliation\n📈 **Proven** — 94%+ recovery rates\n💰 **ROI** — Typically pays for itself in month one\n\nWe don\'t just chase payments — we **transform** how you manage revenue.',
         category: 'comparison',
         relatedTopics: ['features', 'ai-engine'],
         priority: 8,

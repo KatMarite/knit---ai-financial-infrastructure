@@ -23,7 +23,7 @@ const BlogDigitizingPayments: React.FC = () => {
                         </div>
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-                        The Data-Driven Case for Digitizing School Payments: Why Cash and Manual EFT Are Costing You 30%+ in Collections
+                        The Data-Driven Case for Digitizing School Payments: Why Cash and Manual EFT Are Costing You 30%+ in Revenue
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
                         Schools implementing automated digital payment systems report 30% improvements in on-time payments compared to cash and manual EFT methods. The data is clear: how you collect payments matters as much as what you charge.
@@ -61,7 +61,7 @@ const BlogDigitizingPayments: React.FC = () => {
 
                     <h2>The Hidden Cost of Cash and Manual Payments</h2>
                     <p>
-                        South African schools still rely heavily on cash payments and manual bank transfers (EFT) for fee collection. This seems harmless—after all, money is money regardless of how it arrives. But payment method research across multiple industries reveals a striking pattern: manual payment methods correlate with significantly lower collection rates and higher operational costs.
+                        South African schools still rely heavily on cash payments and manual bank transfers (EFT) for fee recovery. This seems harmless—after all, money is money regardless of how it arrives. But payment method research across multiple industries reveals a striking pattern: manual payment methods correlate with significantly lower payment success rates and higher operational costs.
                     </p>
                     <p>
                         Consider the typical South African school payment journey today:
@@ -71,12 +71,12 @@ const BlogDigitizingPayments: React.FC = () => {
                         <li><strong>Manual EFT:</strong> Parent receives invoice → Logs into banking app → Manually enters school account details → Enters reference number (often incorrectly) → Confirms payment → School checks bank statement daily → Manually matches payment to student account</li>
                     </ul>
                     <p>
-                        Every step in these processes creates friction that reduces collection probability. Every manual touchpoint introduces delay, error, and the opportunity for parents to postpone payment "until tomorrow." The data proves it.
+                        Every step in these processes creates friction that reduces payment probability. Every manual touchpoint introduces delay, error, and the opportunity for parents to postpone payment "until tomorrow." The data proves it.
                     </p>
 
-                    <h2>The Collection Rate Data: Digital vs Manual</h2>
+                    <h2>The Payment Success Data: Digital vs Manual</h2>
                     <p>
-                        Industry research and platform data from South African schools reveal substantial collection rate differences across payment methods:
+                        Industry research and platform data from South African schools reveal substantial payment success differences across payment methods:
                     </p>
 
                     <div className="overflow-x-auto my-8 border border-surface-200 rounded-lg">
@@ -119,7 +119,7 @@ const BlogDigitizingPayments: React.FC = () => {
                     </div>
 
                     <p>
-                        The collection rate gap between automated debit orders (85-90%) and cash payments (45-55%) represents a 40-45 percentage point difference—meaning schools relying on cash collect less than HALF the rate of schools using automated digital systems. Even manual EFT significantly underperforms automated methods by 20-30 percentage points.
+                        The payment success gap between automated debit orders (85-90%) and cash payments (45-55%) represents a 40-45 percentage point difference—meaning schools relying on cash collect less than HALF the rate of schools using automated digital systems. Even manual EFT significantly underperforms automated methods by 20-30 percentage points.
                     </p>
                     <p className="text-sm bg-surface-50 p-4 rounded border border-surface-200 italic">
                         Caveat – debit orders are onerous on onboarding requirements and also activating debit order mandates, having said that as the data demonstrates it is more effective.
@@ -127,7 +127,7 @@ const BlogDigitizingPayments: React.FC = () => {
 
                     <h2>Why Automated Digital Payments Outperform Manual Methods</h2>
 
-                    <h3>1. Friction Removal: Every Click Costs You Collections</h3>
+                    <h3>1. Friction Removal: Every Click Costs You Revenue</h3>
                     <p>
                         Behavioral economics research consistently shows that each additional step in a payment process reduces completion rates by 10-15%. The difference between:
                     </p>
@@ -207,7 +207,7 @@ const BlogDigitizingPayments: React.FC = () => {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-emerald-600 font-bold">R37.0M</td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">Collection improvement</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">Revenue improvement</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">—</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-emerald-600 font-bold">+R11.5M</td>
                                 </tr>
@@ -217,7 +217,7 @@ const BlogDigitizingPayments: React.FC = () => {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-emerald-600 font-bold">60 hrs/year</td>
                                 </tr>
                                 <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">Collection agency referrals</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">External agency referrals</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-red-500">R4.2M @ 22%</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-emerald-600">R1.3M @ 22%</td>
                                 </tr>
@@ -230,7 +230,7 @@ const BlogDigitizingPayments: React.FC = () => {
                         <ul className="space-y-2 mt-2">
                             <li className="flex items-start gap-2 text-brand-800">
                                 <CheckCircle size={18} className="mt-1 text-brand-600 shrink-0" />
-                                <span><strong>Collection improvement:</strong> +R11.5M additional revenue</span>
+                                <span><strong>Revenue improvement:</strong> +R11.5M additional revenue</span>
                             </li>
                             <li className="flex items-start gap-2 text-brand-800">
                                 <CheckCircle size={18} className="mt-1 text-brand-600 shrink-0" />
@@ -238,7 +238,7 @@ const BlogDigitizingPayments: React.FC = () => {
                             </li>
                             <li className="flex items-start gap-2 text-brand-800">
                                 <CheckCircle size={18} className="mt-1 text-brand-600 shrink-0" />
-                                <span><strong>Reduced agency fees:</strong> R2.9M savings (fewer referrals)</span>
+                                <span><strong>Reduced external agency fees:</strong> R2.9M savings (fewer referrals)</span>
                             </li>
                         </ul>
                         <p className="mt-4 font-bold text-brand-900 text-lg">Total annual impact: R14.5M+ for a typical 500-student school</p>
@@ -282,9 +282,9 @@ const BlogDigitizingPayments: React.FC = () => {
                     </p>
                     <ul>
                         <li>Automated debit orders collect 85-90% on time vs 45-55% for cash—a 40 percentage point gap</li>
-                        <li>Schools implementing digital payment systems report 30% improvements in on-time collections</li>
+                        <li>Schools implementing digital payment systems report 30% improvements in on-time payments</li>
                         <li>Manual reconciliation time drops 90% (600 hours → 60 hours annually)</li>
-                        <li>Collection agency referrals decrease 70% through early intervention and automated retries</li>
+                        <li>External agency referrals decrease 70% through early intervention and automated retries</li>
                         <li>Total annual impact for typical school: R14.5M+ in improved collections, reduced costs, and freed staff capacity</li>
                     </ul>
                     <p>
@@ -294,7 +294,7 @@ const BlogDigitizingPayments: React.FC = () => {
                     <div className="mt-12 bg-slate-900 text-white p-8 rounded-2xl not-prose text-center">
                         <h3 className="text-2xl font-bold mb-4">Ready to Digitize Your Payment Operations?</h3>
                         <p className="text-slate-300 mb-8 max-w-lg mx-auto">
-                            Knit Financial Services provides comprehensive digital payment infrastructure for South African schools, ensuring multi-channel processing, DebiCheck compliance, and AI-powered collections.
+                            Knit Financial Services provides comprehensive digital payment infrastructure for South African schools, ensuring multi-channel processing, DebiCheck compliance, and AI-powered recovery.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             <button className="px-6 py-3 bg-white text-slate-900 rounded-md font-bold hover:bg-surface-50 transition-colors flex items-center justify-center gap-2">

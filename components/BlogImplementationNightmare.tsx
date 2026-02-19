@@ -239,7 +239,7 @@ const BlogImplementationNightmare: React.FC = () => {
                                             <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></div> <strong>Admissions Agent:</strong> Automates credit screening.
                                         </li>
                                         <li className="flex items-center gap-2 text-sm text-slate-700">
-                                            <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></div> <strong>Collections Agent:</strong> Handles reminders via WhatsApp/SMS.
+                                            <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></div> <strong>Revenue Agent:</strong> Handles reminders via WhatsApp/SMS.
                                         </li>
                                     </ul>
                                 </div>
@@ -324,7 +324,7 @@ const BlogImplementationNightmare: React.FC = () => {
                         <ScrollReveal>
                             <h2 className="text-3xl font-bold mb-6 text-slate-900">Ready to Experience Days, Not Months?</h2>
                             <p className="text-xl text-slate-600 mb-10">
-                                Knit is building the future of school finance. We prevent arrears so you rarely need expensive collection agencies.
+                                Knit is building the future of school finance. We prevent arrears so you rarely need expensive external agencies.
                             </p>
                             <div className="flex justify-center gap-4">
                                 <button className="px-8 py-4 bg-brand-900 text-white rounded-full font-bold hover:bg-brand-800 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2">

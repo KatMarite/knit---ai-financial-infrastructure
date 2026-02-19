@@ -34,7 +34,7 @@ const FeatureShowcase = () => {
     const features = [
         {
             title: '1. Describe your school',
-            desc: 'Knit’s AI learns how your school operates — student count, fee structures, payment behavior, and historical collection patterns.',
+            desc: 'Knit’s AI learns how your school operates — student count, fee structures, payment behavior, and historical payment patterns.',
             icon: <Settings size={20} />,
             visual: (
                 <div className="bg-surface-950 p-2 rounded-lg h-full overflow-hidden flex flex-col relative group">
@@ -62,7 +62,7 @@ const FeatureShowcase = () => {
         },
         {
             title: '2. Predict parent payment behavior',
-            desc: 'Knit segments parents by likelihood to pay — distinguishing late-but-reliable families from high-risk delinquencies.',
+            desc: 'Knit segments parents by likelihood to pay — distinguishing late-but-reliable families from high-risk accounts.',
             icon: <User size={20} />,
             visual: (
                 <div className="bg-surface-950 p-2 rounded-lg h-full overflow-hidden flex flex-col relative group">
@@ -245,14 +245,14 @@ const FeatureShowcase = () => {
             )
         },
         {
-            title: '4. Contextual collections and recoveries',
-            desc: 'Knit’s AI decides who to follow up, how, and when — setting up payment plans, adjusting tone, and reducing delinquencies automatically.',
+            title: '4. Contextual revenue recovery',
+            desc: 'Knit’s AI decides who to follow up, how, and when — setting up payment plans, adjusting tone, and reducing overdue accounts automatically.',
             icon: <MessageSquare size={20} />,
             visual: (
                 <div className="bg-surface-950 p-2 rounded-lg h-full overflow-hidden flex flex-col relative group">
                     <img
                         src="/feature-4-bursar-collections.png"
-                        alt="Bursar & Collections Interface"
+                        alt="Bursar & Recovery Interface"
                         className={`w-full h-full object-cover rounded shadow-lg opacity-90 transition-opacity duration-1000 ${activeTab === 3 ? 'scale-105' : 'scale-100'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-950/50 to-transparent pointer-events-none"></div>

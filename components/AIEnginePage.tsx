@@ -170,7 +170,7 @@ const AIEnginePage: React.FC = () => {
                         </ScrollReveal>
                         <ScrollReveal delay={200}>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
-                                Knit has built a rock solid liquidity, payments and collections engine to alleviate school managers and bursars from manual work, improve their time by up to 50%. We’ve worked with multiple schools to refine our AI and make it fit for school’s purpose.
+                                Knit has built a rock solid liquidity, payments and recovery engine to alleviate school managers and bursars from manual work, improve their time by up to 50%. We’ve worked with multiple schools to refine our AI and make it fit for school’s purpose.
                             </p>
                         </ScrollReveal>
                     </div>

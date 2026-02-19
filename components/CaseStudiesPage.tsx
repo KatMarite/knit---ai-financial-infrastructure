@@ -43,7 +43,7 @@ const CaseStudiesPage: React.FC = () => {
                                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                                     <CountUp end={15} suffix="%+" />
                                 </div>
-                                <div className="text-brand-100/70 font-medium">Collection Improvement</div>
+                                <div className="text-brand-100/70 font-medium">Recovery Improvement</div>
                             </div>
                         </ScrollReveal>
                         <ScrollReveal delay={100} className="h-full">
@@ -94,14 +94,14 @@ const CaseStudiesPage: React.FC = () => {
                                     <div className="mb-8">
                                         <h4 className="text-lg font-bold text-slate-900 mb-2">The Challenge</h4>
                                         <p className="text-slate-600">
-                                            Like many independent schools in South Africa, we struggled with manual collections processes, documentation and late fee payments that consumed administrative time.
+                                            Like many independent schools in South Africa, we struggled with manual payment follow-up processes, documentation and late fee payments that consumed administrative time.
                                         </p>
                                     </div>
 
                                     <div className="mb-8">
                                         <h4 className="text-lg font-bold text-slate-900 mb-2">The Solution</h4>
                                         <p className="text-slate-600">
-                                            Knit provided us with a comprehensive financial operating system that handles our complete fee lifecycle—from enrollment screening through automated collections. The platform integrates credit bureau verification at application stage, streamlined payment processing with multiple channels, proactive automated reminders, and real-time financial visibility.
+                                            Knit provided us with a comprehensive financial operating system that handles our complete fee lifecycle—from enrollment screening through automated revenue recovery. The platform integrates credit bureau verification at application stage, streamlined payment processing with multiple channels, proactive automated reminders, and real-time financial visibility.
                                         </p>
                                     </div>
 
@@ -185,14 +185,14 @@ const CaseStudiesPage: React.FC = () => {
                                     <div className="mb-8">
                                         <h4 className="text-lg font-bold text-slate-900 mb-2">The Challenge</h4>
                                         <p className="text-slate-600">
-                                            Like most independent schools in South Africa, Southdowns faced a familiar pain point: a significant number of school fee accounts aren't paid on time. Manual collection processes (EFTs) and highly manual activities consumed valuable administrative time.
+                                            Like most independent schools in South Africa, Southdowns faced a familiar pain point: a significant number of school fee accounts aren't paid on time. Manual payment processes (EFTs) and highly manual activities consumed valuable administrative time.
                                         </p>
                                     </div>
 
                                     <div className="mb-8">
                                         <h4 className="text-lg font-bold text-slate-900 mb-2">The Solution</h4>
                                         <p className="text-slate-600">
-                                            Southdowns went live with knit's collections infrastructure, powered by AI agents. The entire 1,300-learner student body was activated simultaneously in just 4 hours, with automated debit orders, real-time payment visibility, and parent engagement workflows running immediately.
+                                            Southdowns went live with knit's revenue recovery infrastructure, powered by AI agents. The entire 1,300-learner student body was activated simultaneously in just 4 hours, with automated debit orders, real-time payment visibility, and parent engagement workflows running immediately.
                                         </p>
                                     </div>
 

@@ -108,7 +108,7 @@ const BlogImplementationNightmareEditorial: React.FC = () => {
                         Our #1 principle is: <em>"Can we integrate instead of building?"</em> We don’t want to replace your school admin system; we want to make it better.
                     </p>
                     <p>
-                        By acting as the specialized "payments and collections layer," we connect seamlessly to your accounting and credit bureaus in hours, not weeks. This decoupling allows us to deploy value immediately without requiring a full rip-and-replace of your core infrastructure.
+                        By acting as the specialized "payments and recovery layer," we connect seamlessly to your accounting and credit bureaus in hours, not weeks. This decoupling allows us to deploy value immediately without requiring a full rip-and-replace of your core infrastructure.
                     </p>
 
                     <h2>3. Zero Training: AI Agents as Your Finance Team</h2>
@@ -117,7 +117,7 @@ const BlogImplementationNightmareEditorial: React.FC = () => {
                     </p>
                     <ul>
                         <li><strong>Admissions Agent:</strong> Automates credit screening and affordability assessments.</li>
-                        <li><strong>Collections Agent:</strong> Handles payment reminders and negotiations via WhatsApp/SMS.</li>
+                        <li><strong>Recovery Agent:</strong> Handles payment reminders and negotiations via WhatsApp/SMS.</li>
                     </ul>
 
                     <hr className="my-12 border-surface-200" />
@@ -133,7 +133,7 @@ const BlogImplementationNightmareEditorial: React.FC = () => {
                         </div>
                         <div className="bg-surface-50 p-6 rounded-lg border border-surface-200 text-center">
                             <div className="text-3xl font-bold text-emerald-600 mb-1">+30%</div>
-                            <div className="text-xs text-slate-500 font-mono uppercase">Collection Rate</div>
+                            <div className="text-xs text-slate-500 font-mono uppercase">Recovery Rate</div>
                         </div>
                         <div className="bg-surface-50 p-6 rounded-lg border border-surface-200 text-center">
                             <div className="text-3xl font-bold text-emerald-600 mb-1">-85%</div>
@@ -146,7 +146,7 @@ const BlogImplementationNightmareEditorial: React.FC = () => {
                         This shift in velocity changes the fundamental economics of adopting new financial technology:
                     </p>
                     <ul>
-                        <li><strong>Immediate Cash Flow:</strong> See collection improvements in the first week, not the first quarter.</li>
+                        <li><strong>Immediate Cash Flow:</strong> See recovery improvements in the first week, not the first quarter.</li>
                         <li><strong>No Training Debt:</strong> Natural language interfaces mean your team is productive from day one.</li>
                         <li><strong>Compliance on Autopilot:</strong> POPIA, NCR, and Section 41 requirements are hard-coded into our AI’s DNA.</li>
                     </ul>
@@ -154,7 +154,7 @@ const BlogImplementationNightmareEditorial: React.FC = () => {
                     <div className="mt-12 bg-slate-900 text-white p-8 rounded-2xl not-prose text-center">
                         <h3 className="text-2xl font-bold mb-4">Ready to Experience Days, Not Months?</h3>
                         <p className="text-slate-300 mb-8 max-w-lg mx-auto">
-                            Knit is building the future of school finance. We prevent arrears so you rarely need expensive collection agencies.
+                            Knit is building the future of school finance. We prevent arrears so you rarely need expensive external agencies.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
                             <button className="px-6 py-3 bg-white text-slate-900 rounded-md font-bold hover:bg-surface-50 transition-colors flex items-center justify-center gap-2">

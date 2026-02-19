@@ -106,7 +106,7 @@ const LandingPage: React.FC = () => {
                                 </ScrollReveal>
                                 <ScrollReveal delay={200}>
                                     <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-light">
-                                        Knit is the school finance managers’ co-pilot. Our AI agents improve manual processes by automating payments, collections, and decisions on who to follow up, how, when and through which appropriate channel.
+                                        Knit is the school finance managers’ co-pilot. Our AI agents improve manual processes by automating payments, recovery, and decisions on who to follow up, how, when and through which appropriate channel.
                                     </p>
                                 </ScrollReveal>
 
@@ -330,7 +330,7 @@ const LandingPage: React.FC = () => {
                                             Workflows
                                         </h3>
                                         <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                                            Drag-and-drop logic for financial operations. Automate fee collection, enrollment contracts, and reconciliation without writing code.
+                                            Drag-and-drop logic for financial operations. Automate fee recovery, enrollment contracts, and reconciliation without writing code.
                                         </p>
                                         <ul className="space-y-2">
                                             <li className="flex items-center gap-2 text-xs text-slate-500 font-mono">
@@ -602,7 +602,7 @@ const LandingPage: React.FC = () => {
                                     </div>
                                     <h3 className="text-lg font-semibold text-brand-950 mb-2">Education & Institutions</h3>
                                     <p className="text-slate-600 mb-8 text-sm leading-relaxed max-w-sm">
-                                        Secure tuition installment revenue without damaging family relationships. Focus on retention, not just collections.
+                                        Secure tuition installment revenue without damaging family relationships. Focus on retention, not just recovery.
                                     </p>
                                     <ul className="space-y-3 mb-8">
                                         <li className="flex items-center gap-3 text-xs text-slate-700 font-mono"><Check size={14} className="text-brand-600" /> Tuition Assurance</li>

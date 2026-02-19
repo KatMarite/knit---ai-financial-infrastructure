@@ -26,7 +26,7 @@ const BlogSchoolSavingsEditorial: React.FC = () => {
                         How AI Is Quietly Saving Schools Hundreds of Thousands Each Year
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
-                        Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual collections, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.
+                        Across South Africa, school finance and administration teams are under growing pressure. Rising operational costs, manual recovery processes, fragmented systems, and increasing parent expectations are stretching bursars and finance managers thin.
                     </p>
 
                     <div className="flex items-center justify-between mt-8 border-t border-b border-surface-200 py-4">
@@ -55,12 +55,12 @@ const BlogSchoolSavingsEditorial: React.FC = () => {
                             className="w-full rounded-xl shadow-lg border border-surface-200"
                         />
                         <figcaption className="text-center text-sm text-slate-500 mt-3 italic">
-                            Streamlining collections with AI-driven insights.
+                            Streamlining recovery with AI-driven insights.
                         </figcaption>
                     </figure>
 
                     <p>
-                        While most schools focus on improving fee collection rates, the larger and often overlooked opportunity lies in operational efficiency. AI-driven finance automation is now enabling schools to materially reduce manual workload, cut third-party collection costs, and improve cash-flow predictability—without compromising parent experience.
+                        While most schools focus on improving fee recovery rates, the larger and often overlooked opportunity lies in operational efficiency. AI-driven finance automation is now enabling schools to materially reduce manual workload, cut external agency costs, and improve cash-flow predictability—without compromising parent experience.
                     </p>
 
                     <h2>Where the Costs Really Sit</h2>
@@ -80,14 +80,14 @@ const BlogSchoolSavingsEditorial: React.FC = () => {
                         At an average fully-loaded finance salary of R250,000–R350,000 per year, this translates into <strong>R100,000–R200,000 in hidden labour costs alone.</strong>
                     </p>
 
-                    <h2>The Bigger Leak: Collection Agencies</h2>
+                    <h2>The Bigger Leak: External Agencies</h2>
                     <p>
-                        Schools often rely on external collection agencies for late-stage arrears. Agency fees typically range from 18% to 25% of recovered amounts. For a mid-to-large private school, this can easily exceed R1–4 million per year in gross arrears exposure.
+                        Schools often rely on external recovery agencies for late-stage arrears. Agency fees typically range from 18% to 25% of recovered amounts. For a mid-to-large private school, this can easily exceed R1–4 million per year in gross arrears exposure.
                     </p>
                     <div className="bg-brand-50 border-l-4 border-brand-600 p-6 my-10 rounded-r-lg not-prose">
                         <h4 className="font-bold text-brand-900 text-lg mb-2">The Impact of Early Intervention</h4>
                         <p className="text-brand-800">
-                            AI-powered early intervention—automated reminders, payment-plan self-service, and risk-based escalation—can prevent 10–25% of these accounts from ever reaching third-party collections. That alone represents <strong>R250,000–R750,000 in annual savings</strong> for many schools.
+                            AI-powered early intervention—automated reminders, payment-plan self-service, and risk-based escalation—can prevent 10–25% of these accounts from ever reaching third-party recovery. That alone represents <strong>R250,000–R750,000 in annual savings</strong> for many schools.
                         </p>
                     </div>
 
@@ -96,7 +96,7 @@ const BlogSchoolSavingsEditorial: React.FC = () => {
                         Modern school finance platforms embed AI agents across four core functions:
                     </p>
                     <ul>
-                        <li><strong>Collections:</strong> automated reminders, escalations, reconciliation, and payment plans</li>
+                        <li><strong>Revenue Recovery:</strong> automated reminders, escalations, reconciliation, and payment plans</li>
                         <li><strong>Admissions:</strong> affordability screening and risk checks at enrolment</li>
                         <li><strong>Forecasting:</strong> cash-flow projections, budget variance analysis, and board reporting</li>
                         <li><strong>Error reduction:</strong> fewer billing mistakes, reversals, and manual rework</li>

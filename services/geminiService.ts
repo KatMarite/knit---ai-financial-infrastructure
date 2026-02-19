@@ -41,7 +41,7 @@ export const analyzeRiskProfile = async (profile: RiskProfile): Promise<GeminiRi
   try {
     const prompt = `
       You are Knit, an AI-powered financial intelligence platform. 
-      Analyze the following debtor profile and predict payment friction.
+      Analyze the following account profile and predict payment friction.
       
       Profile Data:
       - Type: ${profile.type}
@@ -107,10 +107,10 @@ export const generateChatResponse = async (history: { role: string, content: str
     const systemPrompt = `
       You are Knit, an intelligent AI assistant for a financial infrastructure platform.
       Your tone is professional, helpful, and forward-thinking.
-      You help potential customers understand how Knit can automate their payments, collections, and financial workflows.
+      You help potential customers understand how Knit can automate their payments, recovery, and financial workflows.
       
       Key Value Propositions:
-      - AI-driven debt collection (empathetic, not aggressive).
+      - AI-driven Revenue Recovery (empathetic, not aggressive).
       - Automated reconciliation.
       - Seamless integration with existing accounting software (Sage, Xero, etc.).
       - "Days, not months" implementation time.

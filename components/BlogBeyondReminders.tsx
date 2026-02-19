@@ -13,7 +13,7 @@ const BlogBeyondReminders: React.FC = () => {
                 {/* Article Header */}
                 <header className="max-w-3xl mx-auto px-4 sm:px-6 mb-12">
                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-6 font-mono">
-                        <span className="px-2 py-1 bg-surface-100 rounded text-slate-700">AI in Collections</span>
+                        <span className="px-2 py-1 bg-surface-100 rounded text-slate-700">AI in Revenue Operations</span>
                         <span>•</span>
                         <div className="flex items-center gap-1">
                             <Calendar size={14} /> Feb 25, 2026
@@ -27,7 +27,7 @@ const BlogBeyondReminders: React.FC = () => {
                         Beyond Reminders: Why Your School Needs an AI Operator, Not an Alarm Clock
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
-                        In the world of school fee collections, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools are just expensive alarm clocks. Knit is different.
+                        In the world of school fee recovery, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools are just expensive alarm clocks. Knit is different.
                     </p>
 
                     <div className="flex items-center justify-between mt-8 border-t border-b border-surface-200 py-4">
@@ -61,7 +61,7 @@ const BlogBeyondReminders: React.FC = () => {
                     </figure>
 
                     <p>
-                        In the world of school fee collections, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools in the education sector are just expensive alarm clocks—they send the same WhatsApp on Day 7 to every parent, regardless of history or context.
+                        In the world of school fee recovery, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools in the education sector are just expensive alarm clocks—they send the same WhatsApp on Day 7 to every parent, regardless of history or context.
                     </p>
                     <p>
                         At Knit, we’ve built something different. We operate as a Smart AI Overlay that sits on top of your existing systems (like STASY or PayU) to automate judgment, not just communication.
@@ -132,7 +132,7 @@ const BlogBeyondReminders: React.FC = () => {
                     </p>
                     <ul>
                         <li><strong>The AI Decision:</strong> Our Document Analyser extracts amounts and dates from uploaded POPs.</li>
-                        <li><strong>The Safety Mechanism:</strong> The moment a POP is submitted via WhatsApp, Knit automatically pauses all collection follow-ups while the document clears. This prevents the frustration of "reminding" a parent who has already paid.</li>
+                        <li><strong>The Safety Mechanism:</strong> The moment a POP is submitted via WhatsApp, Knit automatically pauses all recovery follow-ups while the document clears. This prevents the frustration of "reminding" a parent who has already paid.</li>
                     </ul>
 
                     <h3>4. Forecasting via "Payment Velocity"</h3>
@@ -199,7 +199,7 @@ const BlogBeyondReminders: React.FC = () => {
                         By automating the routine "judgment calls" that take up 80% of a finance team's day, Knit allows your staff to focus on the 20% of cases that truly require human empathy and wisdom.
                     </p>
                     <p className="font-bold text-xl text-brand-900 mt-8 mb-4">
-                        Knit: We don’t just send reminders. We manage your collections.
+                        Knit: We don’t just send reminders. We manage your revenue recovery.
                     </p>
 
                     <div className="mt-12 bg-surface-50 border border-surface-200 p-8 rounded-2xl not-prose flex flex-col md:flex-row items-center gap-8">

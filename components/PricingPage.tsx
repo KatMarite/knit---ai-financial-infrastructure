@@ -42,7 +42,7 @@ const PricingPage: React.FC = () => {
                                 {[
                                     '0 - 500 Units',
                                     'Basic Risk Assessment',
-                                    'Automated Collections (Email)',
+                                    'Automated Payment Follow-ups (Email)',
                                     'Next-day Payouts',
                                     'Standard Support'
                                 ].map((feature, i) => (
@@ -77,7 +77,7 @@ const PricingPage: React.FC = () => {
                                 {[
                                     '500 - 2000 Units',
                                     'Advanced Neural Risk Engine',
-                                    'Multi-channel Collections (WhatsApp)',
+                                    'Multi-channel Recovery (WhatsApp)',
                                     'Same-day Payouts',
                                     'Priority Support',
                                     'API Access'
@@ -162,7 +162,7 @@ const PricingPage: React.FC = () => {
                                         <td className="py-4 px-6 text-slate-600">Custom Training</td>
                                     </tr>
                                     <tr>
-                                        <td className="py-4 px-6 font-medium text-slate-900 bg-surface-50/30">Collections</td>
+                                        <td className="py-4 px-6 font-medium text-slate-900 bg-surface-50/30">Revenue Recovery</td>
                                         <td className="py-4 px-6 text-slate-600">Email Reminders</td>
                                         <td className="py-4 px-6 text-brand-700 font-medium bg-brand-50/30">Omichannel (WA/SMS)</td>
                                         <td className="py-4 px-6 text-slate-600">Legal Escalations</td>
