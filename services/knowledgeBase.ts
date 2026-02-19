@@ -79,7 +79,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['free trial', 'trial', 'try before buy', 'try it out', 'free', 'no commitment'],
         question: 'Do you offer a free trial?',
-        answer: 'Yes! We offer a **free trial on our Growth plan** so you can experience the full power of Knit risk-free.\n\nGet started by:\n• Emailing **sales@knit.cash**\n• WhatsApp **+27 65 952 0478**\n• Or click **Book a Demo** on our website',
+        answer: 'Yes! We offer a **free trial on our Growth plan** so you can experience the full power of Knit risk-free.\n\nTo get started immediately:\n\n👉 [Click here to book your demo & trial](/contact)',
         category: 'pricing',
         relatedTopics: ['demo', 'contact'],
         priority: 7,
@@ -186,7 +186,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['schools', 'education', 'school fees', 'tuition', 'university', 'college', 'academy', 'learner', 'student'],
         question: 'How does Knit help schools?',
-        answer: 'Knit is **purpose-built for schools**:\n\n🎓 **Automated Fee Recovery** — reduces admin burden by 15+ hours/week\n🔮 **Early Warning** — AI identifies at-risk accounts before they become overdue\n💬 **Empathetic Outreach** — preserves parent relationships\n📊 **Real-Time Visibility** — track recovery rates live\n💰 **Flexible Plans** — automatically offer payment plans\n\nSchools using Knit achieve **94%+ recovery rates** — up from a typical 75–85%.',
+        answer: 'Knit is **purpose-built for schools**:\n\n🎓 **Automated Fee Recovery** — reduces admin burden by 15+ hours/week\n🔮 **Early Warning** — AI identifies at-risk accounts before they become overdue\n💬 **Empathetic Outreach** — preserves parent relationships\n📊 **Real-Time Visibility** — track status live\n💰 **Flexible Plans** — automatically offer payment plans',
         category: 'use-cases',
         relatedTopics: ['results', 'features'],
         priority: 8,
@@ -206,7 +206,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['results', 'roi', 'benefits', 'outcomes', 'success', 'performance', 'improvement', 'better', 'statistics', 'stats', 'numbers'],
         question: 'What results can I expect?',
-        answer: 'Our clients consistently see **transformational results**:\n\n📈 **94%+** recovery rates (up from 75–85%)\n⏰ **15+ hours** saved per week on admin\n📉 **40% reduction** in overdue accounts\n⚡ **60% faster** payment processing\n❤️ **Improved relationships** through empathetic communication\n\nKnit typically pays for itself within the **first month**.',
+        answer: 'Our clients consistently see **transformational results**:\n\n⏰ **15+ hours** saved per week on admin\n⚡ **60% faster** payment processing\n❤️ **Improved relationships** through empathetic communication\n\nKnit typically pays for itself within the **first month**.',
         category: 'results',
         relatedTopics: ['use-cases', 'features'],
         priority: 9,
@@ -226,7 +226,7 @@ export const knowledgeBase: KnowledgeItem[] = [
     {
         keywords: ['demo', 'book demo', 'schedule', 'meeting', 'presentation', 'show me', 'see it', 'demonstration', 'walkthrough'],
         question: 'How do I book a demo?',
-        answer: 'Booking a demo is easy! 🎯\n\n1️⃣ Click **"Book a Demo"** on our website\n2️⃣ Email **sales@knit.cash**\n3️⃣ WhatsApp **+27 65 952 0478**\n4️⃣ Fill out our **contact form**\n\nDemos last about **30 minutes** and are customised to your specific needs. We\'ll show you exactly how Knit can work for your organisation.',
+        answer: 'Booking a demo is easy! 🎯\n\n👉 [Click here to complete the booking form](/contact)\n\nWe\'ll show you exactly how Knit can work for your organisation.',
         category: 'contact',
         relatedTopics: ['contact', 'free-trial'],
         priority: 9,

@@ -71,9 +71,42 @@ function renderFormattedText(text: string) {
 }
 
 // Inline formatting: **bold**, *italic*
-function renderInline(text: string): React.ReactNode[] {
+
+// Helper to process formatting within a text segment
+function formatText(text: string): React.ReactNode[] {
     const parts: React.ReactNode[] = [];
-    // Match **bold** segments
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let lastIdx = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+        if (match.index > lastIdx) {
+            parts.push(...formatBold(text.slice(lastIdx, match.index)));
+        }
+
+        parts.push(
+            <a
+                key={`a-${match.index}`}
+                href={match[2]}
+                target={match[2].startsWith('/') ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                className="text-brand-600 hover:text-brand-800 underline font-medium"
+            >
+                {match[1]}
+            </a>
+        );
+        lastIdx = match.index + match[0].length;
+    }
+
+    if (lastIdx < text.length) {
+        parts.push(...formatBold(text.slice(lastIdx)));
+    }
+
+    return parts;
+}
+
+function formatBold(text: string): React.ReactNode[] {
+    const parts: React.ReactNode[] = [];
     const regex = /\*\*(.+?)\*\*/g;
     let lastIdx = 0;
     let match: RegExpExecArray | null;
@@ -92,8 +125,11 @@ function renderInline(text: string): React.ReactNode[] {
     if (lastIdx < text.length) {
         parts.push(text.slice(lastIdx));
     }
-
     return parts;
+}
+
+function renderInline(text: string): React.ReactNode[] {
+    return formatText(text);
 }
 
 const Chatbot: React.FC = () => {
