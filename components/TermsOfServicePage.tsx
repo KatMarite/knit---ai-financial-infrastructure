@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import ScrollReveal from './ScrollReveal';
 import { FileText, CheckCircle, AlertTriangle, Scale, CreditCard, ShieldAlert, UserCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TermsOfServicePage: React.FC = () => {
     const lastUpdated = "February 9, 2026";
@@ -54,7 +55,7 @@ const TermsOfServicePage: React.FC = () => {
                                         1. Acceptance of Terms
                                     </h2>
                                     <p className="text-slate-600">
-                                        By accessing and using the Knit platform ("Service"), available at www.knit.cash and related subdomains, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+                                        By accessing and using the Knit platform ("Service"), available at www.knit.cash and related subdomains, you accept and agree to be bound by the terms and conditions of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
                                     </p>
                                     <p className="text-slate-600 mt-4">
                                         These Terms of Service ("Terms") apply to all visitors, users, and others who access the Service. If you disagree with any part of the terms, then you may not access the Service.
@@ -108,7 +109,7 @@ const TermsOfServicePage: React.FC = () => {
                                             <strong className="text-slate-800">Transaction Fees:</strong> Deducted automatically from successful payments where applicable.
                                         </li>
                                         <li>
-                                            <strong className="text-slate-800">Refunds:</strong> Subscription fees are non-refundable except as required by law or as explicitly stated in our Cancellation Policy.
+                                            <strong className="text-slate-800">Refunds:</strong> Subscription fees are non-refundable except as required by law or as explicitly stated in our <Link to="/cancellation-policy" className="text-brand-600 hover:text-brand-700 underline">Cancellation Policy</Link>.
                                         </li>
                                     </ul>
                                 </div>

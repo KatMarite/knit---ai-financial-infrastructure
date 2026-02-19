@@ -49,7 +49,7 @@ const PrivacyPolicyPage: React.FC = () => {
                             <div className="bg-brand-50 border-l-4 border-brand-500 p-6 rounded-r-lg mb-12">
                                 <h3 className="text-brand-900 font-bold text-lg mb-2 mt-0">Commitment to Data Privacy</h3>
                                 <p className="text-brand-800 m-0 text-base">
-                                    At Knit, we take the protection of personal information seriously. As a financial infrastructure provider, we adhere to the Protection of Personal Information Act (POPIA) and other relevant data protection regulations to ensure your data is secure, confidential, and processed lawfully.
+                                    At Knit, we take the protection of personal information seriously. As a financial infrastructure provider, we adhere to the Protection of Personal Information Act (POPIA) and any other applicable data protection legislation and/or regulations to ensure your data is secure, confidential, and processed lawfully.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -66,7 +66,7 @@ const PrivacyPolicyPage: React.FC = () => {
                                         This Privacy Policy explains how Knit ("we," "us," or "our") collects, uses, discloses, and safeguards your information when you use our embedded finance platform, website, and related services (collectively, the "Service").
                                     </p>
                                     <p className="text-slate-600 mt-4">
-                                        By accessing or using the Service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure of your personal information as described in this Privacy Policy and our Terms of Service.
+                                        By accessing or using the Service, you acknowledge that you have read, understood, and agree to our collection, storage, use, and disclosure of your personal information as described in this Privacy Policy and our Terms of Service.
                                     </p>
                                 </div>
 
@@ -77,7 +77,7 @@ const PrivacyPolicyPage: React.FC = () => {
                                         2. Information We Collect
                                     </h2>
                                     <p className="text-slate-600 mb-4">
-                                        We collect information that you provide directly to us, as well as information automatically collected when you use our Service.
+                                        We collect information that you provide directly to us, as well as information collected when you use our Service.
                                     </p>
                                     <ul className="list-disc pl-6 space-y-2 text-slate-600">
                                         <li>
@@ -87,10 +87,10 @@ const PrivacyPolicyPage: React.FC = () => {
                                             <strong className="text-slate-800">Financial Information:</strong> Bank account details, transaction history, payment records, and fee structures necessary for processing payments.
                                         </li>
                                         <li>
-                                            <strong className="text-slate-800">Identify Verification Data:</strong> Government-issued ID numbers and other details required for regulatory compliance (FICA/KYC).
+                                            <strong className="text-slate-800">Identify Verification Data:</strong> Government-issued Identity numbers and other details required for regulatory compliance (Financial Inteligence Centre Act /Know Your Client).
                                         </li>
                                         <li>
-                                            <strong className="text-slate-800">Usage Data:</strong> Information about how you access and use the Service, including IP address, browser type, and device information.
+                                            <strong className="text-slate-800">Usage Data:</strong> Information about how you access and use the Service, including Internet Protocol address, browser type, and device information.
                                         </li>
                                     </ul>
                                 </div>
@@ -102,7 +102,7 @@ const PrivacyPolicyPage: React.FC = () => {
                                         3. How We Use Your Information
                                     </h2>
                                     <p className="text-slate-600 mb-4">
-                                        We use the collected information for specific business purposes, including:
+                                        We use the collected information for specific business purposes, including but not limited to:
                                     </p>
                                     <ul className="list-disc pl-6 space-y-2 text-slate-600">
                                         <li>Providing, operating, and maintaining our Service.</li>
@@ -110,7 +110,7 @@ const PrivacyPolicyPage: React.FC = () => {
                                         <li>Conducting credit screenings and affordability assessments (with consent).</li>
                                         <li> improving, personalizing, and expanding our Service.</li>
                                         <li>Preventing fraud and ensuring the security of our platform.</li>
-                                        <li>Complying with legal obligations, including NCR and POPIA requirements.</li>
+                                        <li>Complying with applicable legal and regulatory obligations, including but not limited to the National Credit Act and Protection Of Personal Information Act requirements.</li>
                                     </ul>
                                 </div>
 

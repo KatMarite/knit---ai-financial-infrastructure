@@ -16,6 +16,7 @@ import FAQPage from './components/FAQPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import SecurityPage from './components/SecurityPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
+import CancellationPolicyPage from './components/CancellationPolicyPage';
 import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
@@ -37,6 +38,7 @@ const App: React.FC = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsOfServicePage />} />
+        <Route path="/cancellation-policy" element={<CancellationPolicyPage />} />
         <Route path="/security" element={<SecurityPage />} />
 
       </Routes>
