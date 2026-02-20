@@ -348,7 +348,7 @@ const Chatbot: React.FC = () => {
             {/* Floating Button */}
             <button
                 onClick={toggleChat}
-                className={`group flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ${isOpen ? 'bg-surface-800 text-white rotate-90' : 'bg-brand-600 text-white'
+                className={`group flex items-center justify-center w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ${isOpen ? 'bg-white text-slate-700 border border-surface-400 rotate-90' : 'bg-brand-600 text-white'
                     }`}
             >
                 {isOpen ? <X size={24} /> : <MessageSquare size={24} className="group-hover:animate-pulse" />}
