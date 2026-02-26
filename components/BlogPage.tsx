@@ -14,10 +14,21 @@ const BlogPage: React.FC = () => {
 
     const blogPosts = [
         {
+            id: 'fee-nonpayment-crisis',
+            title: 'Why the Fee Non-Payment Crisis Is Worse Than the Headlines Suggest',
+            excerpt: 'South Africa\'s fee-paying schools are in a silent financial crisis. StatsSA confirms 65.7% of school-aged children don\'t pay tuition fees — but for the schools that rely on fee income, the real problem is velocity, compliance, and cash flow starvation.',
+            date: 'Feb 25, 2026',
+            readTime: '8 min read',
+            category: 'African Finance',
+            author: 'Knit Team',
+            image: '/fee_crisis_thumbnail.png',
+            slug: '/blog/editorial/fee-nonpayment-crisis'
+        },
+        {
             id: 'beyond-reminders',
             title: 'Beyond Reminders: Why Your School Needs an AI Operator, Not an Alarm Clock',
             excerpt: 'In the world of school fee recovery, there is a massive difference between reminding someone to pay and deciding how to handle a complex financial relationship. Most "AI" tools in the education sector are just expensive alarm clocks—they send the same WhatsApp on Day 7 to every parent, regardless of history or context.',
-            date: 'Feb 25, 2026',
+            date: 'Feb 23, 2026',
             readTime: '5 min read',
             category: 'AI in Revenue Operations',
             author: 'Knit Team',
